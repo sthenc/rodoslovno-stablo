@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="9b7629b8-cfdf-4e0f-addb-46d2122437e4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="7650b2a3-f202-46a9-87c0-3d4d13d95406" name="Prezentacijski sloj&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="43124cbe-aa59-4017-882a-cfa0b66cf4ce" direction="Forward">
+          <layerMoniker Id="1d91db85-c6a4-4fec-a075-53808745ad33" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="1d91db85-c6a4-4fec-a075-53808745ad33" name="Servisni sloj&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7b753daa-c7d5-4022-8ff6-530cc54623ab" direction="Forward">
+          <layerMoniker Id="c657446f-0905-458d-b71e-7cd35af7b00a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="c657446f-0905-458d-b71e-7cd35af7b00a" name="Logički sloj&#xD;&#xA;&#xD;&#xA;">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="5b513ea1-f4b4-495e-9d7b-bff40f18d07a" direction="Forward">
+          <layerMoniker Id="bf3b7aff-3a24-4122-b662-ee47df3e19f4" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="bf3b7aff-3a24-4122-b662-ee47df3e19f4" name="Infrastrukturni sloj">
+      <childLayers>
+        <layer Id="342de8f8-8961-4bc0-b1fd-95d50d219935" name="pristup bazi&#xD;&#xA;" />
+        <layer Id="ee27181c-087a-46c3-9a8a-56beedb0c0aa" name="pristup XML datotekama" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,1109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="59ec5a1c-6d5e-4f11-97ae-401ae4c026ac"
+  name="Model_Odabir-Spremanje" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction
+        Id="cdb2651c-0d00-4083-84b7-f538f1abe2f5"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="40bbefb2-ebd4-4384-a58d-b276893372f3"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="f1a4b11f-da87-4d75-80d1-755ad3caa06f"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="ae74292e-cec9-4ab9-bbe4-6205266ccfbf"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="293225aa-1719-43cb-8e60-ed131b0f4cb2"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e98b46ac-3924-468d-b141-1ec97e06855f"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="ae74292e-cec9-4ab9-bbe4-6205266ccfbf"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f7ecf770-d46f-41c9-ab0a-f5f7b49ff2a0"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8157d94d-f184-4e0b-96a4-752a4280856b"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="e0a92244-1a71-48b1-9b91-9495e677abc1"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="293225aa-1719-43cb-8e60-ed131b0f4cb2"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e98b46ac-3924-468d-b141-1ec97e06855f"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0b1a3d8b-3b76-4552-ad20-7fa6c97e54f2"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="e0a92244-1a71-48b1-9b91-9495e677abc1"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="f1a4b11f-da87-4d75-80d1-755ad3caa06f"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9e95a3a6-ad25-452e-9d9f-e51f7c7955d0"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="b8c9badd-854c-43fc-a45f-6002e35bc747"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="da99c6a5-2cab-4922-84cf-376ec228ee12"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="122b14e0-8d86-4983-b5b1-a26e49e968a6"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="8749d293-e34a-46e2-8c07-c26635a5aa2d"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f564a41d-509d-4b9c-8088-79ca5adb6f31"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="8d61a121-bba3-4c25-bf8b-d9666e8a2fb3"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="122b14e0-8d86-4983-b5b1-a26e49e968a6"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="31ff66dc-5b87-4707-a8a2-c0ba8ded9120"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8749d293-e34a-46e2-8c07-c26635a5aa2d"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="abab819a-0d9c-4402-b971-4134f1bdc0b5"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="e0a92244-1a71-48b1-9b91-9495e677abc1"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="d1b24aba-e253-4b64-8938-24b8693ce5c1"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="51bf4e1e-4038-4b74-9c75-db26dc9c83a0"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="24fe8046-190d-439a-84a3-48ce6080f50e"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="43ef7c17-81c3-4b90-8479-fc6553d609a8"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="49fd0dfb-3c87-4e7d-aad2-6ae95baafc95"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ddf4448e-19e5-45dc-96ef-56830b7e107d"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="43ef7c17-81c3-4b90-8479-fc6553d609a8"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="d3c279b3-0bc3-4b8b-87a7-510e5075d6a9"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="51bf4e1e-4038-4b74-9c75-db26dc9c83a0"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f564a41d-509d-4b9c-8088-79ca5adb6f31"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="49fd0dfb-3c87-4e7d-aad2-6ae95baafc95"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="51bf4e1e-4038-4b74-9c75-db26dc9c83a0"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ddf4448e-19e5-45dc-96ef-56830b7e107d"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="51bf4e1e-4038-4b74-9c75-db26dc9c83a0"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8d61a121-bba3-4c25-bf8b-d9666e8a2fb3"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="24fe8046-190d-439a-84a3-48ce6080f50e"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="cc22e2f4-2368-4326-b3e5-7a91cdaf9f52"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="51bf4e1e-4038-4b74-9c75-db26dc9c83a0"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="da99c6a5-2cab-4922-84cf-376ec228ee12"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="2c147abd-127f-4ee0-9047-e0e1c809ffd2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="e0a92244-1a71-48b1-9b91-9495e677abc1"
+            name="Korisnik"
+            isActor="true"
+            lifelineDisplayName="Korisnik">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="8157d94d-f184-4e0b-96a4-752a4280856b"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0b1a3d8b-3b76-4552-ad20-7fa6c97e54f2"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="abab819a-0d9c-4402-b971-4134f1bdc0b5"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="261e198f-ca2a-4366-84b8-9846d58b1491"
+            name="Model"
+            isActor="false"
+            lifelineDisplayName="Model">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="ae74292e-cec9-4ab9-bbe4-6205266ccfbf"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f1a4b11f-da87-4d75-80d1-755ad3caa06f"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="122b14e0-8d86-4983-b5b1-a26e49e968a6"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="da99c6a5-2cab-4922-84cf-376ec228ee12"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="51bf4e1e-4038-4b74-9c75-db26dc9c83a0"
+            name="XML datoteka"
+            isActor="false"
+            lifelineDisplayName="XML datoteka">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="43ef7c17-81c3-4b90-8479-fc6553d609a8"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="24fe8046-190d-439a-84a3-48ce6080f50e"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="fe5d0806-62ae-4a10-818d-681a77902269"
+            name="Spremi stablo"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8157d94d-f184-4e0b-96a4-752a4280856b"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="293225aa-1719-43cb-8e60-ed131b0f4cb2"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="9a965df0-d80b-42a7-bca8-b0d0ea2aa6b9"
+            name="Izbor direktorija"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e98b46ac-3924-468d-b141-1ec97e06855f"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0b1a3d8b-3b76-4552-ad20-7fa6c97e54f2"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="28bbcfc5-d19a-46c7-9a7f-981a2d8828ad"
+            name="Odabrani direktorij"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="abab819a-0d9c-4402-b971-4134f1bdc0b5"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8749d293-e34a-46e2-8c07-c26635a5aa2d"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="34ecc4ff-4746-45fa-ac1d-2b676f31cf97"
+            name="Upiši u datoteku"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f564a41d-509d-4b9c-8088-79ca5adb6f31"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="49fd0dfb-3c87-4e7d-aad2-6ae95baafc95"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="d7497abf-67ba-42ec-81c2-0f9ad13bfc7a"
+            name="Potvrda upisa"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ddf4448e-19e5-45dc-96ef-56830b7e107d"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8d61a121-bba3-4c25-bf8b-d9666e8a2fb3"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f7ecf770-d46f-41c9-ab0a-f5f7b49ff2a0"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9e95a3a6-ad25-452e-9d9f-e51f7c7955d0"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="31ff66dc-5b87-4707-a8a2-c0ba8ded9120"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="2c147abd-127f-4ee0-9047-e0e1c809ffd2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="d3c279b3-0bc3-4b8b-87a7-510e5075d6a9"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="cc22e2f4-2368-4326-b3e5-7a91cdaf9f52"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="c3e04a8b-27ed-42d2-abde-bb4d1306ceef"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="27ca70b7-ae68-40d4-99ce-5f9f5c83987b"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="5d908495-57b7-4082-8ad5-77350cd97bc7"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="5335a117-2f17-4993-95d6-60379e74f18c"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="c1d9c905-e26f-4bda-a84c-20a1bbc3d309"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="21429f03-9208-4d8f-8d0a-09f39d88c0c8"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="5335a117-2f17-4993-95d6-60379e74f18c"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="13411002-aee5-4e74-b1c1-9ea86fe80217"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="da059301-cdbb-438e-8ff1-3bbf9747b6f4"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="1bf45ea3-0882-416e-b262-a0c26afeaad0"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c1d9c905-e26f-4bda-a84c-20a1bbc3d309"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="21429f03-9208-4d8f-8d0a-09f39d88c0c8"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f482bd10-425f-4eaa-af41-a8a7c89f1cfa"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="1bf45ea3-0882-416e-b262-a0c26afeaad0"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="5d908495-57b7-4082-8ad5-77350cd97bc7"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="70ae457a-3191-4968-8d1a-9624d64a8458"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="980dddc5-007b-437d-87a9-f962e600476f"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="ddd6ff50-5bc2-4b90-8c1b-0a9d5a80ac62"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="0e8dfd56-31c5-4c8c-8ed3-d7db9ef99e22"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="f73e843c-4a98-4c06-bc3e-9afeda830ce7"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4e4a2ffb-6b53-48d7-a969-c8fb3ad7357a"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d7dd1548-983f-4618-898d-e0ef70b83aaa"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="bcdead44-ae2d-4026-9146-68447724f3a5"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="0e8dfd56-31c5-4c8c-8ed3-d7db9ef99e22"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="f55acdc3-7ba0-4948-9906-6e49f5bdfbd3"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f73e843c-4a98-4c06-bc3e-9afeda830ce7"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="760d85f6-2673-4868-b2b9-93b3ddaa6748"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="1bf45ea3-0882-416e-b262-a0c26afeaad0"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="6782ddb2-8a29-402c-bd10-597c62d46c7e"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="17c1d60f-b393-4425-9bd7-36ce13c14c58"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="f0c31792-19db-4c00-80ef-ae96ffcd98de"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="04a6bafb-5546-4229-8aae-37df0cdf55a9"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="2239a851-231d-4c8b-97c5-791996e97d7e"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c526ab1e-1a5f-4083-afe4-12553f30c8e3"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="04a6bafb-5546-4229-8aae-37df0cdf55a9"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="a1d317be-2003-41aa-91ba-08b79a6b9e22"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="17c1d60f-b393-4425-9bd7-36ce13c14c58"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4e4a2ffb-6b53-48d7-a969-c8fb3ad7357a"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2239a851-231d-4c8b-97c5-791996e97d7e"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="17c1d60f-b393-4425-9bd7-36ce13c14c58"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c526ab1e-1a5f-4083-afe4-12553f30c8e3"
+            name="MessageOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="17c1d60f-b393-4425-9bd7-36ce13c14c58"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d7dd1548-983f-4618-898d-e0ef70b83aaa"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="f0c31792-19db-4c00-80ef-ae96ffcd98de"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="fded60e8-e1fd-48bb-8ebc-578c7aeec72e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="17c1d60f-b393-4425-9bd7-36ce13c14c58"
+                LastKnownName="XML datoteka"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bcdead44-ae2d-4026-9146-68447724f3a5"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="39afb013-4fc7-4290-bfe8-385da0347ed6"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="1bf45ea3-0882-416e-b262-a0c26afeaad0"
+                LastKnownName="Korisnik"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="ddd6ff50-5bc2-4b90-8c1b-0a9d5a80ac62"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="bc0837b8-4566-43c7-b741-b5b8e3c55b2a"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+                LastKnownName="Model"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="1bf45ea3-0882-416e-b262-a0c26afeaad0"
+            name="Korisnik"
+            isActor="true"
+            lifelineDisplayName="Korisnik">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="da059301-cdbb-438e-8ff1-3bbf9747b6f4"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f482bd10-425f-4eaa-af41-a8a7c89f1cfa"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="760d85f6-2673-4868-b2b9-93b3ddaa6748"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="39afb013-4fc7-4290-bfe8-385da0347ed6"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="e20a4c3d-2958-4bbe-a2ca-99dadd532826"
+            name="Model"
+            isActor="false"
+            lifelineDisplayName="Model">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="5335a117-2f17-4993-95d6-60379e74f18c"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="5d908495-57b7-4082-8ad5-77350cd97bc7"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="0e8dfd56-31c5-4c8c-8ed3-d7db9ef99e22"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="ddd6ff50-5bc2-4b90-8c1b-0a9d5a80ac62"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="17c1d60f-b393-4425-9bd7-36ce13c14c58"
+            name="XML datoteka"
+            isActor="false"
+            lifelineDisplayName="XML datoteka">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="04a6bafb-5546-4229-8aae-37df0cdf55a9"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="f0c31792-19db-4c00-80ef-ae96ffcd98de"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="51f6553d-cac7-45fd-88d9-882a8e9b64d7"
+            name="Odaberi stablo"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="da059301-cdbb-438e-8ff1-3bbf9747b6f4"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c1d9c905-e26f-4bda-a84c-20a1bbc3d309"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="5fccb7d4-59f6-4383-880e-a1def0ded87d"
+            name="Odaberi datoteku"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="21429f03-9208-4d8f-8d0a-09f39d88c0c8"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f482bd10-425f-4eaa-af41-a8a7c89f1cfa"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f14bc3f6-3974-4450-a870-9050da4f7f85"
+            name="Datoteka odabrana"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="760d85f6-2673-4868-b2b9-93b3ddaa6748"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f73e843c-4a98-4c06-bc3e-9afeda830ce7"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6b2173af-f810-463a-b1b1-d2ff52dc4884"
+            name="Učitaj datoteku"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4e4a2ffb-6b53-48d7-a969-c8fb3ad7357a"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2239a851-231d-4c8b-97c5-791996e97d7e"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="968b7227-1237-4ec0-bd63-6086ac503aff"
+            name="Učitana datoteka"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c526ab1e-1a5f-4083-afe4-12553f30c8e3"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d7dd1548-983f-4618-898d-e0ef70b83aaa"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c29413ea-cf44-4ae7-a0bc-cdaca35d7dc2"
+            name="Prikaži stablo"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bcdead44-ae2d-4026-9146-68447724f3a5"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="39afb013-4fc7-4290-bfe8-385da0347ed6"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="Model_Odabir-Spremanje.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="13411002-aee5-4e74-b1c1-9ea86fe80217"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="70ae457a-3191-4968-8d1a-9624d64a8458"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="f55acdc3-7ba0-4948-9906-6e49f5bdfbd3"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="bc0837b8-4566-43c7-b741-b5b8e3c55b2a"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="a1d317be-2003-41aa-91ba-08b79a6b9e22"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="fded60e8-e1fd-48bb-8ebc-578c7aeec72e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

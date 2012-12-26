@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="feebca21-dd36-4245-8f99-5d4d86635904" name="UMLUseCaseDiagram1" linkedPackageId="ff11c0f8-1469-458c-8bac-0d6b3f3d1698" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="3a76d08f-03b1-45aa-8220-3bb9a041d0e2">
+      <profileInstance Id="ec2e6a1d-3c7c-43b1-8048-02d0cd351a01" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3ead4178-b1f6-4ceb-8c15-e486c46c9ded">
+      <profileInstance Id="5d09f8ff-52a0-4a7e-8e31-c5ca3ebaa878" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="ae7a0966-a7f8-4485-bf76-cf0189916531" name="Korisnik" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6446a936-f6c8-4ffa-a460-ddfa106129a9" />
+        <targetEnds>
+          <association Id="7cab07ec-f08d-446a-a56d-1d94c9bf55f1" isDerived="false" sourceEndRoleName="Korisnik" targetEndRoleName="Uređivanje stabla" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4b915aef-d207-405d-a28a-1e40175feb0f" LastKnownName="Uređivanje stabla" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e487d1bf-ce7a-4559-8243-d3b8f0c63469" name="Korisnik" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2da2ff10-b7a0-4e0b-b7cc-43d5436a2cc7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b07ddda-79cc-45b6-b347-6d60616fac47" name="Uređivanje stabla" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5f9d539c-1676-485b-a588-1765e2bd5615" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8a7722b2-2c59-49cd-89ca-7de4f6f35624" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4b915aef-d207-405d-a28a-1e40175feb0f" name="Uređivanje stabla" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e6175d28-f278-4c99-ad0f-0587854611dc" />
+        <additions>
+          <include Id="f114c2cc-b5b8-4d7e-ae55-72ddad51c86e">
+            <useCaseMoniker Id="381998ef-1aea-4666-b133-fbc1abbe5537" LastKnownName="Uređivanje elemenata stabla" />
+            <elementDefinition Id="68b04bc8-4295-4fda-ac3f-86538208ed94" />
+          </include>
+          <include Id="25bed763-3579-4ca8-9fd3-70a7f5b94907">
+            <useCaseMoniker Id="a903f33c-d913-47d6-a7e3-82b1904de062" LastKnownName="Dodavanje elemenata u stablo" />
+            <elementDefinition Id="4bc22b2c-7410-4eff-b850-dcd77e4ef55d" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a903f33c-d913-47d6-a7e3-82b1904de062" name="Dodavanje elemenata u stablo" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a396e3ce-948f-4e0d-8dff-8d9b84ed1420" />
+        <additions>
+          <include Id="394288e2-5725-42b7-af15-e2d1551c5b3f">
+            <useCaseMoniker Id="e70b50b3-0397-45b9-a57f-2091f917ae08" LastKnownName="Dodaj osobu" />
+            <elementDefinition Id="1fe65d89-3d58-4c64-b221-84f9329ed521" />
+          </include>
+          <include Id="f71904f7-eeae-48cc-92fa-08f31fc0ce39">
+            <useCaseMoniker Id="572e07b1-1edd-42d7-8796-424adab052cb" LastKnownName="Dodaj vezu" />
+            <elementDefinition Id="aabc64f0-3e5a-4fa9-87d1-aa51c237ba75" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e70b50b3-0397-45b9-a57f-2091f917ae08" name="Dodaj osobu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2195b702-e878-4dc5-8cab-75276d319a00" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="309379b1-3da1-419a-9b4f-ca81a094a16f" name="Uredi osobu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0a88515c-9573-4ae7-be79-d4765b6f48fb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="572e07b1-1edd-42d7-8796-424adab052cb" name="Dodaj vezu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8c83f46b-d38f-495b-8cad-49ec8a1d16c7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="38f2b27f-b041-4209-a095-8adc8e17ccf2" name="Uredi vezu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ea7b44b0-bd02-4bdc-b774-3138031b0966" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="381998ef-1aea-4666-b133-fbc1abbe5537" name="Uređivanje elemenata stabla" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0a3e76df-2325-4c50-8a1e-7926123c2ff0" />
+        <additions>
+          <include Id="7cee2b1c-1a33-4f89-a9a0-ef6ac176de8b">
+            <useCaseMoniker Id="309379b1-3da1-419a-9b4f-ca81a094a16f" LastKnownName="Uredi osobu" />
+            <elementDefinition Id="a8dffbc9-5bfe-418d-88e3-4a232c79732d" />
+          </include>
+          <include Id="074152d2-e437-441e-847a-65ef3bf79dac">
+            <useCaseMoniker Id="38f2b27f-b041-4209-a095-8adc8e17ccf2" LastKnownName="Uredi vezu" />
+            <elementDefinition Id="7f6bf36d-0bc8-477e-b3db-c487265b1ede" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a18e1152-8c0b-4cea-9d52-5ca1afaaa1c6" name="Dodaj partnera" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5faf074a-3b5c-46d6-bc26-1c8098f659f3" />
+        <extendedCases>
+          <extend Id="0aa658ea-2175-4153-9cf4-a10aba6e7627">
+            <useCaseMoniker Id="a903f33c-d913-47d6-a7e3-82b1904de062" LastKnownName="Dodavanje elemenata u stablo" />
+            <elementDefinition Id="8798c0f1-9172-4209-9023-2c48a16d94fe" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="84c576b6-5f17-438e-b273-355c8d139271" name="Dodaj roditelja" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="efdf7e24-96b3-4e65-9bcc-dbfd0abcdcc6" />
+        <extendedCases>
+          <extend Id="3a99261d-c68d-46af-a726-0d7f1aa7c187">
+            <useCaseMoniker Id="a903f33c-d913-47d6-a7e3-82b1904de062" LastKnownName="Dodavanje elemenata u stablo" />
+            <elementDefinition Id="92809c86-9306-4f74-84dc-9cba3a373e5e" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1ed5a10d-1691-45a9-a94c-219214fefa10" name="Dodaj potomka" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2934905e-212c-4c92-acb9-8c6350d2d893" />
+        <extendedCases>
+          <extend Id="a98aa77a-2398-44a7-8c3b-322c9a01daad">
+            <useCaseMoniker Id="a903f33c-d913-47d6-a7e3-82b1904de062" LastKnownName="Dodavanje elemenata u stablo" />
+            <elementDefinition Id="c08755c7-1889-4d46-b149-0b1ea2369060" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3d27aade-55a1-4e15-a379-3e961d302114" name="Dodaj baku" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b0d98c07-8b2c-4160-b72d-09a09537ae0d" />
+        <extendedCases>
+          <extend Id="7a2fbde7-49a1-4d82-a71f-c09eb364663a">
+            <useCaseMoniker Id="a903f33c-d913-47d6-a7e3-82b1904de062" LastKnownName="Dodavanje elemenata u stablo" />
+            <elementDefinition Id="830cecff-7fad-4b27-a93c-9a63b02cde3f" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="abe37fa9-d2ce-4d93-bed8-6b5ff9ad3a1b" name="Dodaj ..." isAbstract="false" isLeaf="false">
+        <elementDefinition Id="50ae1dd2-0225-4141-b57a-b409a88d2fee" />
+        <extendedCases>
+          <extend Id="71703966-c267-4792-b592-c3e48d53003f">
+            <useCaseMoniker Id="a903f33c-d913-47d6-a7e3-82b1904de062" LastKnownName="Dodavanje elemenata u stablo" />
+            <elementDefinition Id="0b0e5768-b211-49d5-8312-a0a989d70786" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="ff11c0f8-1469-458c-8bac-0d6b3f3d1698" name="Dodavanje 2. generacije">
+    <elementDefinition Id="598264fc-1189-4408-a2df-46ad37392a85" />
+  </package>
+</useCaseModelRoot>

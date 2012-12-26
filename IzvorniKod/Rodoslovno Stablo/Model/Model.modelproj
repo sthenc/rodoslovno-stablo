@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ded93c54-ba38-4e62-81f1-44a3ed9d24cd}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>Model</Name>
+    <RootNamespace>Model</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="admin_add.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="admin_add.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>admin_add.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Razredi.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Razredi.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Razredi.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="UC4.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UC4.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UC4.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Upit.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Upit.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Upit.sequencediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="Login.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Login.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Login.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Model.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="ViseslojniDijagram.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="ViseslojniDijagram.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ViseslojniDijagram.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="ViseslojniDijagram.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>ViseslojniDijagram.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+</Project>

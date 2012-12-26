@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bb67a348-136b-4d18-9f70-e01510e053a4" name="UC2-KorisnikMijenjaPodatke" linkedPackageId="b388fa63-5806-4512-a366-62e1d9c772fc" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="b99c28aa-d218-4e3a-bc72-9af09252a423">
+      <profileInstance Id="a0733d23-92e2-494d-8f46-c7590be0ca7b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9dafcf38-3197-49f5-8fe4-2621d54f4e53">
+      <profileInstance Id="d6fcc14c-4a35-439d-abd8-4989fb9416fa" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="337082ef-dea0-439d-81a7-027b3ac8a248" name="korisnik" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="de263682-3885-4cfc-be41-7538cbf5378d" />
+        <targetEnds>
+          <association Id="1a53acac-b9a4-4cfc-a515-864d19a8e4a6" isDerived="false" sourceEndRoleName="korisnik" targetEndRoleName="Mijenjaj podatke" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9de088df-fa89-4bec-bb72-e42ce247bd0f" LastKnownName="Mijenjaj podatke" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="426f3499-822d-46a5-8a2d-95a79c9c6e25" name="korisnik" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="322289ab-5501-4237-b8b2-d9e9a3f26cf9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b28c48c7-4c60-47e1-97c5-214221755386" name="Mijenjaj podatke" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="adff5b06-6191-43e6-ac3c-dc5c3511af3c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3514ecc4-c38e-4af6-8bc3-18383b77a94c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9de088df-fa89-4bec-bb72-e42ce247bd0f" name="Mijenjaj podatke" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9549f845-1782-4431-9039-254a99b46895" />
+        <targetEnds>
+          <association Id="8fb1e454-418a-4d4f-aeed-aa92823e7764" isDerived="false" sourceEndRoleName="Mijenjaj podatke" targetEndRoleName="baza podataka" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="0d9e3cdd-1acd-474a-9553-b4dea7bacd8f" LastKnownName="baza podataka" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4a674f90-0878-44ac-a031-6c67c4e2dcea" name="Mijenjaj podatke" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8a8606a2-5ef6-411b-8133-c1f9512cb1a3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f53a8d3f-e6de-42fd-b7a4-b02cd121f8b5" name="baza podataka" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e2b6eea2-80d0-4a74-8e79-ac4d39f38f91" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7d433784-488a-461b-85df-ecfb66b8f608" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="8bec6e4e-7d9a-4079-b6ff-7a48b60e1612">
+            <useCaseMoniker Id="d005899a-a267-452e-b6ea-1b8c1b6f2873" LastKnownName="izmjena podataka o sebi" />
+            <elementDefinition Id="5e870d03-f63f-4edb-9f95-93a0616dff53" />
+          </include>
+          <include Id="f1493a09-ed03-4737-9030-d74eecd96e69">
+            <useCaseMoniker Id="3c5881a9-4742-4cbc-bfd6-a2f8c87f5e01" LastKnownName="izmjena podataka o partneru" />
+            <elementDefinition Id="705f62f6-d863-4750-9149-a22b7d2e0c26" />
+          </include>
+          <include Id="bbc67f19-fbd6-4135-8411-faf622adfb8c">
+            <useCaseMoniker Id="2214ee6b-8e4f-4090-8a37-ea3d2f976577" LastKnownName="izmjena korisnickog imena" />
+            <elementDefinition Id="ee771e6f-dc71-4fa5-9075-3d0c7dd8f32d" />
+          </include>
+          <include Id="ba62d9ad-280f-4779-9317-1abd5dbda3ee">
+            <useCaseMoniker Id="1ae3cb89-4eca-44f7-9fa5-db1cfd89d726" LastKnownName="izmjena lozinke" />
+            <elementDefinition Id="02657f46-d0c5-4744-ae57-426e71055bed" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d005899a-a267-452e-b6ea-1b8c1b6f2873" name="izmjena podataka o sebi" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5eb8d2ac-caf6-4be3-8cc4-087fd5a8c668" />
+        <extendedCases>
+          <extend Id="0365faa4-1dd0-4750-b1fb-36975a9a4f4b">
+            <useCaseMoniker Id="aafaf8fe-9236-475d-9494-8c5965b323ee" LastKnownName="izmjeni ime i prezime" />
+            <elementDefinition Id="2d65f002-2515-4ad7-83b2-c1d219eb12d6" />
+          </extend>
+          <extend Id="213862bd-f241-473e-bdf4-66599281e90b">
+            <useCaseMoniker Id="15a58af7-5a45-413d-ad63-e0edf891c85c" LastKnownName="izmijeni datum rođenja" />
+            <elementDefinition Id="f8261f62-9cb1-4a9a-84bb-96986324e8f9" />
+          </extend>
+          <extend Id="3073fcda-8b08-4a28-b737-819008aefbfd">
+            <useCaseMoniker Id="a1efdce3-9455-418c-a645-a68411bc69bc" LastKnownName="izmijeni datum vjencanja" />
+            <elementDefinition Id="f659d191-26c1-4737-a46b-ac9f38f6cf76" />
+          </extend>
+          <extend Id="b91d098f-cec4-4b7f-b3a7-c3cbde19b12c">
+            <useCaseMoniker Id="3209e985-3f3a-4018-a595-1c94e0bf4551" LastKnownName="izmijeni fotografiju" />
+            <elementDefinition Id="15060a51-d1c3-4adb-af92-1cb31ce29780" />
+          </extend>
+          <extend Id="6897185b-592f-4d45-9254-98802f925d52">
+            <useCaseMoniker Id="10940f29-e4d0-498a-9f50-1fc267c89ee5" LastKnownName="izmijeni adresu" />
+            <elementDefinition Id="b13ce526-0609-4ebe-8c52-3e1f4ec37f04" />
+          </extend>
+          <extend Id="348e2419-5a5e-4f42-82a1-d4f7fce5b699">
+            <useCaseMoniker Id="ddc1d0fa-78d9-49b4-835a-a13780604f4f" LastKnownName="izmijeni telefonski broj" />
+            <elementDefinition Id="771f2175-d480-4b2e-b680-bff744196535" />
+          </extend>
+          <extend Id="4e8b1d93-9de5-4de6-bd77-ea34074ec191">
+            <useCaseMoniker Id="717d0851-f61e-4769-8b40-3b89c067ad00" LastKnownName="izmijeni e-mail" />
+            <elementDefinition Id="1d43b68d-cf74-48ba-8270-5873290edf4d" />
+          </extend>
+          <extend Id="47a551be-af31-4f75-a6fc-1f1834a728c5">
+            <useCaseMoniker Id="ecff11ff-2d5b-41e5-be7c-413db7da901a" LastKnownName="izmijeni životopis" />
+            <elementDefinition Id="b38db922-492d-4e35-ac7f-c8e4151bc92a" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3c5881a9-4742-4cbc-bfd6-a2f8c87f5e01" name="izmjena podataka o partneru" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0d17e49d-662a-4a1d-8f81-faa0a11d81f5" />
+        <extendedCases>
+          <extend Id="35e1bb28-5d3e-47f3-91ed-0caa2bc87529">
+            <useCaseMoniker Id="aafaf8fe-9236-475d-9494-8c5965b323ee" LastKnownName="izmjeni ime i prezime" />
+            <elementDefinition Id="8d4504b9-9ef1-400f-977c-71b434c172dd" />
+          </extend>
+          <extend Id="ba6f4311-e6eb-4c7c-a001-a77d48c47f17">
+            <useCaseMoniker Id="15a58af7-5a45-413d-ad63-e0edf891c85c" LastKnownName="izmijeni datum rođenja" />
+            <elementDefinition Id="9e9d9de4-1ab2-4fdf-bba6-453c974f0e42" />
+          </extend>
+          <extend Id="814c3894-42d9-4f65-9209-65bc30237b54">
+            <useCaseMoniker Id="a1efdce3-9455-418c-a645-a68411bc69bc" LastKnownName="izmijeni datum vjencanja" />
+            <elementDefinition Id="b93136d1-8b62-4bfe-b7fa-ff2add9b74c8" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2214ee6b-8e4f-4090-8a37-ea3d2f976577" name="izmjena korisnickog imena" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f711adc3-2f0e-4714-9b56-6b4e7475133e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1ae3cb89-4eca-44f7-9fa5-db1cfd89d726" name="izmjena lozinke" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="716fc3d9-60d7-467b-ba73-a2d6c6f0ca05" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="aafaf8fe-9236-475d-9494-8c5965b323ee" name="izmjeni ime i prezime" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0302d9b9-0b09-40c5-8279-55e3ad156ed0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="15a58af7-5a45-413d-ad63-e0edf891c85c" name="izmijeni datum rođenja" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a2ca020b-ec9f-44fa-994f-dec36943028e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a1efdce3-9455-418c-a645-a68411bc69bc" name="izmijeni datum vjencanja" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="680e3410-50c6-4674-b58d-c2d668588ee6" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3209e985-3f3a-4018-a595-1c94e0bf4551" name="izmijeni fotografiju" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="15fbceb5-d755-4a3d-926f-a79e0299f24a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="10940f29-e4d0-498a-9f50-1fc267c89ee5" name="izmijeni adresu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="024ab436-05fb-4b95-9839-684b9b0a41bf" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ddc1d0fa-78d9-49b4-835a-a13780604f4f" name="izmijeni telefonski broj" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3dd37922-7c16-4602-b4d6-4f5445c372b2" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="717d0851-f61e-4769-8b40-3b89c067ad00" name="izmijeni e-mail" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b0832902-1203-444b-ab01-4ac0c4dd4b49" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ecff11ff-2d5b-41e5-be7c-413db7da901a" name="izmijeni životopis" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6e1812b4-f8af-482c-bff0-6b258424b1f1" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="0d9e3cdd-1acd-474a-9553-b4dea7bacd8f" name="baza podataka" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b91bf49a-83d7-4fdd-935d-875a9ecbfb4e" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="b388fa63-5806-4512-a366-62e1d9c772fc" name="ModelingProject1">
+    <elementDefinition Id="8deaecc3-4262-4761-a6c7-f3cb04933d26" />
+  </package>
+</useCaseModelRoot>

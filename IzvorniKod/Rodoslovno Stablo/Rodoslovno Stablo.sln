@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Model", "Model\Model.modelproj", "{DED93C54-BA38-4E62-81F1-44A3ED9D24CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DED93C54-BA38-4E62-81F1-44A3ED9D24CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED93C54-BA38-4E62-81F1-44A3ED9D24CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED93C54-BA38-4E62-81F1-44A3ED9D24CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED93C54-BA38-4E62-81F1-44A3ED9D24CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
