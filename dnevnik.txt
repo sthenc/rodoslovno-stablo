@@ -32,3 +32,13 @@ Stjepan Henc, Antonio Piha, Toni Vugdelija, Viktor Kvaternjak
 
 Sadržaj sastanka:
 Razgovor oko detalja preostalih stvari koje treba još napraviti u poglavlju o arhitekturi i nedovršenim dijelovima poglavlja o funkcionalnim zahtjevima.
+
+
+
+Srijeda, 2.1.2013., 16:10 – 17:05h
+
+Prisutni:
+Stjepan Henc, Antonio Piha, Toni Vugdelija, Viktor Kvaternjak, Ivan Weber
+
+Sadržaj sastanka:
+Spontani skype sastanak na temu podešavanja rada u novom githubovom repozitoriju.
