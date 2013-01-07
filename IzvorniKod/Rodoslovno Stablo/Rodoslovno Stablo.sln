@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationLogic", "Applica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{BA7C1613-AECE-4E8F-8E8C-E39F770225A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rodoslovno stablo", "Rodoslovno stablo\Rodoslovno stablo.csproj", "{DD04475D-9EBC-4037-8A81-3068654C8139}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{BA7C1613-AECE-4E8F-8E8C-E39F770225A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA7C1613-AECE-4E8F-8E8C-E39F770225A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA7C1613-AECE-4E8F-8E8C-E39F770225A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD04475D-9EBC-4037-8A81-3068654C8139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD04475D-9EBC-4037-8A81-3068654C8139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD04475D-9EBC-4037-8A81-3068654C8139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD04475D-9EBC-4037-8A81-3068654C8139}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
