@@ -122,8 +122,47 @@ namespace ApplicationLogic
 		#endregion
 
 		#region Obiteljske operacije
+		// za sada sve veze koje se dodaju u bazu moraju biti sacinjene od ovih osnovnih veza
 
-		// TODO, vjerojatno bi FindPerson bio koristan
+		public Guid Add_Parent(Guid osoba1, Guid osoba2)
+		{
+			return AddConnection(osoba2, osoba1, "parent");
+		}
+
+		public Guid Add_Child(Guid osoba1, Guid osoba2)
+		{
+			return AddConnection(osoba1, osoba2, "parent");
+		}
+
+		public Guid Add_Partner(Guid osoba1, Guid osoba2)
+		{
+			return AddConnection(osoba1, osoba2, "partner");
+		}
+
+		// beware, LINQ dragons ahead
+		public Guid[] Get_Parent(Guid osoba)
+		{
+			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("parent"))
+						.Select(x => x.personID1)
+						.ToArray();
+		}
+
+		public Guid[] Get_Child(Guid osoba)
+		{
+			return veze.FindAll(x => x.personID1 == osoba && x.type.Equals("parent"))
+						.Select(x => x.personID2)
+						.ToArray();
+		}
+
+		public Guid[] Get_Partner(Guid osoba)
+		{
+			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("partner"))
+						.Select(x => x.personID1)
+					.Concat(
+						veze.FindAll(x => x.personID1 == osoba && x.type.Equals("partner"))
+						.Select(x => x.personID2)
+					).ToArray();
+		}
 		#endregion
 	}
 }
