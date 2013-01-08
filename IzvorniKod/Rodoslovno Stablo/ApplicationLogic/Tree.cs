@@ -74,6 +74,7 @@ namespace ApplicationLogic
 
 		public void DeletePerson(Guid ID)
 		{
+			// TODO pobrisi i veze na tu osobu
 			if (PersonExists(ID))
 			{
 				osobe.RemoveAll(x => x.personID == ID);
