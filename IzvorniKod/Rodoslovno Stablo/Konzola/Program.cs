@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ApplicationLogic;
 
 
 namespace Konzola
@@ -70,13 +72,19 @@ namespace Konzola
 			return auth.Authorize(username, password);
 		}
 
+		static Person QueryDisambiguator(List<Person> kandidati)
+		{
+			// TODO
+			return kandidati.ElementAt(0);
+		}
+
 		static void MenuLoop()
 		{
 			while (true)
 			{
 				System.Console.WriteLine("Unesite svoj upit:");
 
-				// TODO
+				// TODO posalji delegat za query disamb., napravi prosljedjivanje QueryAnalyzeru
 
 				break;
 			}
