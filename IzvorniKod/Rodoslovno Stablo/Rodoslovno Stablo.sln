@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rodoslovno stablo", "Rodoslovno stablo\Rodoslovno stablo.csproj", "{DD04475D-9EBC-4037-8A81-3068654C8139}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationLogicTests", "ApplicationLogicTests\ApplicationLogicTests.csproj", "{42FD58B5-41AB-4146-8121-38C7FC291E37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{DD04475D-9EBC-4037-8A81-3068654C8139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD04475D-9EBC-4037-8A81-3068654C8139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD04475D-9EBC-4037-8A81-3068654C8139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FD58B5-41AB-4146-8121-38C7FC291E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42FD58B5-41AB-4146-8121-38C7FC291E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42FD58B5-41AB-4146-8121-38C7FC291E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42FD58B5-41AB-4146-8121-38C7FC291E37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

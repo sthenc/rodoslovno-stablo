@@ -7,12 +7,14 @@ namespace ApplicationLogic
 {
 	public class Tree
 	{
-		// TODO, sve
-		// XXX, pazi da je get public a set private
-
 		public List<Person> osobe;
 		public List<Connection> veze;
 
+		public Tree()
+		{ 
+			osobe = new List<Person>();
+			veze = new List<Connection>();
+		}
 
 //		Opći format funkcije je:
 //		rezultat	Upit(Osoba1, Osoba2, parametri) {}
