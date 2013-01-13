@@ -17,7 +17,7 @@ namespace Konzola
 		static void Init()
 		{
 			drvo = new ApplicationLogic.Tree();
-			qpro = new ApplicationLogic.QueryProcessor(drvo, QueryDisambiguator);
+			qpro = new ApplicationLogic.QueryProcessor(drvo, QueryDisambiguator, GetLine);
 			auth = new ApplicationLogic.Authenticator();
 		}
 
@@ -80,6 +80,11 @@ namespace Konzola
 			return kandidati.ElementAt(0);
 		}
 
+		static string GetLine()
+		{
+			return System.Console.ReadLine();
+		}
+		
 		static void MenuLoop()
 		{
 			while (true)

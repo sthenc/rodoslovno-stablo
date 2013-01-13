@@ -48,7 +48,7 @@ namespace ApplicationLogic
 
 		public void ChangePerson(Person osoba)
 		{
-			if (PersonExists(osoba.personID))
+			if (PersonExists(osoba.personID)) // pazi da bude isti ID
 			{
 				Person mijenjamo = GetPersonByID(osoba.personID);
 				// makni staru osobu
