@@ -17,7 +17,7 @@ namespace Konzola
 		static void Init()
 		{
 			drvo = new ApplicationLogic.Tree();
-			qpro = new ApplicationLogic.QueryProcessor(drvo);
+			qpro = new ApplicationLogic.QueryProcessor(drvo, QueryDisambiguator);
 			auth = new ApplicationLogic.Authenticator();
 		}
 
@@ -76,7 +76,7 @@ namespace Konzola
 
 		static Person QueryDisambiguator(List<Person> kandidati)
 		{
-			// TODO
+			// TODO resolvanje dvosmislenosti upita
 			return kandidati.ElementAt(0);
 		}
 
@@ -84,11 +84,22 @@ namespace Konzola
 		{
 			while (true)
 			{
-				System.Console.WriteLine("Unesite svoj upit:");
+				System.Console.WriteLine("\nUnesite svoj upit:");
 
-				// TODO posalji delegat za query disamb., napravi prosljedjivanje QueryAnalyzeru
+				string query = System.Console.ReadLine();
 
-				break;
+				try
+				{
+					qpro.RunCommand(query);
+				}
+				catch (System.InvalidOperationException e)
+				{
+					System.Console.WriteLine("{0}\n", e.Message);
+				}
+				catch (QueryProcessor.QuitException)
+				{
+					break;
+				}
 			}
 		}
 
