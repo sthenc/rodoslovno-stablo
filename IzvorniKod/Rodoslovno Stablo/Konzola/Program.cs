@@ -12,10 +12,12 @@ namespace Konzola
 	{
 		private static ApplicationLogic.QueryProcessor qpro;
 		private static ApplicationLogic.Authenticator auth;
+		private static ApplicationLogic.Tree drvo;
 
 		static void Init()
 		{
-			qpro = new ApplicationLogic.QueryProcessor();
+			drvo = new ApplicationLogic.Tree();
+			qpro = new ApplicationLogic.QueryProcessor(drvo);
 			auth = new ApplicationLogic.Authenticator();
 		}
 

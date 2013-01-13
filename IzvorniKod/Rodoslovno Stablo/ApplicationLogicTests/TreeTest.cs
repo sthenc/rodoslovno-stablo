@@ -78,6 +78,69 @@ namespace ApplicationLogicTests
 			Assert.AreEqual(expected, actual);
 		}
 
+		[Test]
+		public void AddGetPartner_Test()
+		{
+			// 1. Korak - pripremi objekte
+			Guid zoric = Drvo.AddPerson("Zoro", "Zoric");
+			Guid hadzi = Drvo.AddPerson("Hadzi", "Hadzic");
+			Drvo.AddPartner(zoric, hadzi);
+
+			// 2. Korak - napravi nesto
+
+			string actual = Drvo.veze.Single(x => x.personID1 == zoric && x.personID2 == hadzi).type;
+
+			// 3. Korak - provjeri pretpostavku
+			string expected = "partner"; // Ovako je jasno sto se ocekuje
+			Assert.AreEqual(expected, actual);
+
+
+			Guid ac_partner = Drvo.GetPartner(hadzi).First();	
+
+			Guid ex_partner = zoric;
+			Assert.AreEqual(ex_partner, ac_partner);
+		}
+
+		[Test]
+		public void DeletePersonAlsoDeleteConnections_Test()
+		{
+			// 1. Korak - pripremi objekte
+			Guid zoric = Drvo.AddPerson("Zoro", "Zoric");
+			Guid hadzi = Drvo.AddPerson("Hadzi", "Hadzic");
+			Guid vix = Drvo.AddPerson("Vix", "Vixic");
+
+			Assert.AreNotEqual(zoric, hadzi);
+			Assert.AreNotEqual(zoric, vix);
+			Drvo.AddPartner(zoric, hadzi);
+			Drvo.AddChild(zoric, vix);
+			Drvo.AddChild(hadzi, vix);
+
+			// 2. Korak - napravi nesto
+			Drvo.DeletePerson(zoric); // RIP kolega
+
+			List<Connection> veze1 = Drvo.veze.FindAll(x => x.personID1 == zoric || x.personID2 == zoric);
+
+			Assert.IsEmpty(veze1);
+
+			List<Connection> veze2 = Drvo.veze.FindAll(x => x.personID1 == vix || x.personID2 == vix);
+
+			Assert.IsNotEmpty(veze2);
+
+			List<Connection> veze0 = Drvo.veze.FindAll(x => x.personID1 == hadzi || x.personID2 == hadzi);
+
+			Assert.IsNotEmpty(veze0);
+
+			//3. Korak - provjeri pretpostavku
+			Guid[] ac_parents = Drvo.GetParent(vix);
+
+			Assert.IsNotEmpty(ac_parents);
+
+
+			Guid[] ac_children = Drvo.GetChild(hadzi);
+
+			Assert.IsNotEmpty(ac_children);
+		}
+
 		#endregion
 	}
 

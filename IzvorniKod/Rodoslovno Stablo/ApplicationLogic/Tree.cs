@@ -63,7 +63,7 @@ namespace ApplicationLogic
 
 		public Guid AddPerson(string ime, string prezime)
 		{ 
-			Guid ID = new Guid();
+			Guid ID = Guid.NewGuid();
 
 			var osoba = new Person(ID, ime, prezime);
 
@@ -78,6 +78,7 @@ namespace ApplicationLogic
 			if (PersonExists(ID))
 			{
 				osobe.RemoveAll(x => x.personID == ID);
+				veze.RemoveAll(x => x.personID1 == ID || x.personID2 == ID);
 			}
 			else
 				throw new System.InvalidOperationException("DeletePerson: Nema osobe sa tim ID-jem.");
@@ -97,7 +98,7 @@ namespace ApplicationLogic
 
 		public Guid AddConnection(Guid Osoba1, Guid Osoba2, string tip)
 		{
-			Guid ID = new Guid();
+			Guid ID = Guid.NewGuid();
 
 			var veza = new Connection(ID);
 
@@ -106,6 +107,8 @@ namespace ApplicationLogic
 				veza.personID1 = Osoba1;
 				veza.personID2 = Osoba2;
 				veza.type = tip;
+
+				veze.Add(veza);
 			}
 			else
 				throw new System.InvalidOperationException("Jedne od osoba nema u drvetu.");
@@ -127,37 +130,37 @@ namespace ApplicationLogic
 		#region Obiteljske operacije
 		// za sada sve veze koje se dodaju u bazu moraju biti sacinjene od ovih osnovnih veza
 
-		public Guid Add_Parent(Guid osoba1, Guid osoba2)
+		public Guid AddParent(Guid osoba1, Guid osoba2)
 		{
 			return AddConnection(osoba2, osoba1, "parent");
 		}
 
-		public Guid Add_Child(Guid osoba1, Guid osoba2)
+		public Guid AddChild(Guid osoba1, Guid osoba2)
 		{
 			return AddConnection(osoba1, osoba2, "parent");
 		}
 
-		public Guid Add_Partner(Guid osoba1, Guid osoba2)
+		public Guid AddPartner(Guid osoba1, Guid osoba2)
 		{
 			return AddConnection(osoba1, osoba2, "partner");
 		}
 
 		// beware, LINQ dragons ahead
-		public Guid[] Get_Parent(Guid osoba)
+		public Guid[] GetParent(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("parent"))
 						.Select(x => x.personID1)
 						.ToArray();
 		}
 
-		public Guid[] Get_Child(Guid osoba)
+		public Guid[] GetChild(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID1 == osoba && x.type.Equals("parent"))
 						.Select(x => x.personID2)
 						.ToArray();
 		}
 
-		public Guid[] Get_Partner(Guid osoba)
+		public Guid[] GetPartner(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("partner"))
 						.Select(x => x.personID1)
