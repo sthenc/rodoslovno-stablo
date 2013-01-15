@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Xml.Serialization;
 
 namespace ApplicationLogic
 {
@@ -18,14 +19,28 @@ namespace ApplicationLogic
 //	zivotopis
 //	K = {osobaID}
 
-	public class Person
+	[Serializable]
+    public class Person
 	{
+        [XmlElement("ID")]
 		public Guid ID { get; set; }
+
+        [XmlElement("name")]
 		public string name { get; set; }
+
+        [XmlElement("surname")]
 		public string surname { get; set; }
+
+        [XmlElement("birthDate")]
 		public DateTime birthDate { get; set; }
+
+        [XmlElement("photo")]
 		public Image photo { get; set; } // TODO
+
+        [XmlElement("adress")]
 		public string adress { get; set; } // mozda da ovo u klasu prebacimo?
+
+        [XmlElement("CV")]
 		public string CV { get; set; }
 		public Sex sex;
 
