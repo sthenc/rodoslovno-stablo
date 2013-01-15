@@ -33,6 +33,7 @@ namespace ApplicationLogic
 			}
 
 			bool komanda_nadjena = false;
+			bool upit_dobar = false;
 			foreach (var cd in komande)
 			{
 				// nadji odgovarajucu funkciju
@@ -47,12 +48,16 @@ namespace ApplicationLogic
 					catch (System.InvalidOperationException e)
 					{
 						System.Console.WriteLine("Nemoguća operacija: {0}\n", e.Message);
+						break;
 					}
 					catch (System.ArgumentException e)
 					{
 						System.Console.WriteLine("Pogrešno oblikovan upit: {0}\n\nIspravno korištenje:\n {1}\n",
 													e.Message, cd.description);
+						break;
 					}
+
+					upit_dobar = true;
 				}
 			}
 
@@ -60,7 +65,13 @@ namespace ApplicationLogic
 			{
 				PrintCommandDescriptions();
 			}
+
+			if (upit_dobar)
+			{ 
+				// TODO spremi u bazu
+			}
 		}
+
 
 		private void PrintCommandDescriptions()
 		{
