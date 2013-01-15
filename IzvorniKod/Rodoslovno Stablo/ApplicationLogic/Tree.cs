@@ -151,27 +151,51 @@ namespace ApplicationLogic
 		}
 
 		// beware, LINQ dragons ahead
-		public IEnumerable<Guid> GetParent(Guid osoba)
+		public Guid[] GetParent(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("parent"))
-						.Select(x => x.personID1);
+						.Select(x => x.personID1)
+						.ToArray();
 		}
 
-		public IEnumerable<Guid> GetChild(Guid osoba)
+		public Guid[] GetChild(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID1 == osoba && x.type.Equals("parent"))
-						.Select(x => x.personID2);
+						.Select(x => x.personID2)
+						.ToArray();
 		}
 
-		public IEnumerable<Guid> GetPartner(Guid osoba)
+		public Guid[] GetPartner(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("partner"))
 						.Select(x => x.personID1)
 					.Concat(
 						veze.FindAll(x => x.personID1 == osoba && x.type.Equals("partner"))
 						.Select(x => x.personID2)
-					);
+					).ToArray();
 		}
 		#endregion
+
+        #region Serijalizacija
+
+        public void Save(string path)
+        {
+            XmlSerializer xmlWriter = new XmlSerializer(typeof(Tree));
+            TextWriter outputFile = new StreamWriter(path);
+
+            xmlWriter.Serialize(outputFile, this);
+
+            outputFile.Close();
+        }
+
+        public static Tree Load(string path)
+        {
+            XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
+            TextReader inputFile = new StreamReader(path);
+
+            return (Tree)xmlReader.Deserialize(inputFile);
+        }
+
+        #endregion
 	}
 }
