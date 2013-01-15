@@ -44,7 +44,10 @@
     <Compile Include="Person.cs" />
     <Compile Include="QueryProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProcessorAdvancedCommands.cs" />
     <Compile Include="QueryProcessorBasicCommands.cs" />
+    <Compile Include="QueryProcessorTextInterface.cs" />
+    <Compile Include="QueryProcessorUtil.cs" />
     <Compile Include="Tree.cs" />
   </ItemGroup>
   <ItemGroup>

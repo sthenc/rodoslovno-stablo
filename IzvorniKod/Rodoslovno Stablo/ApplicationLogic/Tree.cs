@@ -31,28 +31,28 @@ namespace ApplicationLogic
 //		[GUID] Dohvati_roditelja(Osoba)
 //		[GUID] Dohvati_dijete(Osoba)
 //		[GUID] Dohvati_partnera(Osoba)
-//		podaci Dohvati_podatke(Osoba) -- promijenjeno
+//		podaci Dohvati_podatke(Osoba) -- zamijenjeno sa direktnim pristupom podatcima
 //		bool Promijeni_podatke(Osoba, podaci) -- mijenjamo sa dohvati i postavi osobu
 //		podaci_stabla Dohvati_podatke_stabla()  -- izbaceno, direktni pristup
 
 		#region Upravljanje osobama
 		public bool PersonExists(Guid ID)
 		{
-			return osobe.Exists(x => x.personID == ID);
+			return osobe.Exists(x => x.ID == ID);
 		}
 
 		public Person GetPersonByID(Guid ID)
 		{
-			return osobe.Single(x => x.personID == ID);
+			return osobe.Single(x => x.ID == ID);
 		}
 
 		public void ChangePerson(Person osoba)
 		{
-			if (PersonExists(osoba.personID)) // pazi da bude isti ID
+			if (PersonExists(osoba.ID)) // pazi da bude isti ID
 			{
-				Person mijenjamo = GetPersonByID(osoba.personID);
+				Person mijenjamo = GetPersonByID(osoba.ID);
 				// makni staru osobu
-				DeletePerson(mijenjamo.personID);
+				DeletePerson(mijenjamo.ID);
 				
 				// dodaj novu
 				osobe.Add(osoba);
@@ -77,7 +77,7 @@ namespace ApplicationLogic
 			// TODO pobrisi i veze na tu osobu
 			if (PersonExists(ID))
 			{
-				osobe.RemoveAll(x => x.personID == ID);
+				osobe.RemoveAll(x => x.ID == ID);
 				veze.RemoveAll(x => x.personID1 == ID || x.personID2 == ID);
 			}
 			else
@@ -88,12 +88,12 @@ namespace ApplicationLogic
 		#region Upravljanje vezama
 		private bool ConnectionExists(Guid ID)
 		{
-			return veze.Exists(x => x.connectionID == ID);
+			return veze.Exists(x => x.ID == ID);
 		}
 
 		public Connection GetConnectionByID(Guid ID)
 		{
-			return veze.Single(x => x.connectionID == ID);
+			return veze.Single(x => x.ID == ID);
 		}
 
 		public Guid AddConnection(Guid Osoba1, Guid Osoba2, string tip)
@@ -120,7 +120,7 @@ namespace ApplicationLogic
 		{
 			if (ConnectionExists(ID))
 			{
-				veze.RemoveAll(x => x.connectionID == ID);
+				veze.RemoveAll(x => x.ID == ID);
 			}
 			else
 				throw new System.InvalidOperationException("DeletePerson: Nema osobe sa tim ID-jem.");

@@ -15,16 +15,16 @@ namespace ApplicationLogic
 	public class Connection
 	{
 		// personID1 je ConnectionType osobi sa personID2
-		public Guid connectionID { get; set; }
+		public Guid ID { get; set; }
 		public string type { get; set; }	// zasad samo {parent, partner}
 		public Guid personID1 { get; set; }		// nadredjena osoba
 		public Guid personID2 { get; set; }
 		public DateTime startDate { get; set; }
 		public DateTime endDate { get; set; }
 
-		public Connection(Guid ID)
+		public Connection(Guid id)
 		{ 
-			connectionID = ID;
+			ID = id;
 		}
 	}
 }

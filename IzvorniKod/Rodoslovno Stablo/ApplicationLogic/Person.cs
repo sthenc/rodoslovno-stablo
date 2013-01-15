@@ -20,19 +20,19 @@ namespace ApplicationLogic
 
 	public class Person
 	{
-		public Guid personID { get; set; }
-		public string personName { get; set; }
-		public string personSurname { get; set; }
+		public Guid ID { get; set; }
+		public string name { get; set; }
+		public string surname { get; set; }
 		public DateTime birthDate { get; set; }
 		public Image photo { get; set; } // TODO
 		public string adress { get; set; } // mozda da ovo u klasu prebacimo?
 		public string CV { get; set; }
 
-		public Person(Guid ID, string name, string surname)
+		public Person(Guid id, string ime, string prezime)
 		{
-			personID = ID;
-			personName = name;
-			personSurname = surname;
+			ID = id;
+			name = ime;
+			surname = prezime;
 		}
 	}
 }

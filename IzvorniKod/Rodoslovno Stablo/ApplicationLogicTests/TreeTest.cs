@@ -61,9 +61,6 @@ namespace ApplicationLogicTests
 		#region Testovi 
 		//ovdje se trpaju testovi
 
-		/// <summary>
-		/// This setup functions runs after each test method
-		/// </summary>
 		[Test]
 		public void AddPerson_Test()
 		{
@@ -71,7 +68,7 @@ namespace ApplicationLogicTests
 			Drvo.AddPerson("Zoro", "Zoric");
  
 			// 2. Korak - napravi nesto
-			string actual = Drvo.osobe.Single(x => true).personName;
+			string actual = Drvo.osobe.Single(x => true).name;
  
 			// 3. Korak - provjeri pretpostavku
 			string expected = "Zoro"; // Ovako je jasno sto se ocekuje
