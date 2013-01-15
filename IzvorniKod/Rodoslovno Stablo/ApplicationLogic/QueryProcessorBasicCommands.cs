@@ -7,8 +7,6 @@ namespace ApplicationLogic
 {
 	public partial class QueryProcessor
 	{
-		// Ovo tu će biti jedan prekrasan fajl sa puno koda
-
 		// Trebamo implementirati funkcije za slijedeće odnose.
 		//
 		//partner/muž/žena
@@ -33,12 +31,60 @@ namespace ApplicationLogic
 		
 
 		// 
+		public IEnumerable<Person> DohvatiRoditelje(Guid dijete)
+		{
+			return DohvatiOsobe(Drvo.GetParent(dijete));
+		}
 
+		public void DodajPraroditelja(string[] parametri)
+		{
+			
+		}
 
 		public void DodajBaku(string[] parametri)
 		{
-			//TODO
-			throw new System.NotImplementedException("TODO DodajBaku");
+			if (parametri.Length != 4)
+				throw new System.ArgumentException();
+
+			string unuk_ime = parametri[0];
+			string unuk_prezime = parametri[1];
+
+			string baka_ime = parametri[2];
+			string baka_prezime = parametri[3];
+
+			Guid unuk = NadjiOsobuPoImenu(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
+			IEnumerable<Person> roditelji = DohvatiRoditelje(unuk);
+			Guid roditelj;
+
+			if (roditelji.Count() == 0)
+			{
+				roditelj = Drvo.AddPerson("N", "N");
+				Drvo.AddParent(unuk, roditelj);
+			}
+			else if (roditelji.Count() > 1)
+			{
+				roditelj = QueryDisambiguator(roditelji, "Baka po kojem roditelju ?").ID;
+			}
+			else // if (roditelji.Count() == 1)
+			{
+				roditelj = roditelji.First().ID;
+			}
+
+			// ok, sada kada znamo na kojeg roditelja se misli
+
+			Guid baka = DodajRoditelja(roditelj, baka_ime, baka_prezime);
+			Person nona = Drvo.GetPersonByID(baka);
+			nona.sex = Person.Sex.Female;
+			Drvo.ChangePerson(nona);
+		}
+
+		private Guid DodajRoditelja(Guid dijete, string rod_ime, string rod_prezime)
+		{
+			Guid roditelj = Drvo.AddPerson(rod_ime, rod_prezime);
+
+			Drvo.AddParent(dijete, roditelj);
+
+			return roditelj;
 		}
 
 	//	public void 

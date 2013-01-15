@@ -19,7 +19,7 @@ namespace ApplicationLogicTests
 		private QueryProcessor qp;
 
 		#region Lažni objekti i funkcije
-		Person QueryDisambiguator(List<Person> kandidati)
+		Person QueryDisambiguator(IEnumerable<Person> kandidati, string msg = "")
 		{
 			// TODO resolvanje dvosmislenosti upita
 			return kandidati.ElementAt(0);
@@ -96,7 +96,7 @@ namespace ApplicationLogicTests
 
 			// 2. Korak - napravi nesto
 
-			Guid actual = qp.NadjiOsobuPoImenu("Zoro", "Zoric");
+			Guid actual = qp.NadjiOsobuPoImenu("Zoro", "Zoric", "");
 
 			// 3. Korak - provjeri pretpostavku
 			Assert.AreEqual(expected, actual);

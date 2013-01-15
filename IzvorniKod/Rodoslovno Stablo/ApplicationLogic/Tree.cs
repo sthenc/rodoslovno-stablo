@@ -146,28 +146,26 @@ namespace ApplicationLogic
 		}
 
 		// beware, LINQ dragons ahead
-		public Guid[] GetParent(Guid osoba)
+		public IEnumerable<Guid> GetParent(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("parent"))
-						.Select(x => x.personID1)
-						.ToArray();
+						.Select(x => x.personID1);
 		}
 
-		public Guid[] GetChild(Guid osoba)
+		public IEnumerable<Guid> GetChild(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID1 == osoba && x.type.Equals("parent"))
-						.Select(x => x.personID2)
-						.ToArray();
+						.Select(x => x.personID2);
 		}
 
-		public Guid[] GetPartner(Guid osoba)
+		public IEnumerable<Guid> GetPartner(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("partner"))
 						.Select(x => x.personID1)
 					.Concat(
 						veze.FindAll(x => x.personID1 == osoba && x.type.Equals("partner"))
 						.Select(x => x.personID2)
-					).ToArray();
+					);
 		}
 		#endregion
 	}

@@ -68,7 +68,7 @@ namespace ApplicationLogic
 
 			if (upit_dobar)
 			{ 
-				// TODO spremi u bazu
+				// TODO spremi upit u bazu
 			}
 		}
 

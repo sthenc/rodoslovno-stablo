@@ -77,7 +77,7 @@ namespace Konzola
 			//return auth.Authorize(username, password);
 		}
 
-		static Person QueryDisambiguator(List<Person> kandidati)
+		static Person QueryDisambiguator(IEnumerable<Person> kandidati, string pitanje = "")
 		{
 			// TODO resolvanje dvosmislenosti upita
 			return kandidati.ElementAt(0);
