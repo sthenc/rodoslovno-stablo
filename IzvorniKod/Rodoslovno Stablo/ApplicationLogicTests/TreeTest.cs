@@ -128,12 +128,12 @@ namespace ApplicationLogicTests
 			Assert.IsNotEmpty(veze0);
 
 			//3. Korak - provjeri pretpostavku
-			Guid[] ac_parents = drvo.GetParent(vix);
+			IEnumerable<Guid> ac_parents = drvo.GetParent(vix);
 
 			Assert.IsNotEmpty(ac_parents);
 
 
-			Guid[] ac_children = drvo.GetChild(hadzi);
+			IEnumerable<Guid> ac_children = drvo.GetChild(hadzi);
 
 			Assert.IsNotEmpty(ac_children);
 		}

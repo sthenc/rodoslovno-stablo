@@ -11,13 +11,13 @@ namespace ApplicationLogic
 		private Tree Drvo;
 		
 		// Podesiva funkcija za odlucivanje o kojoj osobi se radi kada je upit dvosmislen
-		private Func<List<Person>, string, Person> QueryDisambiguator;
+		private Func<IEnumerable<Person>, string, Person> QueryDisambiguator;
 
 		// Podesiva funkcija za dohvacanje korisnikovog unosa
 		// ovo je jedina funkcija koju mozemo koristiti za to
 		private Func<string> GetLine;
 
-		public QueryProcessor(Tree drvo, Func<List<Person>, string, Person> QD, 
+		public QueryProcessor(Tree drvo, Func<IEnumerable<Person>, string, Person> QD, 
 								Func<string> daj_liniju, TextWriter tw = null)
 		{
 			// dodajmo malo couplinga

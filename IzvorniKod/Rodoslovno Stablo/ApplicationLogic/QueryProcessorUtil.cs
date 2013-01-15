@@ -32,6 +32,9 @@ namespace ApplicationLogic
 			return pobjednik.ID;
 		}
 
-		public List<Person> DohvatiOsobe()
+		public IEnumerable<Person> DohvatiOsobe(IEnumerable<Guid> ids)
+		{
+			return ids.Select(id => Drvo.GetPersonByID(id));
+		}
 	}
 }

@@ -33,7 +33,10 @@ namespace ApplicationLogic
 		
 
 		// 
-
+		public IEnumerable<Person> DohvatiRoditelje(Guid dijete)
+		{
+			return DohvatiOsobe(Drvo.GetParent(dijete));
+		}
 
 
 		public void DodajBaku(string[] parametri)
@@ -48,18 +51,35 @@ namespace ApplicationLogic
 			string baka_prezime = parametri[3];
 
 			Guid unuk = NadjiOsobuPoImenu(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
-			List<Person> roditelji = ((IEnumerable<Guid>) Drvo.GetParent(unuk)).Select(id => Drvo.GetPersonByID(id)).ToList();
+			IEnumerable<Person> roditelji = DohvatiRoditelje(unuk);
 			Guid roditelj;
 
-			if (roditelji.Count == 0)
+			if (roditelji.Count() == 0)
 			{
 				roditelj = Drvo.AddPerson("N", "N");
 				Drvo.AddParent(unuk, roditelj);
 			}
-			else if (roditelji.Count > 1)
+			else if (roditelji.Count() > 1)
+			{
 				roditelj = QueryDisambiguator(roditelji, "Baka po kojem roditelju ?").ID;
-			//TODO
-			throw new System.NotImplementedException("TODO DodajBaku");
+			}
+			else // if (roditelji.Count() == 1)
+			{
+				roditelj = roditelji.First().ID;
+			}
+
+			// ok, sada kada znamo na kojeg roditelja se misli
+
+			Guid baka = DodajRoditelja(roditelj, baka_ime, baka_prezime);
+		}
+
+		private Guid DodajRoditelja(Guid dijete, string rod_ime, string rod_prezime)
+		{
+			Guid roditelj = Drvo.AddPerson(rod_ime, rod_prezime);
+
+			Drvo.AddParent(dijete, roditelj);
+
+			return roditelj;
 		}
 
 	//	public void 
