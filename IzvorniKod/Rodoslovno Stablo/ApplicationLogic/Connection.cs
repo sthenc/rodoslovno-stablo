@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace ApplicationLogic
 {
@@ -12,14 +13,26 @@ namespace ApplicationLogic
 //	osobaID1
 //	osobaID2
 
-	public class Connection
+	[Serializable]
+    public class Connection
 	{
 		// personID1 je ConnectionType osobi sa personID2
+        [XmlElement("ID")]
 		public Guid ID { get; set; }
+
+        [XmlElement("type")]
 		public string type { get; set; }	// zasad samo {parent, partner}
+
+        [XmlElement("personID1")]
 		public Guid personID1 { get; set; }		// nadredjena osoba
+
+        [XmlElement("personID2")]
 		public Guid personID2 { get; set; }
+
+        [XmlElement("startDate")]
 		public DateTime startDate { get; set; }
+
+        [XmlElement("endDate")]
 		public DateTime endDate { get; set; }
 
 		public Connection(Guid id)

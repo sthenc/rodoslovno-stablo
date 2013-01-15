@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace ApplicationLogic
 {
+    [Serializable]
 	public class Tree
 	{
+        [XmlElement("Person")]
 		public List<Person> osobe;
+
+        [XmlElement("Connection")]
 		public List<Connection> veze;
 
 		public Tree()
