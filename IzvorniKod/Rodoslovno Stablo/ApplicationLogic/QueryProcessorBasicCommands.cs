@@ -7,8 +7,6 @@ namespace ApplicationLogic
 {
 	public partial class QueryProcessor
 	{
-		// Ovo tu će biti jedan prekrasan fajl sa puno koda
-
 		// Trebamo implementirati funkcije za slijedeće odnose.
 		//
 		//partner/muž/žena
@@ -38,6 +36,10 @@ namespace ApplicationLogic
 			return DohvatiOsobe(Drvo.GetParent(dijete));
 		}
 
+		public void DodajPraroditelja(string[] parametri)
+		{
+			
+		}
 
 		public void DodajBaku(string[] parametri)
 		{
