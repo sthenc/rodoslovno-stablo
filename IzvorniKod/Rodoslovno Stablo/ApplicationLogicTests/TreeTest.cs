@@ -15,7 +15,7 @@ namespace ApplicationLogicTests
 	[TestFixture]
 	public class TreeTest
 	{
-		private Tree Drvo;
+		private Tree drvo;
 
 		#region Setup and Tear down
 		/// <summary>
@@ -24,7 +24,7 @@ namespace ApplicationLogicTests
 		[TestFixtureSetUp]
 		public void InitialSetup()
 		{
-			Drvo = new Tree();
+			drvo = new Tree();
 		}
 
 		/// <summary>
@@ -52,8 +52,8 @@ namespace ApplicationLogicTests
 		public void TearDownForEachTest()
 		{
 			// pobrisi sve
-			Drvo.osobe.RemoveAll(x => true);
-			Drvo.veze.RemoveAll(x => true);
+			drvo.osobe.RemoveAll(x => true);
+			drvo.veze.RemoveAll(x => true);
 		}
 		#endregion
 
@@ -65,10 +65,10 @@ namespace ApplicationLogicTests
 		public void AddPerson_Test()
 		{
 			// 1. Korak - pripremi objekte
-			Drvo.AddPerson("Zoro", "Zoric");
+			drvo.AddPerson("Zoro", "Zoric");
  
 			// 2. Korak - napravi nesto
-			string actual = Drvo.osobe.Single(x => true).name;
+			string actual = drvo.osobe.Single(x => true).name;
  
 			// 3. Korak - provjeri pretpostavku
 			string expected = "Zoro"; // Ovako je jasno sto se ocekuje
@@ -79,20 +79,20 @@ namespace ApplicationLogicTests
 		public void AddGetPartner_Test()
 		{
 			// 1. Korak - pripremi objekte
-			Guid zoric = Drvo.AddPerson("Zoro", "Zoric");
-			Guid hadzi = Drvo.AddPerson("Hadzi", "Hadzic");
-			Drvo.AddPartner(zoric, hadzi);
+			Guid zoric = drvo.AddPerson("Zoro", "Zoric");
+			Guid hadzi = drvo.AddPerson("Hadzi", "Hadzic");
+			drvo.AddPartner(zoric, hadzi);
 
 			// 2. Korak - napravi nesto
 
-			string actual = Drvo.veze.Single(x => x.personID1 == zoric && x.personID2 == hadzi).type;
+			string actual = drvo.veze.Single(x => x.personID1 == zoric && x.personID2 == hadzi).type;
 
 			// 3. Korak - provjeri pretpostavku
 			string expected = "partner"; // Ovako je jasno sto se ocekuje
 			Assert.AreEqual(expected, actual);
 
 
-			Guid ac_partner = Drvo.GetPartner(hadzi).First();	
+			Guid ac_partner = drvo.GetPartner(hadzi).First();	
 
 			Guid ex_partner = zoric;
 			Assert.AreEqual(ex_partner, ac_partner);
@@ -102,38 +102,38 @@ namespace ApplicationLogicTests
 		public void DeletePersonAlsoDeleteConnections_Test()
 		{
 			// 1. Korak - pripremi objekte
-			Guid zoric = Drvo.AddPerson("Zoro", "Zoric");
-			Guid hadzi = Drvo.AddPerson("Hadzi", "Hadzic");
-			Guid vix = Drvo.AddPerson("Vix", "Vixic");
+			Guid zoric = drvo.AddPerson("Zoro", "Zoric");
+			Guid hadzi = drvo.AddPerson("Hadzi", "Hadzic");
+			Guid vix = drvo.AddPerson("Vix", "Vixic");
 
 			Assert.AreNotEqual(zoric, hadzi);
 			Assert.AreNotEqual(zoric, vix);
-			Drvo.AddPartner(zoric, hadzi);
-			Drvo.AddChild(zoric, vix);
-			Drvo.AddChild(hadzi, vix);
+			drvo.AddPartner(zoric, hadzi);
+			drvo.AddChild(zoric, vix);
+			drvo.AddChild(hadzi, vix);
 
 			// 2. Korak - napravi nesto
-			Drvo.DeletePerson(zoric); // RIP kolega
+			drvo.DeletePerson(zoric); // RIP kolega
 
-			List<Connection> veze1 = Drvo.veze.FindAll(x => x.personID1 == zoric || x.personID2 == zoric);
+			List<Connection> veze1 = drvo.veze.FindAll(x => x.personID1 == zoric || x.personID2 == zoric);
 
 			Assert.IsEmpty(veze1);
 
-			List<Connection> veze2 = Drvo.veze.FindAll(x => x.personID1 == vix || x.personID2 == vix);
+			List<Connection> veze2 = drvo.veze.FindAll(x => x.personID1 == vix || x.personID2 == vix);
 
 			Assert.IsNotEmpty(veze2);
 
-			List<Connection> veze0 = Drvo.veze.FindAll(x => x.personID1 == hadzi || x.personID2 == hadzi);
+			List<Connection> veze0 = drvo.veze.FindAll(x => x.personID1 == hadzi || x.personID2 == hadzi);
 
 			Assert.IsNotEmpty(veze0);
 
 			//3. Korak - provjeri pretpostavku
-			Guid[] ac_parents = Drvo.GetParent(vix);
+			Guid[] ac_parents = drvo.GetParent(vix);
 
 			Assert.IsNotEmpty(ac_parents);
 
 
-			Guid[] ac_children = Drvo.GetChild(hadzi);
+			Guid[] ac_children = drvo.GetChild(hadzi);
 
 			Assert.IsNotEmpty(ac_children);
 		}
