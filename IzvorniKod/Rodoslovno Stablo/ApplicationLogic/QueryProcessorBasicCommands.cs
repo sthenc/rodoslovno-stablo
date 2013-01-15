@@ -71,6 +71,9 @@ namespace ApplicationLogic
 			// ok, sada kada znamo na kojeg roditelja se misli
 
 			Guid baka = DodajRoditelja(roditelj, baka_ime, baka_prezime);
+			Person nona = Drvo.GetPersonByID(baka);
+			nona.sex = Person.Sex.Female;
+			Drvo.ChangePerson(nona);
 		}
 
 		private Guid DodajRoditelja(Guid dijete, string rod_ime, string rod_prezime)

@@ -27,12 +27,16 @@ namespace ApplicationLogic
 		public Image photo { get; set; } // TODO
 		public string adress { get; set; } // mozda da ovo u klasu prebacimo?
 		public string CV { get; set; }
+		public Sex sex;
 
 		public Person(Guid id, string ime, string prezime)
 		{
 			ID = id;
 			name = ime;
 			surname = prezime;
+			sex = Sex.Unknown;
 		}
+
+		public static enum Sex {Male, Female, Unknown}; // mogli bismo i nastaviti
 	}
-}
+}	
