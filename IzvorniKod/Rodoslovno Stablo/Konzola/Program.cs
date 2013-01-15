@@ -36,42 +36,45 @@ namespace Konzola
 
 		static bool Login()
 		{
-			string username, password;
+			// za testiranje
+			return auth.Authorize("admin", "abc123");
 
-			System.Console.Out.Write("Unesite svoje korisničko ime: ");
+			//string username, password;
 
-			username = System.Console.In.ReadLine();
+			//System.Console.Out.Write("Unesite svoje korisničko ime: ");
+
+			//username = System.Console.In.ReadLine();
 
 
-			// ucitaj password, izvor http://stackoverflow.com/questions/3404421/password-masking-console-application
-			password = "";
-			Console.Write("Unesite svoju lozinku: ");
-			ConsoleKeyInfo key;
+			//// ucitaj password, izvor http://stackoverflow.com/questions/3404421/password-masking-console-application
+			//password = "";
+			//Console.Write("Unesite svoju lozinku: ");
+			//ConsoleKeyInfo key;
 
-			do
-			{
-				key = Console.ReadKey(true);
+			//do
+			//{
+			//	key = Console.ReadKey(true);
 
-				if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
-				{
-					password += key.KeyChar;
-					Console.Write("*");
-				}
-				else
-				{
-					if (key.Key == ConsoleKey.Backspace && password.Length > 0)
-					{
-						password = password.Substring(0, (password.Length - 1));
-						Console.Write("\b \b");
-					}
-				}
-			}
-			// Prekini unos kada korisnik lupi Enter
-			while (key.Key != ConsoleKey.Enter);
+			//	if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+			//	{
+			//		password += key.KeyChar;
+			//		Console.Write("*");
+			//	}
+			//	else
+			//	{
+			//		if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+			//		{
+			//			password = password.Substring(0, (password.Length - 1));
+			//			Console.Write("\b \b");
+			//		}
+			//	}
+			//}
+			//// Prekini unos kada korisnik lupi Enter
+			//while (key.Key != ConsoleKey.Enter);
 
-			Console.WriteLine();
+			//Console.WriteLine();
 
-			return auth.Authorize(username, password);
+			//return auth.Authorize(username, password);
 		}
 
 		static Person QueryDisambiguator(List<Person> kandidati)
@@ -96,10 +99,6 @@ namespace Konzola
 				try
 				{
 					qpro.RunCommand(query);
-				}
-				catch (System.InvalidOperationException e)
-				{
-					System.Console.WriteLine("{0}\n", e.Message);
 				}
 				catch (QueryProcessor.QuitException)
 				{
