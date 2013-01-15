@@ -14,14 +14,14 @@ namespace ApplicationLogic
 			public PersonNotFoundException(string msg) : base(msg) { }
 		}
 
-		public Guid NadjiOsobuPoImenu(string ime, string prezime)
+		public Guid NadjiOsobuPoImenu(string ime, string prezime, string pitanje)
 		{ 
 			List<Person> kandidati = Drvo.osobe.FindAll(x => x.name == ime && x.surname == prezime);
 
 			Person pobjednik = null;
 			if (kandidati.Count > 1)
 			{
-				pobjednik = QueryDisambiguator(kandidati);
+				pobjednik = QueryDisambiguator(kandidati, pitanje);
 			}
 			else pobjednik = kandidati.FirstOrDefault(null);
 			
@@ -31,5 +31,7 @@ namespace ApplicationLogic
 			
 			return pobjednik.ID;
 		}
+
+		public List<Person> DohvatiOsobe()
 	}
 }

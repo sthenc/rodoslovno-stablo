@@ -11,13 +11,13 @@ namespace ApplicationLogic
 		private Tree Drvo;
 		
 		// Podesiva funkcija za odlucivanje o kojoj osobi se radi kada je upit dvosmislen
-		private Func<List<Person>, Person> QueryDisambiguator;
+		private Func<List<Person>, string, Person> QueryDisambiguator;
 
 		// Podesiva funkcija za dohvacanje korisnikovog unosa
 		// ovo je jedina funkcija koju mozemo koristiti za to
 		private Func<string> GetLine;
 
-		public QueryProcessor(Tree drvo, Func<List<Person>, Person> QD, 
+		public QueryProcessor(Tree drvo, Func<List<Person>, string, Person> QD, 
 								Func<string> daj_liniju, TextWriter tw = null)
 		{
 			// dodajmo malo couplinga
@@ -64,9 +64,10 @@ namespace ApplicationLogic
 		public void Initialize_Commands()
 		{
 			komande = new List<CommandDescriptor>();
-			komande.Add(new CommandDescriptor("dodaj_baku", DodajBaku, "dodaj_baku ime, [prezime]"));
-			komande.Add(new CommandDescriptor("promijeni_podatke", PromijeniPodatke, "promijeni_podatke ime, [prezime]"));
+			komande.Add(new CommandDescriptor("dodaj_baku", DodajBaku, "dodaj_baku ime_unuk, prezime_unuk, ime, prezime"));
+			komande.Add(new CommandDescriptor("promijeni_podatke", PromijeniPodatke, "promijeni_podatke ime, prezime"));
 			komande.Add(new CommandDescriptor("izlaz", Izlaz));
+			komande.Add(new CommandDescriptor("ispisi_drvo", IspisiDrvo));
 			// TODO popis funkcija
 		}
 	}

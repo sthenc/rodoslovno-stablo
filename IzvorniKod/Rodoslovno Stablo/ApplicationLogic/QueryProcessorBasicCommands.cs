@@ -35,8 +35,29 @@ namespace ApplicationLogic
 		// 
 
 
+
 		public void DodajBaku(string[] parametri)
 		{
+			if (parametri.Length != 4)
+				throw new System.ArgumentException();
+
+			string unuk_ime = parametri[0];
+			string unuk_prezime = parametri[1];
+
+			string baka_ime = parametri[2];
+			string baka_prezime = parametri[3];
+
+			Guid unuk = NadjiOsobuPoImenu(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
+			List<Person> roditelji = ((IEnumerable<Guid>) Drvo.GetParent(unuk)).Select(id => Drvo.GetPersonByID(id)).ToList();
+			Guid roditelj;
+
+			if (roditelji.Count == 0)
+			{
+				roditelj = Drvo.AddPerson("N", "N");
+				Drvo.AddParent(unuk, roditelj);
+			}
+			else if (roditelji.Count > 1)
+				roditelj = QueryDisambiguator(roditelji, "Baka po kojem roditelju ?").ID;
 			//TODO
 			throw new System.NotImplementedException("TODO DodajBaku");
 		}
