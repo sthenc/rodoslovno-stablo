@@ -37,7 +37,11 @@ namespace ApplicationLogic
         [XmlElement("photo")]
 		public Image photo { get; set; } // TODO
 
+<<<<<<< HEAD
         [XmlElement("adress")]
+=======
+        [XmlElement("address")]
+>>>>>>> origin/marko_dev
 		public string adress { get; set; } // mozda da ovo u klasu prebacimo?
 
         [XmlElement("CV")]
