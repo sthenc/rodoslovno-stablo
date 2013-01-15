@@ -168,11 +168,12 @@ namespace ApplicationLogic
 		public IEnumerable<Guid> GetPartner(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("partner"))
-				.Select(x => x.personID1)
+					.Select(x => x.personID1)
 				.Concat(
 					veze.FindAll(x => x.personID1 == osoba && x.type.Equals("partner"))
-				.Select(x => x.personID2)
-		);
+					.Select(x => x.personID2)
+				);
+		}
 		#endregion
 
         #region Serijalizacija
