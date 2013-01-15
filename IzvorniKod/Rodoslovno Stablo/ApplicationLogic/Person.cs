@@ -37,25 +37,22 @@ namespace ApplicationLogic
         [XmlElement("photo")]
 		public Image photo { get; set; } // TODO
 
-<<<<<<< HEAD
-        [XmlElement("adress")]
-=======
         [XmlElement("address")]
->>>>>>> origin/marko_dev
 		public string adress { get; set; } // mozda da ovo u klasu prebacimo?
 
         [XmlElement("CV")]
-		public string CV { get; set; }
-		public Sex sex;
+        public string CV { get; set; }
+
+        [XmlElement("sex")]
+        public Sex sex;
 
 		public Person(Guid id, string ime, string prezime)
 		{
 			ID = id;
 			name = ime;
 			surname = prezime;
-			sex = Sex.Unknown;
 		}
 
-		public enum Sex {Male, Female, Unknown}; // mogli bismo i nastaviti
+        public enum Sex { Male, Female, Unknown }; // mogli bismo i nastaviti
 	}
-}	
+}
