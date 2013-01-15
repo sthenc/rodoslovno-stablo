@@ -37,6 +37,6 @@ namespace ApplicationLogic
 			sex = Sex.Unknown;
 		}
 
-		public static enum Sex {Male, Female, Unknown}; // mogli bismo i nastaviti
+		public enum Sex {Male, Female, Unknown}; // mogli bismo i nastaviti
 	}
 }	
