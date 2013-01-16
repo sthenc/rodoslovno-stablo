@@ -7,6 +7,11 @@ namespace ApplicationLogic
 {
 	public class UserManager
 	{
+		public UserManager()
+		{ 
+			
+		}
+
 		public bool Login(string username, string password)
 		{
 			// TODO, ovo i povezivanje sa bazom
