@@ -68,6 +68,7 @@ namespace ApplicationLogic
 		{
 			komande = new List<CommandDescriptor>();
 			komande.Add(new CommandDescriptor("dodaj_osobu", AddPerson, "dodaj_osobu ime, prezime"));
+			komande.Add(new CommandDescriptor("nadji_osobu", GetPerson, "nadji_osobu ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_baku", AddGrandmother, "dodaj_baku ime_unuk, prezime_unuk, ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_djeda", AddGrandfather, "dodaj_djeda ime_unuk, prezime_unuk, ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_praroditelja", AddGrandparent, "dodaj_praroditelja ime_unuk, prezime_unuk, ime, prezime"));
