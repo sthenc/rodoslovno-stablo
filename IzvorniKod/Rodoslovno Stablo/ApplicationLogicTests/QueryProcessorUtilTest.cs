@@ -48,8 +48,8 @@ namespace ApplicationLogicTests
 		[TestFixtureSetUp]
 		public void InitialSetup()
 		{
-			drvo = new Tree();
-			qp = new QueryProcessor(drvo, QueryDisambiguator, GetLine);
+			qp = new QueryProcessor(QueryDisambiguator, GetLine);
+			drvo = qp.Drvo;
 		}
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace ApplicationLogicTests
 
 			// 2. Korak - napravi nesto
 
-			Guid actual = qp.NadjiOsobuPoImenu("Zoro", "Zoric", "");
+			Guid actual = qp.FindPersonByName("Zoro", "Zoric", "");
 
 			// 3. Korak - provjeri pretpostavku
 			Assert.AreEqual(expected, actual);

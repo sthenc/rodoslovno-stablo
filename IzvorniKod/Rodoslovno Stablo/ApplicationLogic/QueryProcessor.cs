@@ -8,8 +8,10 @@ namespace ApplicationLogic
 {
 	public partial class QueryProcessor
 	{
-		private Tree Drvo;
-		
+		//private Tree Drvo;
+		// za potrebe testiranja
+		public Tree Drvo;
+
 		// Podesiva funkcija za odlucivanje o kojoj osobi se radi kada je upit dvosmislen
 		private Func<IEnumerable<Person>, string, Person> QueryDisambiguator;
 
@@ -17,11 +19,12 @@ namespace ApplicationLogic
 		// ovo je jedina funkcija koju mozemo koristiti za to
 		private Func<string> GetLine;
 
-		public QueryProcessor(Tree drvo, Func<IEnumerable<Person>, string, Person> QD, 
+		public QueryProcessor(Func<IEnumerable<Person>, string, Person> QD, 
 								Func<string> daj_liniju, TextWriter tw = null)
 		{
+			Drvo = new Tree();
+
 			// dodajmo malo couplinga
-			Drvo = drvo;
 			QueryDisambiguator = QD;
 			GetLine = daj_liniju;
 
@@ -64,10 +67,12 @@ namespace ApplicationLogic
 		public void Initialize_Commands()
 		{
 			komande = new List<CommandDescriptor>();
-			komande.Add(new CommandDescriptor("dodaj_baku", DodajBaku, "dodaj_baku ime_unuk, prezime_unuk, ime, prezime"));
-			komande.Add(new CommandDescriptor("promijeni_podatke", PromijeniPodatke, "promijeni_podatke ime, prezime"));
-			komande.Add(new CommandDescriptor("izlaz", Izlaz));
-			komande.Add(new CommandDescriptor("ispisi_drvo", IspisiDrvo));
+			komande.Add(new CommandDescriptor("dodaj_baku", AddGrandmother, "dodaj_baku ime_unuk, prezime_unuk, ime, prezime"));
+			komande.Add(new CommandDescriptor("dodaj_djeda", AddGrandfather, "dodaj_djeda ime_unuk, prezime_unuk, ime, prezime"));
+			komande.Add(new CommandDescriptor("dodaj_praroditelja", AddGrandparent, "dodaj_praroditelja ime_unuk, prezime_unuk, ime, prezime"));
+			komande.Add(new CommandDescriptor("promijeni_podatke", ChangeData, "promijeni_podatke ime, prezime"));
+			komande.Add(new CommandDescriptor("izlaz", Quit));
+			komande.Add(new CommandDescriptor("ispisi_drvo", PrintTree));
 			// TODO popis funkcija
 		}
 	}

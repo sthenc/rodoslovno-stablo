@@ -9,6 +9,7 @@ namespace ApplicationLogic
 	{
 		// Trebamo implementirati funkcije za slijedeće odnose.
 		//
+		//osobu
 		//partner/muž/žena
 		//potomak/sin/kćer
 		//roditelj/majka/otac
@@ -31,17 +32,9 @@ namespace ApplicationLogic
 		
 
 		// 
-		public IEnumerable<Person> DohvatiRoditelje(Guid dijete)
-		{
-			return DohvatiOsobe(Drvo.GetParent(dijete));
-		}
 
-		public void DodajPraroditelja(string[] parametri)
-		{
-			
-		}
 
-		public void DodajBaku(string[] parametri)
+		public void AddGrandsomething(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
 		{
 			if (parametri.Length != 4)
 				throw new System.ArgumentException();
@@ -52,8 +45,8 @@ namespace ApplicationLogic
 			string baka_ime = parametri[2];
 			string baka_prezime = parametri[3];
 
-			Guid unuk = NadjiOsobuPoImenu(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
-			IEnumerable<Person> roditelji = DohvatiRoditelje(unuk);
+			Guid unuk = FindPersonByName(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
+			IEnumerable<Person> roditelji = Drvo.GetParents(unuk);
 			Guid roditelj;
 
 			if (roditelji.Count() == 0)
@@ -72,24 +65,30 @@ namespace ApplicationLogic
 
 			// ok, sada kada znamo na kojeg roditelja se misli
 
-			Guid baka = DodajRoditelja(roditelj, baka_ime, baka_prezime);
+			Guid baka = Drvo.AddParent(roditelj, baka_ime, baka_prezime);
 			Person nona = Drvo.GetPersonByID(baka);
-			nona.sex = Person.Sex.Female;
+			nona.sex = spol;
 			Drvo.ChangePerson(nona);
 		}
 
-		private Guid DodajRoditelja(Guid dijete, string rod_ime, string rod_prezime)
+		public void AddGrandmother(string[] parametri)
 		{
-			Guid roditelj = Drvo.AddPerson(rod_ime, rod_prezime);
+			AddGrandsomething(parametri, Person.Sex.Female);
+		}
 
-			Drvo.AddParent(dijete, roditelj);
+		public void AddGrandfather(string[] parametri)
+		{
+			AddGrandsomething(parametri, Person.Sex.Male);
+		}
 
-			return roditelj;
+		public void AddGrandparent(string[] parametri)
+		{
+			AddGrandsomething(parametri, Person.Sex.Unknown);
 		}
 
 	//	public void 
 
-		public void PromijeniPodatke(string[] parametri)
+		public void ChangeData(string[] parametri)
 		{
 			//TODO 
 			//System.Console.WriteLine
@@ -98,16 +97,21 @@ namespace ApplicationLogic
 			throw new System.NotImplementedException("TODO PromijeniPodatke");
 		}
 
-		public void IspisiDrvo(string[] parametri)
+		public void PrintTree(string[] parametri)
 		{
 
 			throw new System.NotImplementedException("TODO IspisiDrvo");
 		}
 
+		public void PrintPerson(string[] parametri)
+		{
+			throw new System.NotImplementedException("TODO PrintPerson");
+		}
+
 		// definiraj novi exception, koristimo ga da program zna kada korisnik želi izaći iz programa
 		public class QuitException : Exception { };
 
-		public void Izlaz(string[] parametri)
+		public void Quit(string[] parametri)
 		{
 			throw new QuitException();
 		}

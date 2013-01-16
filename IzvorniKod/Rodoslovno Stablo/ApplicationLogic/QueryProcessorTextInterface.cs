@@ -7,7 +7,7 @@ namespace ApplicationLogic
 {
 	public partial class QueryProcessor
 	{
-		public void RunCommand(string input)
+		public void ProcessQuery(string input)
 		{
 			// Parsiranje upita
 			// format upita je  "upit argument1, argument2,argument3,    argument4"
