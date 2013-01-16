@@ -53,6 +53,6 @@ namespace ApplicationLogic
 			surname = prezime;
 		}
 
-        public enum Sex { Male, Female, Unknown }; // mogli bismo i nastaviti
+        public enum Sex { [XmlEnum("Male")] Male, [XmlEnum("Female")] Female, [XmlEnum("Unknown")] Unknown }; // mogli bismo i nastaviti
 	}
 }
