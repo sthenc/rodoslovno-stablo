@@ -33,6 +33,17 @@ namespace ApplicationLogic
 
 		// 
 
+		public void AddPerson(string[] parametri)
+		{
+			if (parametri.Length != 2)
+				throw new System.ArgumentException();
+
+			string ime = parametri[0];
+			string prezime = parametri[1];
+
+			Drvo.AddPerson(ime, prezime);
+		}
+
 
 		public void AddGrandsomething(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
 		{
@@ -86,7 +97,43 @@ namespace ApplicationLogic
 			AddGrandsomething(parametri, Person.Sex.Unknown);
 		}
 
-	//	public void 
+		public void GetGrandsomething(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
+		{
+			// napravi da vraca sve koji matchaju uvjet
+
+			if (parametri.Length != 2)
+				throw new System.ArgumentException();
+
+			string unuk_ime = parametri[0];
+			string unuk_prezime = parametri[1];
+
+			Guid unuk = FindPersonByName(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
+			IEnumerable<Guid> roditelji = Drvo.GetParent(unuk);
+
+			var baka = new List<Guid>();
+
+			foreach (var roditelj in roditelji)
+				baka = baka.Concat(Drvo.GetParent(roditelj)).ToList();
+
+			baka = baka.FindAll(b => Drvo.GetPersonByID(b).sex == spol);
+
+			PrintPersons(baka);
+		}
+
+		public void GetGrandmother(string[] parametri)
+		{
+			GetGrandsomething(parametri, Person.Sex.Female);
+		}
+
+		public void GetGrandfather(string[] parametri)
+		{
+			GetGrandsomething(parametri, Person.Sex.Male);
+		}
+
+		public void GetGrandparent(string[] parametri)
+		{
+			GetGrandsomething(parametri, Person.Sex.Unknown);
+		}
 
 		public void ChangeData(string[] parametri)
 		{
@@ -99,8 +146,15 @@ namespace ApplicationLogic
 
 		public void PrintTree(string[] parametri)
 		{
+			System.Console.WriteLine("\n-Interni prikaz rodoslovnog stabla\n");
 
-			throw new System.NotImplementedException("TODO IspisiDrvo");
+			System.Console.WriteLine("--Osobe u stablu");
+			foreach (var o in Drvo.osobe)
+				System.Console.WriteLine("---{0}", o.ToString());
+
+			System.Console.WriteLine("\n--Veze u stablu");
+			foreach (var v in Drvo.veze)
+				System.Console.WriteLine("---{0}", v.ToString());
 		}
 
 		public void PrintPerson(string[] parametri)

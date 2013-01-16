@@ -99,7 +99,7 @@ namespace ApplicationLogicTests
 		}
 
 		[Test]
-		public void DeletePersonAlsoDeleteConnections_Test()
+		public void DeletePersonWithConnections_Test()
 		{
 			// 1. Korak - pripremi objekte
 			Guid zoric = drvo.AddPerson("Zoro", "Zoric");
@@ -113,7 +113,7 @@ namespace ApplicationLogicTests
 			drvo.AddChild(hadzi, vix);
 
 			// 2. Korak - napravi nesto
-			drvo.DeletePerson(zoric); // RIP kolega
+			drvo.DeletePersonWithConnections(zoric); // RIP kolega
 
 			List<Connection> veze1 = drvo.veze.FindAll(x => x.personID1 == zoric || x.personID2 == zoric);
 

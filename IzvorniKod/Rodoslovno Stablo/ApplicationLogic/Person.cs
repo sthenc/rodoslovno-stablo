@@ -51,8 +51,14 @@ namespace ApplicationLogic
 			ID = id;
 			name = ime;
 			surname = prezime;
+			sex = Sex.Unknown;
 		}
 
-        public enum Sex { Male, Female, Unknown }; // mogli bismo i nastaviti
+        public enum Sex { Male, Female, Unknown };
+
+		public override string ToString()
+		{	// TODO
+			return String.Format("ID = {0}, ime = {1}, prezime = {2}, spol = {3}", ID, name, surname, sex);
+		}
 	}
 }

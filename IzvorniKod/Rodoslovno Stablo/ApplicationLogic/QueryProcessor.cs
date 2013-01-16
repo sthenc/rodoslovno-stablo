@@ -67,12 +67,17 @@ namespace ApplicationLogic
 		public void Initialize_Commands()
 		{
 			komande = new List<CommandDescriptor>();
+			komande.Add(new CommandDescriptor("dodaj_osobu", AddPerson, "dodaj_osobu ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_baku", AddGrandmother, "dodaj_baku ime_unuk, prezime_unuk, ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_djeda", AddGrandfather, "dodaj_djeda ime_unuk, prezime_unuk, ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_praroditelja", AddGrandparent, "dodaj_praroditelja ime_unuk, prezime_unuk, ime, prezime"));
+			komande.Add(new CommandDescriptor("nadji_bake", GetGrandmother, "nadji_bake ime_unuk, prezime_unuk"));
+			komande.Add(new CommandDescriptor("nadji_djedove", GetGrandfather, "nadji_djedove ime_unuk, prezime_unuk"));
+			komande.Add(new CommandDescriptor("nadji_praroditelje", GetGrandparent, "nadji_praroditelje ime_unuk, prezime_unuk"));
 			komande.Add(new CommandDescriptor("promijeni_podatke", ChangeData, "promijeni_podatke ime, prezime"));
-			komande.Add(new CommandDescriptor("izlaz", Quit));
-			komande.Add(new CommandDescriptor("ispisi_drvo", PrintTree));
+			komande.Add(new CommandDescriptor("ispisi_stablo", PrintTree, "ispisi_stablo"));
+			komande.Add(new CommandDescriptor("ispisi_osobu", PrintPerson, "ispisi_osobu ime, prezime"));
+			komande.Add(new CommandDescriptor("izlaz", Quit, "izlaz"));
 			// TODO popis funkcija
 		}
 	}

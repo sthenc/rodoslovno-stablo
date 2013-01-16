@@ -39,5 +39,10 @@ namespace ApplicationLogic
 		{ 
 			ID = id;
 		}
+
+		public string ToString()
+		{
+			return String.Format("ID = {0}, type = {1}, osobaID1 = {2}, osobaID2 = {3}", ID, type, personID1, personID2);
+		}
 	}
 }

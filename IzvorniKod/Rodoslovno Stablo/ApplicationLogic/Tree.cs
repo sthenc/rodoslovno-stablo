@@ -63,7 +63,7 @@ namespace ApplicationLogic
 			{
 				Person mijenjamo = GetPersonByID(osoba.ID);
 				// makni staru osobu
-				DeletePerson(mijenjamo.ID);
+				osobe.RemoveAll(x => x.ID == osoba.ID);
 				
 				// dodaj novu
 				osobe.Add(osoba);
@@ -83,9 +83,8 @@ namespace ApplicationLogic
 			return ID;
 		}
 
-		public void DeletePerson(Guid ID)
+		public void DeletePersonWithConnections(Guid ID)
 		{
-			// TODO pobrisi i veze na tu osobu
 			if (PersonExists(ID))
 			{
 				osobe.RemoveAll(x => x.ID == ID);
@@ -134,7 +133,7 @@ namespace ApplicationLogic
 				veze.RemoveAll(x => x.ID == ID);
 			}
 			else
-				throw new System.InvalidOperationException("DeletePerson: Nema osobe sa tim ID-jem.");
+				throw new System.InvalidOperationException("DeleteConnection: Nema veze sa tim ID-jem.");
 		}
 		#endregion
 

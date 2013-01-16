@@ -23,13 +23,30 @@ namespace ApplicationLogic
 			{
 				pobjednik = QueryDisambiguator(kandidati, pitanje);
 			}
-			else pobjednik = kandidati.FirstOrDefault(null);
-			
+			else if (kandidati.Count == 1)
+			{
+				pobjednik = kandidati.First();
+			}
 
 			if (pobjednik == null)
 				throw new PersonNotFoundException(String.Format("Ne mogu pronaći osobu {0} {1}", ime,prezime));
 			
 			return pobjednik.ID;
+		}
+
+		public void PrintPersons(IEnumerable<Guid> osobe)
+		{
+			IEnumerable<Person> persone = osobe.Select(o => Drvo.GetPersonByID(o));
+			PrintPersons(persone);
+		}
+
+		public void PrintPersons(IEnumerable<Person> osobe)
+		{
+			foreach (var o in osobe)
+			{
+				System.Console.WriteLine(o);
+			}
+			//throw new System.NotImplementedException();
 		}
 	}
 }
