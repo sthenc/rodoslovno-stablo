@@ -11,14 +11,12 @@ namespace Konzola
 	public class Program
 	{
 		private static ApplicationLogic.QueryProcessor qpro;
-		private static ApplicationLogic.Authenticator auth;
-		private static ApplicationLogic.Tree drvo;
+		private static ApplicationLogic.UserManager um;
 
 		static void Init()
 		{
-			drvo = new ApplicationLogic.Tree();
-			qpro = new ApplicationLogic.QueryProcessor(drvo, QueryDisambiguator, GetLine);
-			auth = new ApplicationLogic.Authenticator();
+			qpro = new ApplicationLogic.QueryProcessor(QueryDisambiguator, GetLine);
+			um = new ApplicationLogic.UserManager();
 		}
 
 		static void PrintStartGreeting()
@@ -37,7 +35,7 @@ namespace Konzola
 		static bool Login()
 		{
 			// za testiranje
-			return auth.Authorize("admin", "abc123");
+			return um.Login("admin", "abc123");
 
 			//string username, password;
 
@@ -98,7 +96,7 @@ namespace Konzola
 
 				try
 				{
-					qpro.RunCommand(query);
+					qpro.ProcessQuery(query);
 				}
 				catch (QueryProcessor.QuitException)
 				{

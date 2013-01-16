@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ApplicationLogic
 {
-	public class Authenticator
+	public class UserManager
 	{
-		public bool Authorize(string username, string password)
+		public bool Login(string username, string password)
 		{
 			// TODO, ovo i povezivanje sa bazom
 			//throw new NotImplementedException();
@@ -16,6 +16,11 @@ namespace ApplicationLogic
 				return true;
 
 			return false;
+		}
+
+		public bool Logoff()
+		{
+			return true;
 		}
 	}
 }

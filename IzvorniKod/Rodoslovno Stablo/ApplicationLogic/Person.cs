@@ -54,5 +54,10 @@ namespace ApplicationLogic
 		}
 
         public enum Sex { [XmlEnum("Male")] Male, [XmlEnum("Female")] Female, [XmlEnum("Unknown")] Unknown }; // mogli bismo i nastaviti
+
+		public override string ToString()
+		{	// TODO
+			return String.Format("ID = {0}, ime = {1}, prezime = {2}, spol = {3}", ID, name, surname, sex);
+		}
 	}
 }

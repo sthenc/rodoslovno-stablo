@@ -9,6 +9,7 @@ namespace ApplicationLogic
 	{
 		// Trebamo implementirati funkcije za slijedeće odnose.
 		//
+		//osobu
 		//partner/muž/žena
 		//potomak/sin/kćer
 		//roditelj/majka/otac
@@ -31,17 +32,20 @@ namespace ApplicationLogic
 		
 
 		// 
-		public IEnumerable<Person> DohvatiRoditelje(Guid dijete)
+
+		public void AddPerson(string[] parametri)
 		{
-			return DohvatiOsobe(Drvo.GetParent(dijete));
+			if (parametri.Length != 2)
+				throw new System.ArgumentException();
+
+			string ime = parametri[0];
+			string prezime = parametri[1];
+
+			Drvo.AddPerson(ime, prezime);
 		}
 
-		public void DodajPraroditelja(string[] parametri)
-		{
-			
-		}
 
-		public void DodajBaku(string[] parametri)
+		public void AddGrandsomething(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
 		{
 			if (parametri.Length != 4)
 				throw new System.ArgumentException();
@@ -52,8 +56,8 @@ namespace ApplicationLogic
 			string baka_ime = parametri[2];
 			string baka_prezime = parametri[3];
 
-			Guid unuk = NadjiOsobuPoImenu(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
-			IEnumerable<Person> roditelji = DohvatiRoditelje(unuk);
+			Guid unuk = FindPersonByName(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
+			IEnumerable<Person> roditelji = Drvo.GetParents(unuk);
 			Guid roditelj;
 
 			if (roditelji.Count() == 0)
@@ -72,24 +76,66 @@ namespace ApplicationLogic
 
 			// ok, sada kada znamo na kojeg roditelja se misli
 
-			Guid baka = DodajRoditelja(roditelj, baka_ime, baka_prezime);
+			Guid baka = Drvo.AddParent(roditelj, baka_ime, baka_prezime);
 			Person nona = Drvo.GetPersonByID(baka);
-			nona.sex = Person.Sex.Female;
+			nona.sex = spol;
 			Drvo.ChangePerson(nona);
 		}
 
-		private Guid DodajRoditelja(Guid dijete, string rod_ime, string rod_prezime)
+		public void AddGrandmother(string[] parametri)
 		{
-			Guid roditelj = Drvo.AddPerson(rod_ime, rod_prezime);
-
-			Drvo.AddParent(dijete, roditelj);
-
-			return roditelj;
+			AddGrandsomething(parametri, Person.Sex.Female);
 		}
 
-	//	public void 
+		public void AddGrandfather(string[] parametri)
+		{
+			AddGrandsomething(parametri, Person.Sex.Male);
+		}
 
-		public void PromijeniPodatke(string[] parametri)
+		public void AddGrandparent(string[] parametri)
+		{
+			AddGrandsomething(parametri, Person.Sex.Unknown);
+		}
+
+		public void GetGrandsomething(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
+		{
+			// napravi da vraca sve koji matchaju uvjet
+
+			if (parametri.Length != 2)
+				throw new System.ArgumentException();
+
+			string unuk_ime = parametri[0];
+			string unuk_prezime = parametri[1];
+
+			Guid unuk = FindPersonByName(unuk_ime, unuk_prezime, "Na kojeg unuka mislite ?");
+			IEnumerable<Guid> roditelji = Drvo.GetParent(unuk);
+
+			var baka = new List<Guid>();
+
+			foreach (var roditelj in roditelji)
+				baka = baka.Concat(Drvo.GetParent(roditelj)).ToList();
+
+			baka = baka.FindAll(b => Drvo.GetPersonByID(b).sex == spol);
+
+			PrintPersons(baka);
+		}
+
+		public void GetGrandmother(string[] parametri)
+		{
+			GetGrandsomething(parametri, Person.Sex.Female);
+		}
+
+		public void GetGrandfather(string[] parametri)
+		{
+			GetGrandsomething(parametri, Person.Sex.Male);
+		}
+
+		public void GetGrandparent(string[] parametri)
+		{
+			GetGrandsomething(parametri, Person.Sex.Unknown);
+		}
+
+		public void ChangeData(string[] parametri)
 		{
 			//TODO 
 			//System.Console.WriteLine
@@ -98,16 +144,28 @@ namespace ApplicationLogic
 			throw new System.NotImplementedException("TODO PromijeniPodatke");
 		}
 
-		public void IspisiDrvo(string[] parametri)
+		public void PrintTree(string[] parametri)
 		{
+			System.Console.WriteLine("\n-Interni prikaz rodoslovnog stabla\n");
 
-			throw new System.NotImplementedException("TODO IspisiDrvo");
+			System.Console.WriteLine("--Osobe u stablu");
+			foreach (var o in Drvo.osobe)
+				System.Console.WriteLine("---{0}", o.ToString());
+
+			System.Console.WriteLine("\n--Veze u stablu");
+			foreach (var v in Drvo.veze)
+				System.Console.WriteLine("---{0}", v.ToString());
+		}
+
+		public void PrintPerson(string[] parametri)
+		{
+			throw new System.NotImplementedException("TODO PrintPerson");
 		}
 
 		// definiraj novi exception, koristimo ga da program zna kada korisnik želi izaći iz programa
 		public class QuitException : Exception { };
 
-		public void Izlaz(string[] parametri)
+		public void Quit(string[] parametri)
 		{
 			throw new QuitException();
 		}

@@ -52,13 +52,18 @@ namespace ApplicationLogic
 			return osobe.Single(x => x.ID == ID);
 		}
 
+		public IEnumerable<Person> GetPersonByID(IEnumerable<Guid> IDs)
+		{
+			return IDs.Select(ID => this.GetPersonByID(ID));
+		}
+
 		public void ChangePerson(Person osoba)
 		{
 			if (PersonExists(osoba.ID)) // pazi da bude isti ID
 			{
 				Person mijenjamo = GetPersonByID(osoba.ID);
 				// makni staru osobu
-				DeletePerson(mijenjamo.ID);
+				osobe.RemoveAll(x => x.ID == osoba.ID);
 				
 				// dodaj novu
 				osobe.Add(osoba);
@@ -78,9 +83,8 @@ namespace ApplicationLogic
 			return ID;
 		}
 
-		public void DeletePerson(Guid ID)
+		public void DeletePersonWithConnections(Guid ID)
 		{
-			// TODO pobrisi i veze na tu osobu
 			if (PersonExists(ID))
 			{
 				osobe.RemoveAll(x => x.ID == ID);
@@ -129,7 +133,7 @@ namespace ApplicationLogic
 				veze.RemoveAll(x => x.ID == ID);
 			}
 			else
-				throw new System.InvalidOperationException("DeletePerson: Nema osobe sa tim ID-jem.");
+				throw new System.InvalidOperationException("DeleteConnection: Nema veze sa tim ID-jem.");
 		}
 		#endregion
 
@@ -139,6 +143,15 @@ namespace ApplicationLogic
 		public Guid AddParent(Guid osoba1, Guid osoba2)
 		{
 			return AddConnection(osoba2, osoba1, "parent");
+		}
+
+		public Guid AddParent(Guid dijete, string rod_ime, string rod_prezime)
+		{
+			Guid roditelj = AddPerson(rod_ime, rod_prezime);
+
+			AddParent(dijete, roditelj);
+
+			return roditelj;
 		}
 
 		public Guid AddChild(Guid osoba1, Guid osoba2)
@@ -158,11 +171,21 @@ namespace ApplicationLogic
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("parent"))
 			.Select(x => x.personID1);
 		}
+
+		public IEnumerable<Person> GetParents(Guid dijete)
+		{
+			return GetPersonByID(GetParent(dijete));
+		}
 		
 		public IEnumerable<Guid> GetChild(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID1 == osoba && x.type.Equals("parent"))
 			.Select(x => x.personID2);
+		}
+
+		public IEnumerable<Person> GetChildren(Guid roditelj)
+		{
+			return GetPersonByID(GetChild(roditelj));
 		}
 		
 		public IEnumerable<Guid> GetPartner(Guid osoba)
@@ -173,6 +196,11 @@ namespace ApplicationLogic
 					veze.FindAll(x => x.personID1 == osoba && x.type.Equals("partner"))
 					.Select(x => x.personID2)
 				);
+		}
+
+		public IEnumerable<Person> GetPartners(Guid part)
+		{
+			return GetPersonByID(GetPartner(part));
 		}
 		#endregion
 
