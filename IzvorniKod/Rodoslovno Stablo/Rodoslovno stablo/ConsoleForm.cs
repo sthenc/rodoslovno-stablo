@@ -54,6 +54,8 @@ namespace Rodoslovno_stablo
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             executeText("help");
+            textBox1.Select();
+
 
 
         }
@@ -61,6 +63,8 @@ namespace Rodoslovno_stablo
         private void buttonExecute_Click(object sender, EventArgs e)
         {
             executeText(textBox1.Text);
+            textBox1.Select();
+
         }
 
        

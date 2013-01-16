@@ -57,6 +57,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersonControl.Designer.cs">
+      <DependentUpon>PersonControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextBoxStreamWriter.cs" />
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonControl.resx">
+      <DependentUpon>PersonControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +116,12 @@
       <Project>{ba7c1613-aece-4e8f-8e8c-e39f770225a6}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_social_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6_social_person1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

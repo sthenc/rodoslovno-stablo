@@ -157,7 +157,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.AllowDrop = true;
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
+           
             // 
             // splitContainer1.Panel2
             // 
@@ -311,6 +313,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Rodoslovno stablo";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip.ResumeLayout(false);
