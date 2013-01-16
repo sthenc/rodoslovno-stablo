@@ -38,6 +38,13 @@ namespace Rodoslovno_stablo
 
         }
 
+        private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsoleForm consoleForm = new ConsoleForm();
+            consoleForm.Show();
+
+        }
+
       
 
 
