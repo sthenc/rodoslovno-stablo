@@ -165,6 +165,7 @@ namespace ApplicationLogic
 		}
 
 		// beware, LINQ dragons ahead
+			// beware, LINQ dragons ahead
 		public IEnumerable<Guid> GetParent(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID2 == osoba && x.type.Equals("parent"))
@@ -175,7 +176,7 @@ namespace ApplicationLogic
 		{
 			return GetPersonByID(GetParent(dijete));
 		}
-
+		
 		public IEnumerable<Guid> GetChild(Guid osoba)
 		{
 			return veze.FindAll(x => x.personID1 == osoba && x.type.Equals("parent"))
@@ -222,6 +223,26 @@ namespace ApplicationLogic
 
             return (Tree)xmlReader.Deserialize(inputFile);
         }
+
+
+		// malo modificirano tako da mozemo unit testat
+		public string SaveTest()
+		{
+			XmlSerializer xmlWriter = new XmlSerializer(typeof(Tree));
+			TextWriter output = new StringWriter();
+
+			xmlWriter.Serialize(output, this);
+
+			return output.ToString();
+		}
+
+		public static Tree LoadTest(string data)
+		{
+			XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
+			TextReader input = new StringReader(data);
+
+			return (Tree)xmlReader.Deserialize(input);
+		}
 
         #endregion
 	}

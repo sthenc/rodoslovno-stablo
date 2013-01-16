@@ -32,6 +32,9 @@
             this.datotekaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spremiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izlazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otvoriKonzoluToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -43,15 +46,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIme = new System.Windows.Forms.TextBox();
             this.textBoxPrezime = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
-            this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
-            this.alatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.otvoriKonzoluToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,6 +93,28 @@
             this.izlazToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
+            // 
+            // alatiToolStripMenuItem
+            // 
+            this.alatiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.otvoriKonzoluToolStripMenuItem,
+            this.postavkeToolStripMenuItem});
+            this.alatiToolStripMenuItem.Name = "alatiToolStripMenuItem";
+            this.alatiToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.alatiToolStripMenuItem.Text = "Alati";
+            // 
+            // otvoriKonzoluToolStripMenuItem
+            // 
+            this.otvoriKonzoluToolStripMenuItem.Name = "otvoriKonzoluToolStripMenuItem";
+            this.otvoriKonzoluToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.otvoriKonzoluToolStripMenuItem.Text = "Otvori konzolu";
+            this.otvoriKonzoluToolStripMenuItem.Click += new System.EventHandler(this.otvoriKonzoluToolStripMenuItem_Click);
+            // 
+            // postavkeToolStripMenuItem
+            // 
+            this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
+            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.postavkeToolStripMenuItem.Text = "Postavke";
             // 
             // pomoćToolStripMenuItem
             // 
@@ -222,64 +244,6 @@
             this.textBoxPrezime.Size = new System.Drawing.Size(134, 20);
             this.textBoxPrezime.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_edit;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 65);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(36, 36);
-            this.saveToolStripButton.Text = "&Save";
-            // 
-            // toolStripDeletePerson
-            // 
-            this.toolStripDeletePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDeletePerson.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_discard;
-            this.toolStripDeletePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDeletePerson.Name = "toolStripDeletePerson";
-            this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
-            this.toolStripDeletePerson.Text = "toolStripButton1";
-            this.toolStripDeletePerson.Click += new System.EventHandler(this.toolStripButton1_Click_1);
-            // 
-            // toolStripAddPerson
-            // 
-            this.toolStripAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripAddPerson.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_add_person;
-            this.toolStripAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripAddPerson.Name = "toolStripAddPerson";
-            this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
-            this.toolStripAddPerson.Text = "toolStripButton1";
-            // 
-            // alatiToolStripMenuItem
-            // 
-            this.alatiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.otvoriKonzoluToolStripMenuItem,
-            this.postavkeToolStripMenuItem});
-            this.alatiToolStripMenuItem.Name = "alatiToolStripMenuItem";
-            this.alatiToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.alatiToolStripMenuItem.Text = "Alati";
-            // 
-            // otvoriKonzoluToolStripMenuItem
-            // 
-            this.otvoriKonzoluToolStripMenuItem.Name = "otvoriKonzoluToolStripMenuItem";
-            this.otvoriKonzoluToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.otvoriKonzoluToolStripMenuItem.Text = "Otvori konzolu";
-            // 
-            // postavkeToolStripMenuItem
-            // 
-            this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
-            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.postavkeToolStripMenuItem.Text = "Postavke";
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -298,6 +262,43 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
             this.dateTimePicker1.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_edit;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 65);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(36, 36);
+            this.saveToolStripButton.Text = "&Save";
+            // 
+            // toolStripAddPerson
+            // 
+            this.toolStripAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripAddPerson.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_add_person;
+            this.toolStripAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripAddPerson.Name = "toolStripAddPerson";
+            this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
+            this.toolStripAddPerson.Text = "toolStripButton1";
+            // 
+            // toolStripDeletePerson
+            // 
+            this.toolStripDeletePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDeletePerson.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_discard;
+            this.toolStripDeletePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDeletePerson.Name = "toolStripDeletePerson";
+            this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
+            this.toolStripDeletePerson.Text = "toolStripButton1";
+            this.toolStripDeletePerson.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // MainForm
             // 
