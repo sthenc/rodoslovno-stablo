@@ -32,7 +32,7 @@ namespace ApplicationLogic
 			if (tw != null)		// Da omogucimo ovo http://saezndaree.wordpress.com/2009/03/29/how-to-redirect-the-consoles-output-to-a-textbox-in-c/
 				System.Console.SetOut(tw);
 
-			Initialize_Commands();
+			InitializeCommands();
 		}
 
 		// tablica sa mapiranjem komandi i kljucnih rijeci, zajedno sa opisima
@@ -64,7 +64,7 @@ namespace ApplicationLogic
 			}
 		}
 
-		public void Initialize_Commands()
+		public void InitializeCommands()
 		{
 			komande = new List<CommandDescriptor>();
 			komande.Add(new CommandDescriptor("dodaj_osobu", AddPerson, "dodaj_osobu ime, prezime"));
