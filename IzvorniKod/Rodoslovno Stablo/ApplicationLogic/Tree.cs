@@ -206,7 +206,7 @@ namespace ApplicationLogic
 
         #region Serijalizacija
 
-        public void Save(string path)
+        public void save(string path)
         {
             XmlSerializer xmlWriter = new XmlSerializer(typeof(Tree));
             TextWriter outputFile = new StreamWriter(path);
@@ -216,7 +216,7 @@ namespace ApplicationLogic
             outputFile.Close();
         }
 
-        public static Tree Load(string path)
+        public static Tree load(string path)
         {
             XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
             TextReader inputFile = new StreamReader(path);
