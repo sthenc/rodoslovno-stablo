@@ -34,6 +34,9 @@ namespace ApplicationLogic
         [XmlElement("birthDate")]
 		public DateTime birthDate { get; set; }
 
+        [XmlElement("deathDate")]
+        public DateTime deathDate { get; set; }
+
         [XmlElement("photo")]
 		public Image photo { get; set; } // TODO
 

@@ -14,7 +14,7 @@ namespace ApplicationLogic
 			public PersonNotFoundException(string msg) : base(msg) { }
 		}
 
-		public Guid FindPersonByName(string ime, string prezime, string pitanje)
+        public Guid FindPersonByName(string ime, string prezime, string pitanje = "Na koga mislite ?")
 		{ 
 			List<Person> kandidati = Drvo.osobe.FindAll(x => x.name == ime && x.surname == prezime);
 
