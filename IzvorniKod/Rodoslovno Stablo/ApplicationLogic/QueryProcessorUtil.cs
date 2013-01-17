@@ -34,6 +34,17 @@ namespace ApplicationLogic
 			return pobjednik.ID;
 		}
 
+		public void PrintPerson(Guid osoba)
+		{
+			Person persona = Drvo.GetPersonByID(osoba);
+			PrintPerson(persona);
+		}
+
+		public void PrintPerson(Person osoba)
+		{
+			System.Console.WriteLine(osoba);
+		}
+
 		public void PrintPersons(IEnumerable<Guid> osobe)
 		{
 			IEnumerable<Person> persone = osobe.Select(o => Drvo.GetPersonByID(o));
