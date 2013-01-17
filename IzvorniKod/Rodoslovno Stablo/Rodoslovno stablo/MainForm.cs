@@ -54,6 +54,16 @@ namespace Rodoslovno_stablo
 
         }
 
+        private void SaveToJpeg(string path)
+        {
+            Panel myPanel = splitContainer1.Panel1;
+
+            Bitmap image = new Bitmap(myPanel.Width, myPanel.Height);
+
+            myPanel.DrawToBitmap(image, new Rectangle(0, 0, image.Width, image.Height));
+            image.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
+        }
+
         private void RefreshTree()
         {
             List<PersonControl> persons = new List<PersonControl>();
