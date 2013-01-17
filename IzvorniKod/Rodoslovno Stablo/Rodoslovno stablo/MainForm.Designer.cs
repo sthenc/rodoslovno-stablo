@@ -38,7 +38,7 @@
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToXML = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
@@ -88,6 +88,7 @@
             this.spremiToolStripMenuItem.Name = "spremiToolStripMenuItem";
             this.spremiToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.spremiToolStripMenuItem.Text = "Spremi";
+            this.spremiToolStripMenuItem.Click += new System.EventHandler(this.spremiToolStripMenuItem_Click);
             // 
             // izlazToolStripMenuItem
             // 
@@ -136,7 +137,7 @@
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripButton,
+            this.saveToXML,
             this.toolStripSeparator,
             this.toolStripAddPerson,
             this.toolStripDeletePerson});
@@ -146,14 +147,15 @@
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
             // 
-            // saveToolStripButton
+            // saveToXML
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(36, 36);
-            this.saveToolStripButton.Text = "&Save";
+            this.saveToXML.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToXML.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
+            this.saveToXML.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToXML.Name = "saveToXML";
+            this.saveToXML.Size = new System.Drawing.Size(36, 36);
+            this.saveToXML.Text = "&Save";
+            this.saveToXML.Click += new System.EventHandler(this.saveToXML_Click);
             // 
             // toolStripSeparator
             // 
@@ -345,7 +347,7 @@
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripMenuItem pomoćToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oProgramuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToXML;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem izlazToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;

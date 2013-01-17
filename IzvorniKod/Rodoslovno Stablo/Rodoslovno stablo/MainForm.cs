@@ -14,9 +14,21 @@ namespace Rodoslovno_stablo
 {
     public partial class MainForm : Form
     {
+        private ConsoleForm consoleForm;
+        private Tree tree;
+        private Panel graf;
+
         public MainForm()
         {
             InitializeComponent();
+
+            graf = splitContainer1.Panel1;
+
+            consoleForm = new ConsoleForm();
+            tree = consoleForm.MyQueryProcessor.Drvo;
+
+            tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
+            graf.Refresh();
         }
 
         private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,9 +55,7 @@ namespace Rodoslovno_stablo
 
         private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsoleForm consoleForm = new ConsoleForm();
             consoleForm.Show();
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -77,7 +87,7 @@ namespace Rodoslovno_stablo
 
         private void RefreshTree()
         {
-            List<PersonControl> persons = new List<PersonControl>();
+            /*List<PersonControl> persons = new List<PersonControl>();
             Person p = new Person(new System.Guid(), "Netko", "Netkic");
             Person p1 = new Person(new System.Guid(), "Bla", "Netkic");
 
@@ -86,10 +96,17 @@ namespace Rodoslovno_stablo
             persons.Add(c);
             persons.Add(c1);
 
-
             splitContainer1.Panel1.Controls.Add(c);
 
-            splitContainer1.Panel1.Controls.Add(c1);
+            splitContainer1.Panel1.Controls.Add(c1);*/
+
+            splitContainer1.Panel1.Controls.Clear();
+
+            foreach (Person p in tree.osobe)
+            {
+                PersonControl c = new PersonControl(p, this);
+                splitContainer1.Panel1.Controls.Add(c);
+            }
         }
 
 
@@ -122,6 +139,45 @@ namespace Rodoslovno_stablo
                     myStream.Close();
                 }
             }
+        }
+
+        private void SaveToXML(Stream file)
+        {
+            tree.Save(file);
+        }
+
+        private void SaveXMLClick()
+        {
+            Stream myStream = null;
+
+            SaveFileDialog dialog = new SaveFileDialog();
+
+            dialog.AddExtension = true;
+            dialog.DefaultExt = "xml";
+            dialog.Filter = "xml files (*.xml)|*.xml";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                myStream = dialog.OpenFile();
+
+                if (myStream != null)
+                {
+                    SaveToXML(myStream);
+                    myStream.Close();
+                }
+
+            }
+        }
+
+        private void saveToXML_Click(object sender, EventArgs e)
+        {
+            SaveXMLClick();
+        }
+
+        private void spremiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveXMLClick();
         }
 
     }

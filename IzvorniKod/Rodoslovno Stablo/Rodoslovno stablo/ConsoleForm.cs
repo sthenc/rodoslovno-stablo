@@ -16,15 +16,23 @@ namespace Rodoslovno_stablo
         TextWriter _writer = null;
 
         private static ApplicationLogic.QueryProcessor qpro;
+
+        public QueryProcessor MyQueryProcessor
+        {
+            get
+            {
+                return qpro;
+            }
+        }
         public ConsoleForm()
         {
             InitializeComponent();
             textBox1.Select();
-            
+
+            qpro = new ApplicationLogic.QueryProcessor(QueryDisambiguator, GetLine);
         }
         private void ConsoleForm_Load(object sender, EventArgs e)
         {
-            qpro = new ApplicationLogic.QueryProcessor(QueryDisambiguator, GetLine);
             _writer = new TextBoxStreamWriter(textBoxOutput);
             Console.SetOut(_writer);
             
