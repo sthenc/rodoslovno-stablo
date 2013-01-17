@@ -109,12 +109,12 @@ namespace Konzola
 		{
 			Init();
 
-			PrintStartGreeting();
+			//PrintStartGreeting();
 
-			if (Login())
-				MenuLoop();
+			//if (Login())
+			//	MenuLoop();
 
-			PrintEndGreeting();
+			//PrintEndGreeting();
 		}
 	}
 }
