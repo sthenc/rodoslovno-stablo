@@ -112,10 +112,6 @@
       <Project>{35678ce6-a0c8-46e9-9ae7-38061b9ab648}</Project>
       <Name>ApplicationLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{ba7c1613-aece-4e8f-8e8c-e39f770225a6}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\6_social_person.png" />
