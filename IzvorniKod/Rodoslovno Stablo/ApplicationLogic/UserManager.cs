@@ -7,6 +7,8 @@ namespace ApplicationLogic
 {
 	public class UserManager
 	{
+		// Izvor za orm  https://github.com/ServiceStack/ServiceStack.OrmLite
+
 		public UserManager()
 		{ 
 			
@@ -24,7 +26,7 @@ namespace ApplicationLogic
 		}
 
 		public bool Logoff()
-		{
+		{	
 			return true;
 		}
 	}
