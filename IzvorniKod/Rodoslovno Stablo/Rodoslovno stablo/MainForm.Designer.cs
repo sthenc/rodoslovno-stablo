@@ -38,8 +38,12 @@
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,16 +52,13 @@
             this.textBoxPrezime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
-            this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
+            this.spremiKaoJpegToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,6 +77,7 @@
             // 
             this.datotekaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.spremiToolStripMenuItem,
+            this.spremiKaoJpegToolStripMenuItem,
             this.izlazToolStripMenuItem});
             this.datotekaToolStripMenuItem.Name = "datotekaToolStripMenuItem";
             this.datotekaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
@@ -84,13 +86,13 @@
             // spremiToolStripMenuItem
             // 
             this.spremiToolStripMenuItem.Name = "spremiToolStripMenuItem";
-            this.spremiToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.spremiToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.spremiToolStripMenuItem.Text = "Spremi";
             // 
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 
@@ -144,10 +146,38 @@
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
             // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(36, 36);
+            this.saveToolStripButton.Text = "&Save";
+            // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripAddPerson
+            // 
+            this.toolStripAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripAddPerson.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_add_person;
+            this.toolStripAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripAddPerson.Name = "toolStripAddPerson";
+            this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
+            this.toolStripAddPerson.Text = "toolStripButton1";
+            // 
+            // toolStripDeletePerson
+            // 
+            this.toolStripDeletePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDeletePerson.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_discard;
+            this.toolStripDeletePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDeletePerson.Name = "toolStripDeletePerson";
+            this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
+            this.toolStripDeletePerson.Text = "toolStripButton1";
+            this.toolStripDeletePerson.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // splitContainer1
             // 
@@ -159,7 +189,6 @@
             // 
             this.splitContainer1.Panel1.AllowDrop = true;
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
-           
             // 
             // splitContainer1.Panel2
             // 
@@ -171,6 +200,15 @@
             this.splitContainer1.Size = new System.Drawing.Size(1047, 671);
             this.splitContainer1.SplitterDistance = 757;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_edit;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 65);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -265,42 +303,12 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // pictureBox1
+            // spremiKaoJpegToolStripMenuItem
             // 
-            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_edit;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 65);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(36, 36);
-            this.saveToolStripButton.Text = "&Save";
-            // 
-            // toolStripAddPerson
-            // 
-            this.toolStripAddPerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripAddPerson.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_add_person;
-            this.toolStripAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripAddPerson.Name = "toolStripAddPerson";
-            this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
-            this.toolStripAddPerson.Text = "toolStripButton1";
-            // 
-            // toolStripDeletePerson
-            // 
-            this.toolStripDeletePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDeletePerson.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_discard;
-            this.toolStripDeletePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDeletePerson.Name = "toolStripDeletePerson";
-            this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
-            this.toolStripDeletePerson.Text = "toolStripButton1";
-            this.toolStripDeletePerson.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            this.spremiKaoJpegToolStripMenuItem.Name = "spremiKaoJpegToolStripMenuItem";
+            this.spremiKaoJpegToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.spremiKaoJpegToolStripMenuItem.Text = "Spremi kao jpeg";
+            this.spremiKaoJpegToolStripMenuItem.Click += new System.EventHandler(this.spremiKaoJpegToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -321,9 +329,9 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,6 +363,7 @@
         private System.Windows.Forms.ToolStripMenuItem postavkeToolStripMenuItem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ToolStripMenuItem spremiKaoJpegToolStripMenuItem;
     }
 }
 

@@ -35,7 +35,7 @@ namespace ApplicationLogic
 
 		public void AddPerson(string[] parametri)
 		{
-			if (parametri.Length != 2)
+		      	if (parametri.Length != 2)
 				throw new System.ArgumentException();
 
 			string ime = parametri[0];

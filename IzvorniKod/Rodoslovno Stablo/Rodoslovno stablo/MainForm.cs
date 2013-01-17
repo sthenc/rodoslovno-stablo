@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace Rodoslovno_stablo
@@ -54,6 +55,26 @@ namespace Rodoslovno_stablo
 
         }
 
+        private void SaveToJpeg(string path)
+        {
+            Panel myPanel = splitContainer1.Panel1;
+
+            Bitmap image = new Bitmap(myPanel.Width, myPanel.Height);
+
+            myPanel.DrawToBitmap(image, new Rectangle(0, 0, image.Width, image.Height));
+            image.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
+        }
+
+        private void SaveToJpeg(Stream file)
+        {
+            Panel myPanel = splitContainer1.Panel1;
+
+            Bitmap image = new Bitmap(myPanel.Width, myPanel.Height);
+
+            myPanel.DrawToBitmap(image, new Rectangle(0, 0, image.Width, image.Height));
+            image.Save(file, System.Drawing.Imaging.ImageFormat.Jpeg);
+        }
+
         private void RefreshTree()
         {
             List<PersonControl> persons = new List<PersonControl>();
@@ -79,8 +100,29 @@ namespace Rodoslovno_stablo
 
         }
 
+        private void spremiKaoJpegToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream myStream = null;
 
+            SaveFileDialog dialog = new SaveFileDialog();
 
+            dialog.AddExtension = true;
+            dialog.DefaultExt = "jpeg";
+            dialog.Filter = "jpeg files (*.jpeg)|*.jpeg";
+            dialog.FilterIndex = 0;
+            //dialog.FileOk += dialog_FileOk;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                myStream = dialog.OpenFile();
+
+                if (myStream != null)
+                {
+                    SaveToJpeg(myStream);
+                    myStream.Close();
+                }
+            }
+        }
 
     }
 }
