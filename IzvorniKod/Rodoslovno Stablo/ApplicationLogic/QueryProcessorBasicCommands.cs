@@ -35,7 +35,7 @@ namespace ApplicationLogic
 
 		public void AddPerson(string[] parametri)
 		{
-			if (parametri.Length != 2)
+		      	if (parametri.Length != 2)
 				throw new System.ArgumentException();
 
 			string ime = parametri[0];
@@ -44,17 +44,17 @@ namespace ApplicationLogic
 			Drvo.AddPerson(ime, prezime);
 		}
 
-        public void GetPerson(string[] parametri)
-        {
-            if (parametri.Length != 2)
-                	throw new System.ArgumentException();
+                public void GetPerson(string[] parametri)
+                {
+                        if (parametri.Length != 2)
+                	        throw new System.ArgumentException();
                 	        
-            string osoba_ime = parametri[0];
-            string osoba_prezime = parametri[1];
+                        string osoba_ime = parametri[0];
+                        string osoba_prezime = parametri[1];
                 	
-            Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-            PrintPerson(osoba);
-        }
+                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+                        PrintPerson(osoba);
+                }
 
 		public void AddGrandsomething(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
 		{
