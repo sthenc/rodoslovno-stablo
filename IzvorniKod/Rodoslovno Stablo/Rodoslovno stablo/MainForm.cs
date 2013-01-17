@@ -16,6 +16,7 @@ namespace Rodoslovno_stablo
     {
         private ConsoleForm consoleForm;
         private Tree tree;
+        private QueryProcessor qerp;
         private Panel graf;
 
         public MainForm()
@@ -25,9 +26,11 @@ namespace Rodoslovno_stablo
             graf = splitContainer1.Panel1;
 
             consoleForm = new ConsoleForm();
-            tree = consoleForm.MyQueryProcessor.Drvo;
+            qerp = consoleForm.MyQueryProcessor;
+            tree = qerp.Drvo;
 
-            tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
+            //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
+            qerp.AddPerson(new string[] {"Ime", "Prezime"});
             graf.Refresh();
         }
 
