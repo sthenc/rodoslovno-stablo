@@ -20,6 +20,8 @@ namespace ApplicationLogic
 		{ 
 			osobe = new List<Person>();
 			veze = new List<Connection>();
+
+            // TODO dodat neke defaultne vrijednosti da se moze lakse testirat stvari
 		}
 
 //		Opći format funkcije je:
