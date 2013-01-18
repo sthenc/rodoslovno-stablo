@@ -74,16 +74,38 @@ namespace ApplicationLogic
 				throw new System.InvalidOperationException("ChangePerson: ID se ne smije dirati.");
 		}
 
-		public Guid AddPerson(string ime, string prezime)
-		{ 
-			Guid ID = Guid.NewGuid();
+        public Guid AddPerson(string ime, string prezime)
+        {
+            Guid ID = Guid.NewGuid();
 
-			var osoba = new Person(ID, ime, prezime);
+            var osoba = new Person(ID, ime, prezime);
 
-			osobe.Add(osoba);
+            osobe.Add(osoba);
 
-			return ID;
-		}
+            return ID;
+        }
+
+        public Guid AddPerson(string ime, string prezime, DateTime datumRodjenja)
+        {
+            Guid ID = Guid.NewGuid();
+
+            var osoba = new Person(ID, ime, prezime, datumRodjenja);
+
+            osobe.Add(osoba);
+
+            return ID;
+        }
+
+        public Guid AddPerson(string ime, string prezime, DateTime datumRodjenja, DateTime datumSmrti)
+        {
+            Guid ID = Guid.NewGuid();
+
+            var osoba = new Person(ID, ime, prezime, datumRodjenja, datumSmrti);
+
+            osobe.Add(osoba);
+
+            return ID;
+        }
 
 		public void DeletePersonWithConnections(Guid ID)
 		{

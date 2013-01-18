@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QueryProcessorAdvancedCommandsTest.cs" />
+    <Compile Include="TreeTestBase.cs" />
     <Compile Include="TreeXMLTest.cs" />
     <Compile Include="QueryProcessorUtilTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

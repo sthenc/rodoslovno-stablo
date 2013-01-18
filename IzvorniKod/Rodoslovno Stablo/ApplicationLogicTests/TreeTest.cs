@@ -13,51 +13,8 @@ namespace ApplicationLogicTests
 	/// izvor http://www.rhyous.com/2012/04/30/beginning-unit-testing-tutorial-in-c-with-nunit/
 	/// </summary>
 	[TestFixture]
-	public class TreeTest
+	public class TreeTest : TreeTestBase
 	{
-		private Tree drvo;
-
-		#region Setup and Tear down
-		/// <summary>
-		/// Ovo se pokrece samo jednom prije pokretanja svih testova
-		/// </summary>
-		[TestFixtureSetUp]
-		public void InitialSetup()
-		{
-			drvo = new Tree();
-		}
-
-		/// <summary>
-		/// Ovo se pokrece samo jednom nakon pokretanja svih testova
-		/// </summary>
-		[TestFixtureTearDown]
-		public void FinalTearDown()
-		{
-
-		}
-
-		/// <summary>
-		/// Ova setup funkcija se pokrece prije svakog testa
-		/// </summary>
-		[SetUp]
-		public void SetupForEachTest()
-		{
-			
-		}
-
-		/// <summary>
-		/// Ova setup funkcija se pokrece nakon svakog testa
-		/// </summary>
-		[TearDown]
-		public void TearDownForEachTest()
-		{
-			// pobrisi sve
-			drvo.osobe.RemoveAll(x => true);
-			drvo.veze.RemoveAll(x => true);
-		}
-		#endregion
-
-
 		#region Testovi 
 		//ovdje se trpaju testovi
 
@@ -68,7 +25,7 @@ namespace ApplicationLogicTests
 			drvo.AddPerson("Zoro", "Zoric");
  
 			// 2. Korak - napravi nesto
-			string actual = drvo.osobe.Single(x => true).name;
+			string actual = drvo.osobe.Single(x => x.name=="Zoro" && x.surname=="Zoric").name;
  
 			// 3. Korak - provjeri pretpostavku
 			string expected = "Zoro"; // Ovako je jasno sto se ocekuje
