@@ -218,6 +218,12 @@ namespace ApplicationLogic
             outputFile.Close();
         }
 
+        public void Save(Stream file)
+        {
+            XmlSerializer xmlWriter = new XmlSerializer(typeof(Tree));
+            xmlWriter.Serialize(file, this);
+        }
+
         public static Tree Load(string path)
         {
             XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
