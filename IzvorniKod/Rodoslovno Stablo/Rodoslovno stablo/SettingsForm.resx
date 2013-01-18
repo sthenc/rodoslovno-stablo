@@ -117,30 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="10_device_access_screen_locked_to_landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10_device_access_screen_locked_to_landscape.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5_content_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5_content_edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5_content_discard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5_content_discard.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6_social_add_person" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6_social_add_person.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5_content_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5_content_save.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6_social_person" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6_social_person.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="6_social_person1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6_social_person1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="6_social_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6_social_group.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

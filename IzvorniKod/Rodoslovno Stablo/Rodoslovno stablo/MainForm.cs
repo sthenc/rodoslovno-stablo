@@ -21,6 +21,9 @@ namespace Rodoslovno_stablo
 
         public MainForm()
         {
+            LoginForm loginForm = new LoginForm();
+            loginForm.ShowDialog();
+
             InitializeComponent();
 
             graf = splitContainer1.Panel1;
@@ -187,6 +190,29 @@ namespace Rodoslovno_stablo
         {
 
         }
+
+        private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form settingsForm = new SettingsForm();
+            settingsForm.Show();
+
+        }
+
+        private void upravljanjeKorisnicimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsersForm usersForm = new UsersForm();
+            usersForm.Show();
+
+        }
+
+        private void oProgramuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.Show();
+
+        }
+
+   
 
     }
 }

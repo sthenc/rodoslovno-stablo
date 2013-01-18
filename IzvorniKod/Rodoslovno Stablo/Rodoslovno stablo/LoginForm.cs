@@ -18,11 +18,16 @@ namespace Rodoslovno_stablo
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            MainForm form = new MainForm();
 
-            form.Show();
+            this.Dispose();
 
-            this.Hide();
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }
