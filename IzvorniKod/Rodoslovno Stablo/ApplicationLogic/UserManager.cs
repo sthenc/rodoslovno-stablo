@@ -91,6 +91,8 @@ namespace ApplicationLogic
 
         private void DBInit()
         {
+            OrmLiteConfig.DialectProvider = SqliteOrmLiteDialectProvider.Instance;
+
             connectionString = GetFileConnectionString();
             using (IDbConnection db = connectionString.OpenDbConnection())
             {
@@ -112,17 +114,17 @@ namespace ApplicationLogic
                 List <Query> queries = new List<Query>();
                 queries.Add(new Query()
                 {
-                    UserID = db.Select<User>(x => x.name == "admin").First().ID,
+                    UserID = db.Select<User>(x => x.username == "admin").First().ID,
                     command = "ispisi_stablo"
                 });
                 queries.Add(new Query()
                 {
-                    UserID = db.Select<User>(x => x.name == "admin").First().ID,
+                    UserID = db.Select<User>(x => x.username == "admin").First().ID,
                     command = "ispisi_osobu Chuck, Norris"
                 });
                 queries.Add(new Query()
                 {
-                    UserID = db.Select<User>(x => x.name == "admin").First().ID,
+                    UserID = db.Select<User>(x => x.username == "admin").First().ID,
                     command = "dodaj_osobu Chuck, Norris"
                 });
 
@@ -134,16 +136,23 @@ namespace ApplicationLogic
             DBInit();
 		}
 
-        private void SaveToDB()
-        { 
-            
-        }
-
         private User ActiveUser;
 
         public void AddUser(User korisnik)
-        { 
-        
+        {
+            List<User> korisnici = null;
+
+            using (IDbConnection db = connectionString.OpenDbConnection())
+            {
+                korisnici = db.Select<User>(x => x.username == korisnik.username);
+
+                if (korisnici.Count() != 0)
+                {
+                    throw new System.ArgumentException("Username je vec zauzet");
+                }
+
+                db.Insert(korisnik);
+            }
         }
 
         public User GetActiveUser()
@@ -153,12 +162,19 @@ namespace ApplicationLogic
 
         public void UpdateUser(User korisnik)
         {
-        
+            using (IDbConnection db = connectionString.OpenDbConnection())
+            {
+                db.Update<User>(korisnik);
+            }
         }
 
         public void StoreQuery(Query upit)
-        { 
-        
+        {
+            upit.UserID = ActiveUser.ID;
+            using (IDbConnection db = connectionString.OpenDbConnection())
+            {
+                db.Insert<Query>(upit);
+            }
         }
 
         public IEnumerable<Query> GetQueries()
@@ -175,17 +191,21 @@ namespace ApplicationLogic
 
 		public bool Login(string username, string password)
 		{
-			// TODO, ovo i povezivanje sa bazom
-			//throw new NotImplementedException();
+			// TODO, dodat password hashing
 
+            List<User> aktivni = null;
             using (IDbConnection db = connectionString.OpenDbConnection())
             {
-                ret = db.Select<Query>(x => x.UserID == ActiveUser.ID);
+                aktivni = db.Select<User>(x => x.username == username && x.password == password);
             }
-			if (username == "admin" && password == "abc123")
-				return true;
 
-			return false;
+            if (aktivni.Count != 1)
+            {
+                return false;
+            }
+
+            ActiveUser = aktivni.ElementAt(0);
+			return true;
 		}
 
 		public bool Logoff()
