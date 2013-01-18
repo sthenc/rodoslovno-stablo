@@ -44,16 +44,20 @@
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitC = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxCV = new System.Windows.Forms.TextBox();
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSex = new System.Windows.Forms.Panel();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,21 +65,22 @@
             this.textBoxIme = new System.Windows.Forms.TextBox();
             this.textBoxPrezime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelSpol = new System.Windows.Forms.Label();
             this.labelAdresa = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelMail = new System.Windows.Forms.Label();
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelCV = new System.Windows.Forms.Label();
+            this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
+            this.radioButtonUnkown = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.splitC.Panel2.SuspendLayout();
+            this.splitC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -189,22 +194,35 @@
             // oProgramuToolStripMenuItem
             // 
             this.oProgramuToolStripMenuItem.Name = "oProgramuToolStripMenuItem";
-            this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.oProgramuToolStripMenuItem.Text = "O programu";
-            this.oProgramuToolStripMenuItem.Click += new System.EventHandler(this.oProgramuToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
             this.toolStripSeparator,
             this.toolStripAddPerson,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripSeparator3,
             this.toolStripDeletePerson});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1047, 39);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_2);
             // 
             // toolStripSeparator
             // 
@@ -220,6 +238,27 @@
             this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
             this.toolStripAddPerson.Text = "toolStripButton1";
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(66, 36);
+            this.toolStripButton2.Text = "Brak";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButton3.Text = "Roditelj";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
             // toolStripDeletePerson
             // 
             this.toolStripDeletePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -228,31 +267,31 @@
             this.toolStripDeletePerson.Name = "toolStripDeletePerson";
             this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
             this.toolStripDeletePerson.Text = "toolStripButton1";
-            this.toolStripDeletePerson.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
-            // splitContainer1
+            // splitC
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 63);
-            this.splitContainer1.Name = "splitContainer1";
+            this.splitC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitC.Location = new System.Drawing.Point(0, 63);
+            this.splitC.Name = "splitC";
             // 
-            // splitContainer1.Panel1
+            // splitC.Panel1
             // 
-            this.splitContainer1.Panel1.AllowDrop = true;
-            this.splitContainer1.Panel1.AutoScroll = true;
-            this.splitContainer1.Panel1.AutoScrollMinSize = new System.Drawing.Size(5000, 5000);
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitC.Panel1.AllowDrop = true;
+            this.splitC.Panel1.AutoScroll = true;
+            this.splitC.Panel1.AutoScrollMinSize = new System.Drawing.Size(5000, 5000);
+            this.splitC.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitC.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
-            // splitContainer1.Panel2
+            // splitC.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Panel2MinSize = 0;
-            this.splitContainer1.Size = new System.Drawing.Size(1047, 671);
-            this.splitContainer1.SplitterDistance = 745;
-            this.splitContainer1.TabIndex = 2;
+            this.splitC.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitC.Panel2.Controls.Add(this.pictureBox1);
+            this.splitC.Panel2.Controls.Add(this.label2);
+            this.splitC.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.splitC.Panel2MinSize = 0;
+            this.splitC.Size = new System.Drawing.Size(1047, 671);
+            this.splitC.SplitterDistance = 745;
+            this.splitC.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -285,20 +324,20 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.textBoxCV, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBoxTelefon, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panelSex, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxIme, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPrezime, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelSpol, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.labelAdresa, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxEmail, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelMail, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.labelTelefon, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelCV, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxDate, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 76);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -312,7 +351,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 320);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // textBoxCV
             // 
@@ -333,20 +371,21 @@
             this.textBoxTelefon.Size = new System.Drawing.Size(186, 20);
             this.textBoxTelefon.TabIndex = 14;
             // 
-            // panel1
+            // panelSex
             // 
-            this.panel1.Controls.Add(this.radioButtonMale);
-            this.panel1.Controls.Add(this.radioButtonFemale);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(103, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 26);
-            this.panel1.TabIndex = 3;
+            this.panelSex.Controls.Add(this.radioButtonUnkown);
+            this.panelSex.Controls.Add(this.radioButtonMale);
+            this.panelSex.Controls.Add(this.radioButtonFemale);
+            this.panelSex.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSex.Location = new System.Drawing.Point(103, 99);
+            this.panelSex.Name = "panelSex";
+            this.panelSex.Size = new System.Drawing.Size(186, 26);
+            this.panelSex.TabIndex = 3;
             // 
             // radioButtonMale
             // 
             this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Location = new System.Drawing.Point(94, 7);
+            this.radioButtonMale.Location = new System.Drawing.Point(41, 7);
             this.radioButtonMale.Name = "radioButtonMale";
             this.radioButtonMale.Size = new System.Drawing.Size(34, 17);
             this.radioButtonMale.TabIndex = 1;
@@ -414,14 +453,6 @@
             this.label4.Text = "Datum rođenja";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(103, 70);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(186, 20);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
             // labelSpol
             // 
             this.labelSpol.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -442,21 +473,21 @@
             this.labelAdresa.TabIndex = 8;
             this.labelAdresa.Text = "Adresa";
             // 
-            // textBox1
+            // textBoxAddress
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(103, 134);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 9;
+            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAddress.Location = new System.Drawing.Point(103, 134);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(186, 20);
+            this.textBoxAddress.TabIndex = 9;
             // 
-            // textBox2
+            // textBoxEmail
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(103, 166);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 20);
-            this.textBox2.TabIndex = 10;
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmail.Location = new System.Drawing.Point(103, 166);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(186, 20);
+            this.textBoxEmail.TabIndex = 10;
             // 
             // labelMail
             // 
@@ -488,12 +519,32 @@
             this.labelCV.TabIndex = 13;
             this.labelCV.Text = "Životopis";
             // 
+            // maskedTextBoxDate
+            // 
+            this.maskedTextBoxDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBoxDate.Location = new System.Drawing.Point(103, 70);
+            this.maskedTextBoxDate.Mask = "00/00/0000";
+            this.maskedTextBoxDate.Name = "maskedTextBoxDate";
+            this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxDate.TabIndex = 16;
+            // 
+            // radioButtonUnkown
+            // 
+            this.radioButtonUnkown.AutoSize = true;
+            this.radioButtonUnkown.Location = new System.Drawing.Point(82, 6);
+            this.radioButtonUnkown.Name = "radioButtonUnkown";
+            this.radioButtonUnkown.Size = new System.Drawing.Size(77, 17);
+            this.radioButtonUnkown.TabIndex = 2;
+            this.radioButtonUnkown.TabStop = true;
+            this.radioButtonUnkown.Text = "Nepoznato";
+            this.radioButtonUnkown.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 734);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.splitC);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -504,14 +555,14 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            this.splitContainer1.ResumeLayout(false);
+            this.splitC.Panel2.ResumeLayout(false);
+            this.splitC.Panel2.PerformLayout();
+            this.splitC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelSex.ResumeLayout(false);
+            this.panelSex.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,7 +579,7 @@
         private System.Windows.Forms.ToolStripButton saveToXML;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripMenuItem izlazToolStripMenuItem;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitC;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
@@ -542,17 +593,16 @@
         private System.Windows.Forms.ToolStripMenuItem otvoriKonzoluToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postavkeToolStripMenuItem;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ToolStripMenuItem spremiKaoJpegToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelSex;
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.Label labelSpol;
         private System.Windows.Forms.Label labelAdresa;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.TextBox textBoxCV;
         private System.Windows.Forms.TextBox textBoxTelefon;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelMail;
         private System.Windows.Forms.Label labelTelefon;
         private System.Windows.Forms.Label labelCV;
@@ -561,6 +611,12 @@
         private System.Windows.Forms.ToolStripMenuItem otvoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem upravljanjeKorisnicimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxDate;
+        private System.Windows.Forms.RadioButton radioButtonUnkown;
     }
 }
 

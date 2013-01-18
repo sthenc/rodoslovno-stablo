@@ -18,6 +18,7 @@ namespace Rodoslovno_stablo
         private Tree tree;
         private QueryProcessor qerp;
         private Panel graf;
+        private System.Drawing.Bitmap myBitmap;
 
         public MainForm()
         {
@@ -26,7 +27,7 @@ namespace Rodoslovno_stablo
 
             InitializeComponent();
 
-            graf = splitContainer1.Panel1;
+            graf = splitC.Panel1;
 
             consoleForm = new ConsoleForm();
             qerp = consoleForm.MyQueryProcessor;
@@ -45,17 +46,7 @@ namespace Rodoslovno_stablo
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            splitContainer1.VerticalScroll.Enabled = !splitContainer1.VerticalScroll.Enabled;
-
-        }
-
-        private void printToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton1_Click_1(object sender, EventArgs e)
-        {
+            splitC.VerticalScroll.Enabled = !splitC.VerticalScroll.Enabled;
 
         }
 
@@ -66,14 +57,22 @@ namespace Rodoslovno_stablo
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Graphics graphicsObj;
+            myBitmap = new Bitmap(5000, 5000,
+            System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             RefreshTree();
-
-
+            
+            graphicsObj = Graphics.FromImage(myBitmap);
+            graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            Pen myPen = new Pen(System.Drawing.Color.Plum, 3);
+            Rectangle rectangleObj = new Rectangle(10, 10, 200, 200);
+            graphicsObj.DrawEllipse(myPen, rectangleObj);
+            graphicsObj.Dispose();
         }
 
         private void SaveToJpeg(string path)
         {
-            Panel myPanel = splitContainer1.Panel1;
+            Panel myPanel = splitC.Panel1;
 
             Bitmap image = new Bitmap(myPanel.Width, myPanel.Height);
 
@@ -83,7 +82,7 @@ namespace Rodoslovno_stablo
 
         private void SaveToJpeg(Stream file)
         {
-            Panel myPanel = splitContainer1.Panel1;
+            Panel myPanel = splitC.Panel1;
 
             Bitmap image = new Bitmap(myPanel.Width, myPanel.Height);
 
@@ -106,12 +105,12 @@ namespace Rodoslovno_stablo
 
             splitContainer1.Panel1.Controls.Add(c1);*/
 
-            splitContainer1.Panel1.Controls.Clear();
+            splitC.Panel1.Controls.Clear();
 
             foreach (Person p in tree.osobe)
             {
                 PersonControl c = new PersonControl(p, this);
-                splitContainer1.Panel1.Controls.Add(c);
+                splitC.Panel1.Controls.Add(c);
             }
         }
 
@@ -119,10 +118,22 @@ namespace Rodoslovno_stablo
         public void personSelected(Person p) {
             textBoxIme.Text = p.name;
             textBoxPrezime.Text = p.surname;
+            maskedTextBoxDate.Text=dateToString(p.birthDate);
+            textBoxAddress.Text = p.address;
+            textBoxCV.Text = p.CV;
+            if (p.sex == Person.Sex.Male)
+                radioButtonMale.Checked = true;
+            else if (p.sex == Person.Sex.Female)
+                radioButtonFemale.Checked = true;
+            else
+                radioButtonUnkown.Checked = true;
 
+           
+           }
+        public string dateToString(DateTime dateTime) {
+            return dateTime.ToString("ddMMyyyy");
 
         }
-
         private void spremiKaoJpegToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stream myStream = null;
@@ -186,11 +197,6 @@ namespace Rodoslovno_stablo
             SaveXMLClick();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form settingsForm = new SettingsForm();
@@ -212,6 +218,22 @@ namespace Rodoslovno_stablo
 
         }
 
+        private void toolStripButton1_Click_2(object sender, EventArgs e)
+        {
+            SaveXMLClick();
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics graphicsObj = e.Graphics;
+            
+            Rectangle rect = new Rectangle(splitC.Panel1.HorizontalScroll.Value, splitC.Panel1.VerticalScroll.Value, splitC.Panel1.Width, splitC.Panel1.Height);
+            Bitmap cropped = myBitmap.Clone(rect, myBitmap.PixelFormat);
+            graphicsObj.DrawImage(cropped,0,0);
+
+            graphicsObj.Dispose();
+        }
+       
    
 
     }

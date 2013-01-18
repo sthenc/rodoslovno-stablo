@@ -192,6 +192,7 @@
     <None Include="Resources\6_social_person1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\6_social_cc_bcc.png" />
     <None Include="Resources\6_social_group.png" />
     <None Include="Resources\10_device_access_screen_locked_to_landscape.png" />
     <Content Include="x64\SQLite.Interop.dll">
