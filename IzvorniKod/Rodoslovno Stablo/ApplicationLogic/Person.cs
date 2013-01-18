@@ -32,7 +32,7 @@ namespace ApplicationLogic
 		public string surname { get; set; }
 
         [XmlElement("birthDate")]
-		public DateTime birthDate { get; set; }
+		public DateTime? birthDate { get; set; }
 
         [XmlElement("deathDate")]
         public DateTime deathDate { get; set; }
