@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,13 +43,25 @@ namespace ApplicationLogicTests
         [Test]
         public void Dohvati_sve_rodjene_izmedjuTest()
         {
-            // 1. Korak - pripremi objekte
 
+            // 1. Korak - pripremi objekte
+            // Da bi mogli uhvatiti rezultate
+            // izvor http://msdn.microsoft.com/en-us/library/system.console.readline.aspx
 
             // 2. Korak - napravi nesto
+            
+            TextWriter expected = new StreamWriter(Console.OpenStandardOutput());
+            Console.SetOut(expected);
 
+            qp.PrintPersons(osobe);
+            
+            TextWriter actual = new StreamWriter(Console.OpenStandardOutput());
+            Console.SetOut(actual);
+            
+            qp.Dohvati_sve_rodjene_izmedju(new string[]{"1.1.1900.","1.1.2013."});
 
             // 3. Korak - provjeri pretpostavku
+            Assert.AreEqual(expected.ToString(), actual.ToString());
 
         }
         #endregion

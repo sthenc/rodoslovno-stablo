@@ -16,6 +16,7 @@ namespace ApplicationLogicTests
     {
         protected Tree drvo;
         protected QueryProcessor qp;
+        protected Guid[] osobe;
 
         // automatizirati korisnicki unos podataka
         private int line_counter = 0;
@@ -39,14 +40,13 @@ namespace ApplicationLogicTests
 
         void izgradiDrvo()
         {
-            Guid[] osobe = {
-                            drvo.AddPerson("Pero", "Koza", new DateTime(1921, 3, 29), new DateTime(1984, 11, 8)),
-                            drvo.AddPerson("Ivo", "Koza", new DateTime(1953, 8, 25)),
-                            drvo.AddPerson("Mara", "Koza", new DateTime(1955, 3, 2)),
-                            drvo.AddPerson("Darko", "Koza", new DateTime(1989, 10, 1)),
-                            drvo.AddPerson("Bara", "Vučemilović", new DateTime(1990, 5, 18)),      
-                            drvo.AddPerson("Milutin", "Koza", new DateTime(2012, 5, 15))
-                            };
+            osobe = new Guid[]{drvo.AddPerson("Pero", "Koza", new DateTime(1921, 3, 29), new DateTime(1984, 11, 8)),
+                    drvo.AddPerson("Ivo", "Koza", new DateTime(1953, 8, 25)),
+                    drvo.AddPerson("Mara", "Koza", new DateTime(1955, 3, 2)),
+                    drvo.AddPerson("Darko", "Koza", new DateTime(1989, 10, 1)),
+                    drvo.AddPerson("Bara", "Vučemilović", new DateTime(1990, 5, 18)),      
+                    drvo.AddPerson("Milutin", "Koza", new DateTime(2012, 5, 15))
+                    };
 
             drvo.AddParent(osobe[1], osobe[0]);
             drvo.AddParent(osobe[3], osobe[1]);
