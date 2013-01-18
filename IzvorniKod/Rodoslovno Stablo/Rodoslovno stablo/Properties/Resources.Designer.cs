@@ -73,6 +73,16 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4_collections_view_as_list {
+            get {
+                object obj = ResourceManager.GetObject("4_collections_view_as_list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5_content_discard {
             get {
                 object obj = ResourceManager.GetObject("5_content_discard", resourceCulture);

@@ -49,7 +49,19 @@ namespace ApplicationLogic
         [XmlElement("sex")]
         public Sex sex;
 
+        [XmlElement("telephone")]
+        public string telephone  { get; set; }
+
+        [XmlElement("positionX")]
+        public int positionX { get; set; }
+
+        [XmlElement("positionY")]
+        public int positionY{ get; set; }
+
+
         public readonly static DateTime nedefiniranDatum = new DateTime(1000, 1, 1);
+
+        public Person() { }
 
         public Person(Guid id, string ime, string prezime) : this(id, ime, prezime, nedefiniranDatum, nedefiniranDatum) { }
 
@@ -98,7 +110,8 @@ namespace ApplicationLogic
 
 		public bool Equals(Person p)
 		{
-			return ID == p.ID && name == p.name && surname == p.surname && photo == p.photo && sex == p.sex && birthDate == p.birthDate && address == p.address;
+			return ID == p.ID && name == p.name && surname == p.surname && photo == p.photo && sex == p.sex && birthDate == p.birthDate && address == p.address
+                && positionX==p.positionX && positionY==p.positionY;
 		}
 	}
 }

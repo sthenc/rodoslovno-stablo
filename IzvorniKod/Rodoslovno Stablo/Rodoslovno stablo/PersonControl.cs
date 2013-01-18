@@ -24,7 +24,10 @@ namespace Rodoslovno_stablo
         }
         public void updateControlContent() {
             labelName.Text = p.name + " " + p.surname;
-            pictureBoxUser.Image = p.photo;
+            if (p.photo!= null)
+                pictureBoxUser.Image = p.photo;
+            labelDateofBirth.Text = p.birthDate.ToShortDateString();
+
 
         }
 
@@ -46,7 +49,18 @@ namespace Rodoslovno_stablo
                 Point newlocation = this.Location;
                 newlocation.X += e.X - _Offset.X;
                 newlocation.Y += e.Y - _Offset.Y;
+                //da ne bjezi izvan podrucja za crtanje
+                if (newlocation.X > 4900) newlocation.X = 4900;
+                if (newlocation.Y > 4900) newlocation.Y = 4900;
+                if (newlocation.X < 0) newlocation.X = 0;
+                if (newlocation.Y < 0) newlocation.Y = 0;
+                // snap to grid
+                if (newlocation.Y % 100 < 15 || newlocation.Y%100 > 85) newlocation.Y = Convert.ToInt32(Math.Round(newlocation.Y/100.0)) * 100;
+                
                 this.Location = newlocation;
+                p.positionX = this.Location.X;
+                p.positionY = this.Location.Y;
+
             }
         }
 
@@ -58,12 +72,16 @@ namespace Rodoslovno_stablo
         private void PersonControl_Click(object sender, EventArgs e)
         {
 
-            f.personSelected(p);
+            f.personSelected(this);
 
             
         }
 
-  
+        public Person getPerson(){
+            return p;
+
+        }
+       
       
     }
 }

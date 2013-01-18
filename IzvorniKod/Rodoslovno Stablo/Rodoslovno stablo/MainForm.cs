@@ -19,6 +19,8 @@ namespace Rodoslovno_stablo
         private QueryProcessor qerp;
         private Panel graf;
         private System.Drawing.Bitmap myBitmap;
+        private PersonControl currentlySelected = null;
+
 
         public MainForm()
         {
@@ -32,10 +34,10 @@ namespace Rodoslovno_stablo
             consoleForm = new ConsoleForm();
             qerp = consoleForm.MyQueryProcessor;
             tree = qerp.Drvo;
-
             //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
-            qerp.AddPerson(new string[] {"Ime", "Prezime"});
+            qerp.AddPerson(new string[] { "Ime", "Prezime" });
             graf.Refresh();
+
         }
 
         private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,16 +59,19 @@ namespace Rodoslovno_stablo
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //centriraj se
+            splitC.Panel1.VerticalScroll.Value = (2500 - splitC.Panel1.Height / 2);
+            splitC.Panel1.HorizontalScroll.Value = (2500 - splitC.Panel1.Width / 2);
             Graphics graphicsObj;
             myBitmap = new Bitmap(5000, 5000,
             System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             RefreshTree();
-            
+
             graphicsObj = Graphics.FromImage(myBitmap);
             graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            Pen myPen = new Pen(System.Drawing.Color.Plum, 3);
-            Rectangle rectangleObj = new Rectangle(10, 10, 200, 200);
-            graphicsObj.DrawEllipse(myPen, rectangleObj);
+            Pen myPen = new Pen(System.Drawing.Color.Black, 4);
+
+            graphicsObj.DrawLine(myPen, new Point(2000, 2000), new Point(2500, 2500));
             graphicsObj.Dispose();
         }
 
@@ -105,20 +110,35 @@ namespace Rodoslovno_stablo
 
             splitContainer1.Panel1.Controls.Add(c1);*/
 
-            splitC.Panel1.Controls.Clear();
-
             foreach (Person p in tree.osobe)
             {
                 PersonControl c = new PersonControl(p, this);
+                c.Location = new Point(p.positionX, p.positionY);
+                
+
                 splitC.Panel1.Controls.Add(c);
             }
         }
 
 
-        public void personSelected(Person p) {
+        public void personSelected(PersonControl c)
+        {
+            if (currentlySelected != null)
+            {
+                deselectPerson();
+
+            }
+            currentlySelected = c;
+            toolStripDeletePerson.Enabled = true;
+
+            c.BackColor = Color.FromArgb(51, 181, 229);
+          
+
+            Person p = c.getPerson();
+
             textBoxIme.Text = p.name;
             textBoxPrezime.Text = p.surname;
-            maskedTextBoxDate.Text=dateToString(p.birthDate);
+            maskedTextBoxDate.Text = dateToString(p.birthDate);
             textBoxAddress.Text = p.address;
             textBoxCV.Text = p.CV;
             if (p.sex == Person.Sex.Male)
@@ -128,9 +148,11 @@ namespace Rodoslovno_stablo
             else
                 radioButtonUnkown.Checked = true;
 
-           
-           }
-        public string dateToString(DateTime dateTime) {
+
+
+        }
+        public string dateToString(DateTime dateTime)
+        {
             return dateTime.ToString("ddMMyyyy");
 
         }
@@ -142,7 +164,7 @@ namespace Rodoslovno_stablo
 
             dialog.AddExtension = true;
             dialog.DefaultExt = "jpeg";
-            dialog.Filter = "jpeg files (*.jpeg)|*.jpeg";
+            dialog.Filter = "JPEG slika (*.jpg)|*.jpg";
             dialog.FilterIndex = 0;
             //dialog.FileOk += dialog_FileOk;
 
@@ -158,10 +180,7 @@ namespace Rodoslovno_stablo
             }
         }
 
-        private void SaveToXML(Stream file)
-        {
-            tree.Save(file);
-        }
+
 
         private void SaveXMLClick()
         {
@@ -186,7 +205,52 @@ namespace Rodoslovno_stablo
 
             }
         }
+        private void SaveToXML(Stream file)
+        {
+            tree.Save(file);
+        }
+        private void OpenXMLClick()
+        {
+            string filename = null;
 
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            dialog.AddExtension = true;
+            dialog.DefaultExt = "xml";
+            dialog.Filter = "Rodoslovno stablo XML datoteke (*.xml)|*.xml";
+            dialog.FilterIndex = 0;
+
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                filename = dialog.FileName;
+
+                if (filename != null)
+                {
+                    OpenFromXML(filename);
+
+                }
+
+            }
+
+        }
+        private void OpenFromXML(string file)
+        {
+            resetEverything();
+            tree = Tree.Load(file);
+            RefreshTree();
+            
+        }
+        private void resetEverything() {
+
+            graf.Controls.Clear();
+            myBitmap.Dispose();
+            myBitmap = new Bitmap(5000, 5000,
+            System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            graf.Refresh();
+            
+
+
+        }
         private void saveToXML_Click(object sender, EventArgs e)
         {
             SaveXMLClick();
@@ -226,15 +290,78 @@ namespace Rodoslovno_stablo
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphicsObj = e.Graphics;
-            
-            Rectangle rect = new Rectangle(splitC.Panel1.HorizontalScroll.Value, splitC.Panel1.VerticalScroll.Value, splitC.Panel1.Width, splitC.Panel1.Height);
-            Bitmap cropped = myBitmap.Clone(rect, myBitmap.PixelFormat);
-            graphicsObj.DrawImage(cropped,0,0);
+            // TODO paziti kad stizemo na rub ekrana
+            int upperLeftX = splitC.Panel1.HorizontalScroll.Value;
+            int upperLeftY = splitC.Panel1.VerticalScroll.Value;
 
+            // if ( upperLeftX > 5000-
+            Rectangle rect = new Rectangle(upperLeftX, upperLeftY, splitC.Panel1.Width - 0, splitC.Panel1.Height - 0);
+            Bitmap cropped = myBitmap.Clone(rect, myBitmap.PixelFormat);
+
+            graphicsObj.DrawImage(cropped, 0, 0);
+            cropped.Dispose();
             graphicsObj.Dispose();
         }
-       
-   
+
+        private void otvoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenXMLClick();
+        }
+
+        private void splitC_Panel1_Click(object sender, EventArgs e)
+        {
+            deselectPerson();
+        }
+        private void deselectPerson()
+        {
+            if (currentlySelected != null)
+            {
+                currentlySelected.BackColor = PersonControl.DefaultBackColor;
+                currentlySelected = null;
+                textBoxAddress.Text = "";
+                textBoxCV.Text = "";
+                textBoxEmail.Text = "";
+                textBoxIme.Text = "";
+                textBoxPrezime.Text = "";
+                textBoxTelefon.Text = "";
+                maskedTextBoxDate.Text = "";
+                toolStripDeletePerson.Enabled = false;
+
+            }
+        }
+
+        private void toolStripAddPerson_Click(object sender, EventArgs e)
+        {
+            Guid novaOsobaGuid = tree.AddPerson("Nova", "Osoba");
+            Person p = tree.GetPersonByID(novaOsobaGuid);
+            PersonControl c = new PersonControl(p, this);
+            graf.Controls.Add(c);
+
+
+        }
+
+        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (currentlySelected != null) {
+                Person p = currentlySelected.getPerson();
+                p.name = textBoxIme.Text;
+                p.surname = textBoxPrezime.Text;
+                p.address = textBoxAddress.Text;
+                p.CV = textBoxCV.Text;
+                p.telephone = textBoxTelefon.Text;
+                currentlySelected.updateControlContent();
+
+                // todo p.birthDate
+            
+            }
+        }
+
+        private void collapseEditingPanel(object sender, EventArgs e)
+        {
+            splitC.Panel2Collapsed = !splitC.Panel2Collapsed;
+
+        }
+
 
     }
 }

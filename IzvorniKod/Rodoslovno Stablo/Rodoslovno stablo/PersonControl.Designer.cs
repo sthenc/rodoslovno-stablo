@@ -30,6 +30,7 @@
         {
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.labelDateofBirth = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,12 +55,22 @@
             this.pictureBoxUser.TabIndex = 0;
             this.pictureBoxUser.TabStop = false;
             // 
+            // labelDateofBirth
+            // 
+            this.labelDateofBirth.AutoSize = true;
+            this.labelDateofBirth.Location = new System.Drawing.Point(55, 17);
+            this.labelDateofBirth.Name = "labelDateofBirth";
+            this.labelDateofBirth.Size = new System.Drawing.Size(64, 13);
+            this.labelDateofBirth.TabIndex = 2;
+            this.labelDateofBirth.Text = "04.12.1932.";
+            // 
             // PersonControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.labelDateofBirth);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxUser);
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -79,5 +90,6 @@
 
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelDateofBirth;
     }
 }

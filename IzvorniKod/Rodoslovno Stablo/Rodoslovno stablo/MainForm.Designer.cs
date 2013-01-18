@@ -48,16 +48,20 @@
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripSplitButton();
+            this.bakaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.djedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
             this.splitC = new System.Windows.Forms.SplitContainer();
+            this.buttonSaveChanges = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxCV = new System.Windows.Forms.TextBox();
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
             this.panelSex = new System.Windows.Forms.Panel();
+            this.radioButtonUnkown = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,7 +77,8 @@
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelCV = new System.Windows.Forms.Label();
             this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
-            this.radioButtonUnkown = new System.Windows.Forms.RadioButton();
+            this.pogledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sakrijPanelZaUređivanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitC.Panel2.SuspendLayout();
@@ -87,6 +92,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datotekaToolStripMenuItem,
+            this.pogledToolStripMenuItem,
             this.alatiToolStripMenuItem,
             this.pomoćToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -112,43 +118,44 @@
             // novoStabloToolStripMenuItem
             // 
             this.novoStabloToolStripMenuItem.Name = "novoStabloToolStripMenuItem";
-            this.novoStabloToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.novoStabloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.novoStabloToolStripMenuItem.Text = "Novo stablo";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // otvoriToolStripMenuItem
             // 
             this.otvoriToolStripMenuItem.Name = "otvoriToolStripMenuItem";
-            this.otvoriToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.otvoriToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.otvoriToolStripMenuItem.Text = "Otvori stablo";
+            this.otvoriToolStripMenuItem.Click += new System.EventHandler(this.otvoriToolStripMenuItem_Click);
             // 
             // spremiToolStripMenuItem
             // 
             this.spremiToolStripMenuItem.Name = "spremiToolStripMenuItem";
-            this.spremiToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.spremiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.spremiToolStripMenuItem.Text = "Spremi";
             this.spremiToolStripMenuItem.Click += new System.EventHandler(this.spremiToolStripMenuItem_Click);
             // 
             // spremiKaoJpegToolStripMenuItem
             // 
             this.spremiKaoJpegToolStripMenuItem.Name = "spremiKaoJpegToolStripMenuItem";
-            this.spremiKaoJpegToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.spremiKaoJpegToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.spremiKaoJpegToolStripMenuItem.Text = "Izvoz u JPEG";
             this.spremiKaoJpegToolStripMenuItem.Click += new System.EventHandler(this.spremiKaoJpegToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 
@@ -196,9 +203,11 @@
             this.oProgramuToolStripMenuItem.Name = "oProgramuToolStripMenuItem";
             this.oProgramuToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.oProgramuToolStripMenuItem.Text = "O programu";
+            this.oProgramuToolStripMenuItem.Click += new System.EventHandler(this.oProgramuToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
@@ -237,6 +246,7 @@
             this.toolStripAddPerson.Name = "toolStripAddPerson";
             this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
             this.toolStripAddPerson.Text = "toolStripButton1";
+            this.toolStripAddPerson.Click += new System.EventHandler(this.toolStripAddPerson_Click);
             // 
             // toolStripButton2
             // 
@@ -248,11 +258,26 @@
             // 
             // toolStripButton3
             // 
+            this.toolStripButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bakaToolStripMenuItem,
+            this.djedToolStripMenuItem});
             this.toolStripButton3.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButton3.Size = new System.Drawing.Size(95, 36);
             this.toolStripButton3.Text = "Roditelj";
+            // 
+            // bakaToolStripMenuItem
+            // 
+            this.bakaToolStripMenuItem.Name = "bakaToolStripMenuItem";
+            this.bakaToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.bakaToolStripMenuItem.Text = "Otac";
+            // 
+            // djedToolStripMenuItem
+            // 
+            this.djedToolStripMenuItem.Name = "djedToolStripMenuItem";
+            this.djedToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.djedToolStripMenuItem.Text = "Djed";
             // 
             // toolStripSeparator3
             // 
@@ -262,6 +287,7 @@
             // toolStripDeletePerson
             // 
             this.toolStripDeletePerson.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDeletePerson.Enabled = false;
             this.toolStripDeletePerson.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_discard;
             this.toolStripDeletePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDeletePerson.Name = "toolStripDeletePerson";
@@ -271,6 +297,7 @@
             // splitC
             // 
             this.splitC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitC.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitC.Location = new System.Drawing.Point(0, 63);
             this.splitC.Name = "splitC";
             // 
@@ -280,11 +307,13 @@
             this.splitC.Panel1.AutoScroll = true;
             this.splitC.Panel1.AutoScrollMinSize = new System.Drawing.Size(5000, 5000);
             this.splitC.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitC.Panel1.Click += new System.EventHandler(this.splitC_Panel1_Click);
             this.splitC.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitC.Panel2
             // 
             this.splitC.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitC.Panel2.Controls.Add(this.buttonSaveChanges);
             this.splitC.Panel2.Controls.Add(this.pictureBox1);
             this.splitC.Panel2.Controls.Add(this.label2);
             this.splitC.Panel2.Controls.Add(this.tableLayoutPanel1);
@@ -292,6 +321,16 @@
             this.splitC.Size = new System.Drawing.Size(1047, 671);
             this.splitC.SplitterDistance = 745;
             this.splitC.TabIndex = 2;
+            // 
+            // buttonSaveChanges
+            // 
+            this.buttonSaveChanges.Location = new System.Drawing.Point(211, 403);
+            this.buttonSaveChanges.Name = "buttonSaveChanges";
+            this.buttonSaveChanges.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveChanges.TabIndex = 3;
+            this.buttonSaveChanges.Text = "Spremi";
+            this.buttonSaveChanges.UseVisualStyleBackColor = true;
+            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
             // 
             // pictureBox1
             // 
@@ -381,6 +420,17 @@
             this.panelSex.Name = "panelSex";
             this.panelSex.Size = new System.Drawing.Size(186, 26);
             this.panelSex.TabIndex = 3;
+            // 
+            // radioButtonUnkown
+            // 
+            this.radioButtonUnkown.AutoSize = true;
+            this.radioButtonUnkown.Location = new System.Drawing.Point(82, 6);
+            this.radioButtonUnkown.Name = "radioButtonUnkown";
+            this.radioButtonUnkown.Size = new System.Drawing.Size(77, 17);
+            this.radioButtonUnkown.TabIndex = 2;
+            this.radioButtonUnkown.TabStop = true;
+            this.radioButtonUnkown.Text = "Nepoznato";
+            this.radioButtonUnkown.UseVisualStyleBackColor = true;
             // 
             // radioButtonMale
             // 
@@ -528,16 +578,20 @@
             this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
             this.maskedTextBoxDate.TabIndex = 16;
             // 
-            // radioButtonUnkown
+            // pogledToolStripMenuItem
             // 
-            this.radioButtonUnkown.AutoSize = true;
-            this.radioButtonUnkown.Location = new System.Drawing.Point(82, 6);
-            this.radioButtonUnkown.Name = "radioButtonUnkown";
-            this.radioButtonUnkown.Size = new System.Drawing.Size(77, 17);
-            this.radioButtonUnkown.TabIndex = 2;
-            this.radioButtonUnkown.TabStop = true;
-            this.radioButtonUnkown.Text = "Nepoznato";
-            this.radioButtonUnkown.UseVisualStyleBackColor = true;
+            this.pogledToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sakrijPanelZaUređivanjeToolStripMenuItem});
+            this.pogledToolStripMenuItem.Name = "pogledToolStripMenuItem";
+            this.pogledToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.pogledToolStripMenuItem.Text = "Pogled";
+            // 
+            // sakrijPanelZaUređivanjeToolStripMenuItem
+            // 
+            this.sakrijPanelZaUređivanjeToolStripMenuItem.Name = "sakrijPanelZaUređivanjeToolStripMenuItem";
+            this.sakrijPanelZaUređivanjeToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.sakrijPanelZaUređivanjeToolStripMenuItem.Text = "Pokaži/sakrij panel";
+            this.sakrijPanelZaUređivanjeToolStripMenuItem.Click += new System.EventHandler(this.collapseEditingPanel);
             // 
             // MainForm
             // 
@@ -613,10 +667,15 @@
         private System.Windows.Forms.ToolStripMenuItem upravljanjeKorisnicimaToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDate;
         private System.Windows.Forms.RadioButton radioButtonUnkown;
+        private System.Windows.Forms.ToolStripSplitButton toolStripButton3;
+        private System.Windows.Forms.ToolStripMenuItem bakaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem djedToolStripMenuItem;
+        private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.ToolStripMenuItem pogledToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sakrijPanelZaUređivanjeToolStripMenuItem;
     }
 }
 

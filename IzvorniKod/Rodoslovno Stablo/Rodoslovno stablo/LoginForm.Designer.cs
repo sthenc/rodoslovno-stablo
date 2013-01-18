@@ -117,6 +117,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "LoginForm";
             this.Text = "Prijava u sustav";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
