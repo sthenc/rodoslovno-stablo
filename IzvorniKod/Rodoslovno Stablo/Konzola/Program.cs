@@ -35,44 +35,44 @@ namespace Konzola
 		static bool Login()
 		{
 			// za testiranje
-			return um.Login("admin", "abc123");
+			//return um.Login("admin", "abc123");
 
-			//string username, password;
+            string username, password;
 
-			//System.Console.Out.Write("Unesite svoje korisničko ime: ");
+            System.Console.Out.Write("Unesite svoje korisničko ime: ");
 
-			//username = System.Console.In.ReadLine();
+            username = System.Console.In.ReadLine();
 
 
-			//// ucitaj password, izvor http://stackoverflow.com/questions/3404421/password-masking-console-application
-			//password = "";
-			//Console.Write("Unesite svoju lozinku: ");
-			//ConsoleKeyInfo key;
+            // ucitaj password, izvor http://stackoverflow.com/questions/3404421/password-masking-console-application
+            password = "";
+            Console.Write("Unesite svoju lozinku: ");
+            ConsoleKeyInfo key;
 
-			//do
-			//{
-			//	key = Console.ReadKey(true);
+            do
+            {
+                key = Console.ReadKey(true);
 
-			//	if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
-			//	{
-			//		password += key.KeyChar;
-			//		Console.Write("*");
-			//	}
-			//	else
-			//	{
-			//		if (key.Key == ConsoleKey.Backspace && password.Length > 0)
-			//		{
-			//			password = password.Substring(0, (password.Length - 1));
-			//			Console.Write("\b \b");
-			//		}
-			//	}
-			//}
-			//// Prekini unos kada korisnik lupi Enter
-			//while (key.Key != ConsoleKey.Enter);
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    password += key.KeyChar;
+                    Console.Write("*");
+                }
+                else
+                {
+                    if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                    {
+                        password = password.Substring(0, (password.Length - 1));
+                        Console.Write("\b \b");
+                    }
+                }
+            }
+            // Prekini unos kada korisnik lupi Enter
+            while (key.Key != ConsoleKey.Enter);
 
-			//Console.WriteLine();
+            Console.WriteLine();
 
-			//return auth.Authorize(username, password);
+            return um.Login(username, password);
 		}
 
 		static Person QueryDisambiguator(IEnumerable<Person> kandidati, string pitanje = "")
@@ -109,12 +109,12 @@ namespace Konzola
 		{
 			Init();
 
-			//PrintStartGreeting();
+            PrintStartGreeting();
 
-			//if (Login())
-			//	MenuLoop();
+            if (Login())
+                MenuLoop();
 
-			//PrintEndGreeting();
+            PrintEndGreeting();
 		}
 	}
 }
