@@ -73,6 +73,10 @@ namespace ApplicationLogic
 			komande.Add(new CommandDescriptor("dodaj_djeda", AddGrandfather, "dodaj_djeda ime_unuk, prezime_unuk, ime, prezime"));
 			komande.Add(new CommandDescriptor("dodaj_praroditelja", AddGrandparent, "dodaj_praroditelja ime_unuk, prezime_unuk, ime, prezime"));
             komande.Add(new CommandDescriptor("dohvati_sve_rodjene_izmedju", Dohvati_sve_rodjene_izmedju, "dohvati_sve_rodjene_izmedju datum1, datum2"));
+            komande.Add(new CommandDescriptor("dohvati_sve_umrle_izmedju", Dohvati_sve_umrle_izmedju, "dohvati_sve_umrle_izmedju datum1, datum2"));
+            komande.Add(new CommandDescriptor("dohvati_sve_koji_pozivjese_vise_od", Dohvati_sve_koji_pozivjese_vise_od, "dohvati_sve_koji_pozivjese_vise_od brojGodina"));
+            komande.Add(new CommandDescriptor("dohvati_sve_koji_pozivjese_manje_od", Dohvati_sve_koji_pozivjese_manje_od, "dohvati_sve_koji_pozivjese_manje_od brojGodina"));
+            komande.Add(new CommandDescriptor("razlika_u_starosti", Razlika_u_starosti, "razlika_u_starosti ime1, prezime1, ime2, prezime2"));
 			komande.Add(new CommandDescriptor("nadji_bake", GetGrandmother, "nadji_bake ime_unuk, prezime_unuk"));
 			komande.Add(new CommandDescriptor("nadji_djedove", GetGrandfather, "nadji_djedove ime_unuk, prezime_unuk"));
 			komande.Add(new CommandDescriptor("nadji_praroditelje", GetGrandparent, "nadji_praroditelje ime_unuk, prezime_unuk"));

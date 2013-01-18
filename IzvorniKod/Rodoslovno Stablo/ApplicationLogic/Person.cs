@@ -49,18 +49,24 @@ namespace ApplicationLogic
         [XmlElement("sex")]
         public Sex sex;
 
-		public Person() { }
+        public readonly static DateTime nedefiniranDatum = new DateTime(1000, 1, 1);
 
-		public Person(Guid id, string ime, string prezime)
+        public Person(Guid id, string ime, string prezime) : this(id, ime, prezime, nedefiniranDatum, nedefiniranDatum) { }
+
+        public Person(Guid id, string ime, string prezime, DateTime datumRodenja) : this(id, ime, prezime, datumRodenja, nedefiniranDatum) { }
+
+		public Person(Guid id, string ime, string prezime, DateTime datumRodenja, DateTime datumSmrti)
 		{
 			ID = id;
 			name = ime;
 			surname = prezime;
 			photo = null;
-			birthDate = new DateTime(1000, 1, 1);
+            birthDate = datumRodenja;
+            deathDate = datumSmrti;
 			address = "";
 			CV = "";
 		}
+
 
         public enum Sex { [XmlEnum("Male")] Male, [XmlEnum("Female")] Female, [XmlEnum("Unknown")] Unknown }; // mogli bismo i nastaviti
 
