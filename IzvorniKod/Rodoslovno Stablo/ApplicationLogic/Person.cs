@@ -32,7 +32,7 @@ namespace ApplicationLogic
 		public string surname { get; set; }
 
         [XmlElement("birthDate")]
-		public DateTime? birthDate { get; set; }
+		public DateTime birthDate { get; set; }
 
         [XmlElement("photo")]
 		public Image photo { get; set; } // TODO
@@ -54,7 +54,7 @@ namespace ApplicationLogic
 			name = ime;
 			surname = prezime;
 			photo = null;
-			birthDate = null;
+			birthDate = new DateTime(1000, 1, 1);
 			address = "";
 			CV = "";
 		}
