@@ -183,5 +183,10 @@ namespace Rodoslovno_stablo
             SaveXMLClick();
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }
