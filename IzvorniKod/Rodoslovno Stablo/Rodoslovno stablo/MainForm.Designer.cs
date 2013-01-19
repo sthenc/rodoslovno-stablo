@@ -51,10 +51,7 @@
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripSplitButton();
-            this.bakaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.djedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonCreateMarriage = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
             this.splitC = new System.Windows.Forms.SplitContainer();
@@ -81,6 +78,7 @@
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelCV = new System.Windows.Forms.Label();
             this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
+            this.toolStripButtonCreateParent = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitC.Panel2.SuspendLayout();
@@ -244,8 +242,8 @@
             this.toolStripButtonSave,
             this.toolStripSeparator,
             this.toolStripAddPerson,
-            this.toolStripButton2,
-            this.toolStripButton3,
+            this.toolStripButtonCreateParent,
+            this.toolStripButtonCreateMarriage,
             this.toolStripSeparator3,
             this.toolStripDeletePerson});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
@@ -279,36 +277,13 @@
             this.toolStripAddPerson.Text = "Kreiraj novu osobu";
             this.toolStripAddPerson.Click += new System.EventHandler(this.toolStripAddPerson_Click);
             // 
-            // toolStripButton2
+            // toolStripButtonCreateMarriage
             // 
-            this.toolStripButton2.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(66, 36);
-            this.toolStripButton2.Text = "Brak";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bakaToolStripMenuItem,
-            this.djedToolStripMenuItem});
-            this.toolStripButton3.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(95, 36);
-            this.toolStripButton3.Text = "Roditelj";
-            // 
-            // bakaToolStripMenuItem
-            // 
-            this.bakaToolStripMenuItem.Name = "bakaToolStripMenuItem";
-            this.bakaToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.bakaToolStripMenuItem.Text = "Otac";
-            // 
-            // djedToolStripMenuItem
-            // 
-            this.djedToolStripMenuItem.Name = "djedToolStripMenuItem";
-            this.djedToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.djedToolStripMenuItem.Text = "Djed";
+            this.toolStripButtonCreateMarriage.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
+            this.toolStripButtonCreateMarriage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCreateMarriage.Name = "toolStripButtonCreateMarriage";
+            this.toolStripButtonCreateMarriage.Size = new System.Drawing.Size(66, 36);
+            this.toolStripButtonCreateMarriage.Text = "Brak";
             // 
             // toolStripSeparator3
             // 
@@ -610,6 +585,15 @@
             this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
             this.maskedTextBoxDate.TabIndex = 16;
             // 
+            // toolStripButtonCreateParent
+            // 
+            this.toolStripButtonCreateParent.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
+            this.toolStripButtonCreateParent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCreateParent.Name = "toolStripButtonCreateParent";
+            this.toolStripButtonCreateParent.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButtonCreateParent.Text = "Roditelj";
+            this.toolStripButtonCreateParent.Click += new System.EventHandler(this.toolStripButtonCreateParent_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,18 +667,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem upravljanjeKorisnicimaToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCreateMarriage;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDate;
         private System.Windows.Forms.RadioButton radioButtonUnkown;
-        private System.Windows.Forms.ToolStripSplitButton toolStripButton3;
-        private System.Windows.Forms.ToolStripMenuItem bakaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem djedToolStripMenuItem;
         private System.Windows.Forms.Button buttonSaveChanges;
         private System.Windows.Forms.ToolStripMenuItem pogledToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sakrijPanelZaUređivanjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preglednikUpitaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCreateParent;
     }
 }
 

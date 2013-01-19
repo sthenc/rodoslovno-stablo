@@ -20,8 +20,10 @@ namespace Rodoslovno_stablo
         private Panel graf;
         
         private PersonControl currentlySelected = null;
-       
-        List<PersonControl> kontrole = new List<PersonControl>();
+        private int connectionCreationInProgress = 0; // 5 - roditelj, 10 brak
+        
+        Dictionary<Person, PersonControl> controls = new Dictionary<Person, PersonControl>();
+
 
         public MainForm()
         {  
@@ -33,6 +35,7 @@ namespace Rodoslovno_stablo
             qerp = consoleForm.MyQueryProcessor;
             tree = qerp.Drvo;
             //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
+            
   
         }
 
@@ -47,18 +50,16 @@ namespace Rodoslovno_stablo
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
             redrawConnections();
-            
-
         }
         private void RefreshTree()
         {
-            kontrole.Clear();
+            controls.Clear();
            foreach (Person p in tree.osobe)
             {
                 PersonControl c = new PersonControl(p, this);
                 c.Location = R2A(new Point(p.positionX, p.positionY));
                 splitC.Panel1.Controls.Add(c);
-                kontrole.Add(c);
+                controls.Add(p,c);
 
             }
             redrawConnections();
@@ -66,30 +67,35 @@ namespace Rodoslovno_stablo
 
         public void redrawConnections()
         {
-            if (kontrole.Count==2)
+            foreach (Connection item in tree.veze)
             {
-                
-                Graphics graphicsObj=graf.CreateGraphics();
-               
-                graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                Pen myPen = new Pen(System.Drawing.Color.Black, 4);
-                SolidBrush blackBrush = new SolidBrush(Color.Black);
-                Point p1=R2A(kontrole.ElementAt(0).getRealBottomPoint());
-                Point p2 =R2A(kontrole.ElementAt(1).getRealTopPoint());
-                graphicsObj.DrawLine(myPen, p1, p2);
-                int radius = 6;
-                p1.X -= radius; p1.Y -= radius;
-                p2.X -= radius; p2.Y -= radius;
-                Rectangle rect = new Rectangle(p1, new Size(2 * radius, 2 * radius));
-                graphicsObj.FillEllipse(blackBrush, rect);
-                rect = new Rectangle(p2, new Size(2 * radius, 2 * radius));
-                graphicsObj.FillEllipse(blackBrush, rect);
-                
+                Person person1 = tree.GetPersonByID(item.personID1);
+                Person person2 = tree.GetPersonByID(item.personID2);
+                PersonControl c1, c2;
+                if (controls.TryGetValue(person1, out c1) && controls.TryGetValue(person2, out c2))
+                {
+                    Graphics graphicsObj = graf.CreateGraphics();
+                    graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    Pen myPen = new Pen(System.Drawing.Color.Black, 4);
+                    SolidBrush blackBrush = new SolidBrush(Color.Black);
 
-                graphicsObj.Dispose();
-                
+                    Point p1 = R2A(c1.getRealBottomPoint());
+                    Point p2 = R2A(c2.getRealTopPoint());
+
+                    graphicsObj.DrawLine(myPen, p1, p2);
+                    int radius = 6;
+                    p1.X -= radius; p1.Y -= radius;
+                    p2.X -= radius; p2.Y -= radius;
+                    Rectangle rect = new Rectangle(p1, new Size(2 * radius, 2 * radius));
+                    graphicsObj.FillEllipse(blackBrush, rect);
+                    rect = new Rectangle(p2, new Size(2 * radius, 2 * radius));
+                    graphicsObj.FillEllipse(blackBrush, rect);
+
+                    graphicsObj.Dispose();
+
+                }
+
             }
-
         }
         private void resetEverything()
         {
@@ -129,6 +135,16 @@ namespace Rodoslovno_stablo
     
         public void personSelected(PersonControl c)
         {
+            if (connectionCreationInProgress == 5 && currentlySelected!= null) { 
+                // kreiramo novu vezu roditelj
+                Person person1 = currentlySelected.getPerson();
+                Person person2 = c.getPerson();
+                tree.AddConnection(person1.ID, person2.ID, "roditelj");
+                connectionCreationInProgress = 0;
+                redrawConnections();
+
+            }
+
             if (currentlySelected != null)
             {
                 deselectPerson();
@@ -360,7 +376,7 @@ namespace Rodoslovno_stablo
             Person p = tree.GetPersonByID(novaOsobaGuid);
             PersonControl c = new PersonControl(p, this);
             graf.Controls.Add(c);
-            kontrole.Add(c);
+            controls.Add(p,c);
 
 
         }
@@ -390,6 +406,13 @@ namespace Rodoslovno_stablo
         public void moveRefresh(){
             graf.Refresh();
         }
+
+        private void toolStripButtonCreateParent_Click(object sender, EventArgs e)
+        {
+            connectionCreationInProgress = 5; // roditelj
+        }
+
+
 
     }
 }

@@ -51,16 +51,18 @@ namespace Rodoslovno_stablo
                 Point newlocation = this.Location;
                 newlocation.X += e.X - _Offset.X;
                 newlocation.Y += e.Y - _Offset.Y;
-                //da ne bjezi izvan podrucja za crtanje
-                if (newlocation.X > 4900) newlocation.X = 4900;
-                if (newlocation.Y > 4900) newlocation.Y = 4900;
-                if (newlocation.X < 0) newlocation.X = 0;
-                if (newlocation.Y < 0) newlocation.Y = 0;
-                // snap to grid
-                if (newlocation.Y % 100 < 15 || newlocation.Y%100 > 85) newlocation.Y = Convert.ToInt32(Math.Round(newlocation.Y/100.0)) * 100;
                 
-                this.Location = newlocation;
-                Point realLocation = f.A2R(this.Location);
+                Point realLocation = f.A2R(newlocation);
+                //da ne bjezi izvan podrucja za crtanje
+                if (realLocation.X > 4900) realLocation.X = 4900;
+                if (realLocation.Y > 4900) realLocation.Y = 4900;
+                if (realLocation.X < 0) realLocation.X = 0;
+                if (realLocation.Y < 0) realLocation.Y = 0;
+                // snap to grid
+                if (realLocation.Y % 100 < 15 || realLocation.Y % 100 > 85) realLocation.Y = Convert.ToInt32(Math.Round(realLocation.Y / 100.0)) * 100;
+
+                this.Location =f.R2A( realLocation);
+                realLocation = f.A2R(this.Location);
                 p.positionX = realLocation.X;
                 p.positionY = realLocation.Y;
 
