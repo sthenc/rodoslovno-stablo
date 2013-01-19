@@ -16,13 +16,21 @@ namespace ApplicationLogic
         [XmlElement("Connection")]
 		public List<Connection> veze;
 
-		public Tree()
-		{ 
-			osobe = new List<Person>();
-			veze = new List<Connection>();
+        private static Tree DrvoSingleton = null;
 
-            // TODO dodat neke defaultne vrijednosti da se moze lakse testirat stvari
-		}
+		private Tree() {}
+
+        public static Tree GetInstance()
+        {
+            if (DrvoSingleton != null) return DrvoSingleton;
+
+            DrvoSingleton = new Tree();
+
+            DrvoSingleton.osobe = new List<Person>();
+            DrvoSingleton.veze = new List<Connection>();
+
+            return DrvoSingleton;
+        }
 
 //		Opći format funkcije je:
 //		rezultat	Upit(Osoba1, Osoba2, parametri) {}
@@ -271,7 +279,13 @@ namespace ApplicationLogic
 			XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
 			TextReader input = new StringReader(data);
 
-			return (Tree)xmlReader.Deserialize(input);
+            Tree deserializirano = (Tree)xmlReader.Deserialize(input);
+            Tree staro = Tree.GetInstance();
+
+            staro.osobe = deserializirano.osobe;
+            staro.veze = deserializirano.veze;
+
+            return staro;
 		}
 
         #endregion

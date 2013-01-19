@@ -10,7 +10,7 @@ namespace ApplicationLogic
 	{
 		//private Tree Drvo;
 		// za potrebe testiranja
-		public Tree Drvo;
+		private Tree Drvo;
 
 		// Podesiva funkcija za odlucivanje o kojoj osobi se radi kada je upit dvosmislen
 		private Func<IEnumerable<Person>, string, Person> QueryDisambiguator;
@@ -22,7 +22,7 @@ namespace ApplicationLogic
 		public QueryProcessor(Func<IEnumerable<Person>, string, Person> QD, 
 								Func<string> daj_liniju, TextWriter tw = null)
 		{
-			Drvo = new Tree();
+            Drvo = Tree.GetInstance();
 
 			// dodajmo malo couplinga
 			QueryDisambiguator = QD;
