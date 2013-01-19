@@ -16,7 +16,6 @@ namespace Rodoslovno_stablo
     {
         private ConsoleForm consoleForm;
         private Tree tree;
-        private QueryProcessor qerp;
         private Panel graf;
         
         private PersonControl currentlySelected = null;
@@ -31,9 +30,7 @@ namespace Rodoslovno_stablo
             loginForm.ShowDialog();
             InitializeComponent();
             graf = splitC.Panel1;
-            consoleForm = new ConsoleForm();
-            qerp = consoleForm.MyQueryProcessor;
-            tree = qerp.Drvo;
+            tree = Tree.GetInstance();
             //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
             
   
@@ -420,6 +417,7 @@ namespace Rodoslovno_stablo
 
         private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            consoleForm = new ConsoleForm();
             consoleForm.Show();
 
         }

@@ -74,7 +74,7 @@ namespace ApplicationLogicTests
         public void InitialSetup()
         {
             qp = new QueryProcessor(QueryDisambiguator, GetLine);
-            drvo = qp.Drvo;
+            drvo = Tree.GetInstance();
         }
 
         /// <summary>
