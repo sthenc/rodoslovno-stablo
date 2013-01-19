@@ -76,20 +76,35 @@ namespace Rodoslovno_stablo
                 {
                     Graphics graphicsObj = graf.CreateGraphics();
                     graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                    Pen myPen = new Pen(System.Drawing.Color.Black, 4);
-                    SolidBrush blackBrush = new SolidBrush(Color.Black);
+                    Pen myPen; SolidBrush myBrush;
+                    Point p1, p2;
+                    if (item.type == "parent")
+                    {
+                        myPen = new Pen(System.Drawing.Color.Black, 4);
+                        myBrush = new SolidBrush(Color.Black);
 
-                    Point p1 = R2A(c1.getRealBottomPoint());
-                    Point p2 = R2A(c2.getRealTopPoint());
+                        p1 = R2A(c1.getRealBottomPoint());
+                        p2 = R2A(c2.getRealTopPoint());
+                    }
+                    else if (item.type == "partner")
+                    {
+                        myPen = new Pen(System.Drawing.Color.IndianRed, 4);
+                        myBrush = new SolidBrush(Color.IndianRed);
+
+                        p1 = R2A(c1.getRealRightPoint());
+                        p2 = R2A(c2.getRealLeftPoint());
+
+                    }
+                    else continue;
 
                     graphicsObj.DrawLine(myPen, p1, p2);
                     int radius = 6;
                     p1.X -= radius; p1.Y -= radius;
                     p2.X -= radius; p2.Y -= radius;
                     Rectangle rect = new Rectangle(p1, new Size(2 * radius, 2 * radius));
-                    graphicsObj.FillEllipse(blackBrush, rect);
+                    graphicsObj.FillEllipse(myBrush, rect);
                     rect = new Rectangle(p2, new Size(2 * radius, 2 * radius));
-                    graphicsObj.FillEllipse(blackBrush, rect);
+                    graphicsObj.FillEllipse(myBrush, rect);
 
                     graphicsObj.Dispose();
 
@@ -135,15 +150,23 @@ namespace Rodoslovno_stablo
     
         public void personSelected(PersonControl c)
         {
-            if (connectionCreationInProgress == 5 && currentlySelected!= null) { 
-                // kreiramo novu vezu roditelj
+            if (connectionCreationInProgress != 0 && currentlySelected!= null) { 
+                // kreiramo novu vezu 
                 Person person1 = currentlySelected.getPerson();
                 Person person2 = c.getPerson();
-                tree.AddConnection(person1.ID, person2.ID, "roditelj");
+                if (connectionCreationInProgress == 5) // roditelj
+                    tree.AddParent(person1.ID, person2.ID);
+                else if (connectionCreationInProgress == 10)  // brak
+                    tree.AddPartner(person1.ID, person2.ID);
+                else if (connectionCreationInProgress == 6) // dijete
+                    tree.AddChild(person1.ID, person2.ID);
+
                 connectionCreationInProgress = 0;
+                //mouse
                 redrawConnections();
 
             }
+           
 
             if (currentlySelected != null)
             {
@@ -410,6 +433,16 @@ namespace Rodoslovno_stablo
         private void toolStripButtonCreateParent_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 5; // roditelj
+        }
+
+        private void toolStripButtonCreateMarriage_Click(object sender, EventArgs e)
+        {
+            connectionCreationInProgress = 10; // brak
+        }
+
+        private void toolStripButtonChild_Click(object sender, EventArgs e)
+        {
+            connectionCreationInProgress = 6; // dijete
         }
 
 

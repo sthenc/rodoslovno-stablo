@@ -51,6 +51,7 @@
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCreateParent = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCreateMarriage = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
@@ -78,7 +79,7 @@
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelCV = new System.Windows.Forms.Label();
             this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
-            this.toolStripButtonCreateParent = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonChild = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitC.Panel2.SuspendLayout();
@@ -243,6 +244,7 @@
             this.toolStripSeparator,
             this.toolStripAddPerson,
             this.toolStripButtonCreateParent,
+            this.toolStripButtonChild,
             this.toolStripButtonCreateMarriage,
             this.toolStripSeparator3,
             this.toolStripDeletePerson});
@@ -277,6 +279,15 @@
             this.toolStripAddPerson.Text = "Kreiraj novu osobu";
             this.toolStripAddPerson.Click += new System.EventHandler(this.toolStripAddPerson_Click);
             // 
+            // toolStripButtonCreateParent
+            // 
+            this.toolStripButtonCreateParent.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
+            this.toolStripButtonCreateParent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCreateParent.Name = "toolStripButtonCreateParent";
+            this.toolStripButtonCreateParent.Size = new System.Drawing.Size(83, 36);
+            this.toolStripButtonCreateParent.Text = "Roditelj";
+            this.toolStripButtonCreateParent.Click += new System.EventHandler(this.toolStripButtonCreateParent_Click);
+            // 
             // toolStripButtonCreateMarriage
             // 
             this.toolStripButtonCreateMarriage.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
@@ -284,6 +295,7 @@
             this.toolStripButtonCreateMarriage.Name = "toolStripButtonCreateMarriage";
             this.toolStripButtonCreateMarriage.Size = new System.Drawing.Size(66, 36);
             this.toolStripButtonCreateMarriage.Text = "Brak";
+            this.toolStripButtonCreateMarriage.Click += new System.EventHandler(this.toolStripButtonCreateMarriage_Click);
             // 
             // toolStripSeparator3
             // 
@@ -585,14 +597,14 @@
             this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
             this.maskedTextBoxDate.TabIndex = 16;
             // 
-            // toolStripButtonCreateParent
+            // toolStripButtonChild
             // 
-            this.toolStripButtonCreateParent.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
-            this.toolStripButtonCreateParent.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCreateParent.Name = "toolStripButtonCreateParent";
-            this.toolStripButtonCreateParent.Size = new System.Drawing.Size(83, 36);
-            this.toolStripButtonCreateParent.Text = "Roditelj";
-            this.toolStripButtonCreateParent.Click += new System.EventHandler(this.toolStripButtonCreateParent_Click);
+            this.toolStripButtonChild.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_cc_bcc;
+            this.toolStripButtonChild.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonChild.Name = "toolStripButtonChild";
+            this.toolStripButtonChild.Size = new System.Drawing.Size(73, 36);
+            this.toolStripButtonChild.Text = "Dijete";
+            this.toolStripButtonChild.Click += new System.EventHandler(this.toolStripButtonChild_Click);
             // 
             // MainForm
             // 
@@ -677,6 +689,7 @@
         private System.Windows.Forms.ToolStripMenuItem preglednikUpitaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButtonCreateParent;
+        private System.Windows.Forms.ToolStripButton toolStripButtonChild;
     }
 }
 

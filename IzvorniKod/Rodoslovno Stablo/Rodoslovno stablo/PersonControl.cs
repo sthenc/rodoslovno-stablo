@@ -100,5 +100,15 @@ namespace Rodoslovno_stablo
 
 
         }
+        public Point getRealLeftPoint(){
+            Point p = new Point(this.Location.X, this.Location.Y + this.Height/2);
+            return f.A2R(p);
+            
+        }
+        public Point getRealRightPoint() {
+            Point p = new Point(this.Location.X + this.Width, this.Location.Y+this.Height/2);
+            return f.A2R(p);
+            
+        }
     }
 }
