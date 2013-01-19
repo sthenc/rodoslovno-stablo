@@ -47,21 +47,156 @@ namespace ApplicationLogicTests
             // 1. Korak - pripremi objekte
             // Da bi mogli uhvatiti rezultate
             // izvor http://msdn.microsoft.com/en-us/library/system.console.readline.aspx
-
-            // 2. Korak - napravi nesto
-            
             TextWriter expected = new StreamWriter(Console.OpenStandardOutput());
-            Console.SetOut(expected);
-
-            qp.PrintPersons(osobe);
-            
             TextWriter actual = new StreamWriter(Console.OpenStandardOutput());
-            Console.SetOut(actual);
-            
-            qp.Dohvati_sve_rodjene_izmedju(new string[]{"1.1.1900.","1.1.2013."});
+            string[][] trazeniDatumi = { new string[] {"1.1.1900.", "1.1.2013."},
+                                         new string[] {"1.1.1920.", "1.1.1922."},
+                                         new string[] {"1.1.1988.", "1.1.1991."}
+                                       };
+            Guid[][] ocekivaneOsobe = {osobe, 
+                                       new Guid[]{osobe[0]},
+                                       new Guid[]{osobe[3], osobe[4]}
+                                      };
+  
+            // Radi + provjeravaj
+            for (int i = 0; i < trazeniDatumi.Length; i++)
+            {
+                Console.SetOut(expected);
+                qp.PrintPersons(ocekivaneOsobe[i]);
 
-            // 3. Korak - provjeri pretpostavku
-            Assert.AreEqual(expected.ToString(), actual.ToString());
+                Console.SetOut(actual);
+                qp.Dohvati_sve_rodjene_izmedju(trazeniDatumi[i]);
+
+                Assert.AreEqual(expected.ToString(), actual.ToString());
+            }
+
+        }
+
+        [Test]
+        public void Dohvati_sve_umrle_izmedjuTest()
+        {
+
+            // 1. Korak - pripremi objekte
+            // Da bi mogli uhvatiti rezultate
+            // izvor http://msdn.microsoft.com/en-us/library/system.console.readline.aspx
+            TextWriter expected = new StreamWriter(Console.OpenStandardOutput());
+            TextWriter actual = new StreamWriter(Console.OpenStandardOutput());
+            string[][] trazeniDatumi = { new string[] {"1.1.1980.", "1.1.1990."},
+                                         new string[] {"1.1.1900.", "1.1.1950."}
+                                       };
+            Guid[][] ocekivaneOsobe = {new Guid[]{osobe[0]},
+                                       new Guid[]{}
+                                      };
+
+            // Radi + provjeravaj
+            for (int i = 0; i < trazeniDatumi.Length; i++)
+            {
+                Console.SetOut(expected);
+                qp.PrintPersons(ocekivaneOsobe[i]);
+
+                Console.SetOut(actual);
+                qp.Dohvati_sve_umrle_izmedju(trazeniDatumi[i]);
+
+                Assert.AreEqual(expected.ToString(), actual.ToString());
+            }
+
+        }
+
+        [Test]
+        public void Dohvati_sve_koji_pozivjese_vise_odTest()
+        {
+
+            // 1. Korak - pripremi objekte
+            // Da bi mogli uhvatiti rezultate
+            // izvor http://msdn.microsoft.com/en-us/library/system.console.readline.aspx
+            TextWriter expected = new StreamWriter(Console.OpenStandardOutput());
+            TextWriter actual = new StreamWriter(Console.OpenStandardOutput());
+            string[][] trazenaDob = { new string[] {"0"},
+                                      new string[] {"10"},
+                                      new string[] {"50"},
+                                      new string[] {"100"}
+                                    };
+            Guid[][] ocekivaneOsobe = {osobe,
+                                       new Guid[]{osobe[0], osobe[1], osobe[2], osobe[3], osobe[4]},
+                                       new Guid[]{osobe[0], osobe[1], osobe[2]},
+                                       new Guid[]{}
+                                      };
+
+            // Radi + provjeravaj
+            for (int i = 0; i < trazenaDob.Length; i++)
+            {
+                Console.SetOut(expected);
+                qp.PrintPersons(ocekivaneOsobe[i]);
+
+                Console.SetOut(actual);
+                qp.Dohvati_sve_koji_pozivjese_vise_od(trazenaDob[i]);
+
+                Assert.AreEqual(expected.ToString(), actual.ToString());
+            }
+
+        }
+
+        [Test]
+        public void Dohvati_sve_koji_pozivjese_manje_odTest()
+        {
+
+            // 1. Korak - pripremi objekte
+            // Da bi mogli uhvatiti rezultate
+            // izvor http://msdn.microsoft.com/en-us/library/system.console.readline.aspx
+            TextWriter expected = new StreamWriter(Console.OpenStandardOutput());
+            TextWriter actual = new StreamWriter(Console.OpenStandardOutput());
+            string[][] trazenaDob = { new string[] {"0"},
+                                      new string[] {"10"},
+                                      new string[] {"50"},
+                                      new string[] {"100"}
+                                    };
+            Guid[][] ocekivaneOsobe = {new Guid[]{},
+                                       new Guid[]{osobe[5]},
+                                       new Guid[]{osobe[3], osobe[4], osobe[5]},
+                                       osobe
+                                      };
+
+            // Radi + provjeravaj
+            for (int i = 0; i < trazenaDob.Length; i++)
+            {
+                Console.SetOut(expected);
+                qp.PrintPersons(ocekivaneOsobe[i]);
+
+                Console.SetOut(actual);
+                qp.Dohvati_sve_koji_pozivjese_manje_od(trazenaDob[i]);
+
+                Assert.AreEqual(expected.ToString(), actual.ToString());
+            }
+
+        }
+
+        [Test]
+        public void Razlika_u_starostiTest()
+        {
+
+            // 1. Korak - pripremi objekte
+            // Da bi mogli uhvatiti rezultate
+            // izvor http://msdn.microsoft.com/en-us/library/system.console.readline.aspx
+            TextWriter expected = new StreamWriter(Console.OpenStandardOutput());
+            TextWriter actual = new StreamWriter(Console.OpenStandardOutput());
+            string[][] trazenaRazlika = { new string[] {"Pero", "Koza", "Ivo", "Koza"},
+                                          new string[] {"Pero", "Koza", "Pero", "Koza"}
+                                        };
+            string[] ocekivano = {  "Razlika u starosti je 32 godine.",
+                                    "Te osobe su isto stare."
+                                 };
+
+            // Radi + provjeravaj
+            for (int i = 0; i < trazenaRazlika.Length; i++)
+            {
+                Console.SetOut(expected);
+                System.Console.WriteLine(ocekivano[i]);
+
+                Console.SetOut(actual);
+                qp.Razlika_u_starosti(trazenaRazlika[i]);
+
+                Assert.AreEqual(expected.ToString(), actual.ToString());
+            }
 
         }
         #endregion

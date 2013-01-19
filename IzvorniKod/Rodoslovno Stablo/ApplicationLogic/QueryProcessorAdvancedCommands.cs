@@ -174,12 +174,12 @@ namespace ApplicationLogic
 
             if (osoba1.birthDate == nedefiniranDatum)
             {
-                System.Console.WriteLine("Datum rodjena nije definiran za {1} {2}", parametri[0], parametri[1]);
+                System.Console.WriteLine("Datum rodjena nije definiran za {1} {2}.", parametri[0], parametri[1]);
                 return;
             }
             if (osoba2.birthDate == nedefiniranDatum)
             {
-                System.Console.WriteLine("Datum rodjena nije definiran za {1} {2}", parametri[2], parametri[3]);
+                System.Console.WriteLine("Datum rodjena nije definiran za {1} {2}.", parametri[2], parametri[3]);
                 return;
             }
 
@@ -198,35 +198,39 @@ namespace ApplicationLogic
             }
 
             int razlika;
-            System.Console.Write("Razlika u starosti je ");
+            string ispis = "Razlika u starosti je ";
             if ((razlika = stariji.birthDate.Year - mladji.birthDate.Year) > 0)
-            {                
-                System.Console.Write("{1}", razlika);
+            {
+                ispis += razlika.ToString();
                 if((razlika % 10 == 2 || razlika % 10 == 3 || razlika % 10 == 4) && !(razlika > 10 && razlika < 20))
-                    System.Console.Write(" godine.");
+                    ispis += " godine.";
                 else
-                    System.Console.Write(" godina.");
+                    ispis +=" godina.";
             }
             else if ((razlika = stariji.birthDate.Month - mladji.birthDate.Month) > 0)
             {
-                System.Console.Write("{1}", razlika);
+                ispis += razlika.ToString();
                 if(razlika == 1)
-                    System.Console.Write(" mjesec.");
+                    ispis += " mjesec.";
                 else if (razlika == 2 || razlika == 3 || razlika  == 4)
-                    System.Console.Write(" mjeseca.");
+                    ispis += " mjeseca.";
                 else
-                    System.Console.Write(" mjeseci.");
+                    ispis += " mjeseci.";
             }
             else if ((razlika = stariji.birthDate.Day - mladji.birthDate.Day) > 0)
             {
-                System.Console.Write("{1}", razlika);
+                ispis += razlika.ToString();
                 if (razlika == 1)
-                    System.Console.Write(" dan.");
-                else 
-                    System.Console.Write(" dana.");
+                    ispis += " dan.";
+                else
+                    ispis += " dana.";
             }
             else
-                System.Console.Write("Te osobe su isto stare.");
+            {
+                ispis = "Te osobe su isto stare.";
+            }
+
+            System.Console.WriteLine(ispis);
 
         }
 
