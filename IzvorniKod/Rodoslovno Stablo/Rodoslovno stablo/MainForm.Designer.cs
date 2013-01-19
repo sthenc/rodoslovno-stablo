@@ -128,44 +128,45 @@
             // novoStabloToolStripMenuItem
             // 
             this.novoStabloToolStripMenuItem.Name = "novoStabloToolStripMenuItem";
-            this.novoStabloToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.novoStabloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.novoStabloToolStripMenuItem.Text = "Novo stablo";
+            this.novoStabloToolStripMenuItem.Click += new System.EventHandler(this.novoStabloToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // otvoriToolStripMenuItem
             // 
             this.otvoriToolStripMenuItem.Name = "otvoriToolStripMenuItem";
-            this.otvoriToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.otvoriToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.otvoriToolStripMenuItem.Text = "Otvori stablo";
             this.otvoriToolStripMenuItem.Click += new System.EventHandler(this.otvoriToolStripMenuItem_Click);
             // 
             // spremiToolStripMenuItem
             // 
             this.spremiToolStripMenuItem.Name = "spremiToolStripMenuItem";
-            this.spremiToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.spremiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.spremiToolStripMenuItem.Text = "Spremi";
             this.spremiToolStripMenuItem.Click += new System.EventHandler(this.spremiToolStripMenuItem_Click);
             // 
             // spremiKaoJpegToolStripMenuItem
             // 
             this.spremiKaoJpegToolStripMenuItem.Name = "spremiKaoJpegToolStripMenuItem";
-            this.spremiKaoJpegToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.spremiKaoJpegToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.spremiKaoJpegToolStripMenuItem.Text = "Izvoz u JPEG";
             this.spremiKaoJpegToolStripMenuItem.Click += new System.EventHandler(this.spremiKaoJpegToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(139, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // izlazToolStripMenuItem
             // 
             this.izlazToolStripMenuItem.Name = "izlazToolStripMenuItem";
-            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.izlazToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
             // 

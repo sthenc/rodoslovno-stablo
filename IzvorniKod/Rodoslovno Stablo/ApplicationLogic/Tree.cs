@@ -240,6 +240,12 @@ namespace ApplicationLogic
 
         #region Serijalizacija
 
+        public void clearTree() {
+            osobe.RemoveAll(x => true);
+            veze.RemoveAll(x =>true);
+
+        
+        }
         public void Save(string path)
         {
             XmlSerializer xmlWriter = new XmlSerializer(typeof(Tree));

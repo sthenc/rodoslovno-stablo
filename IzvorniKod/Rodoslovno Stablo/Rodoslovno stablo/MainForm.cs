@@ -28,12 +28,20 @@ namespace Rodoslovno_stablo
         public MainForm()
         {  
             LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-            InitializeComponent();
-            deselectPerson();
-            graf = splitC.Panel1;
-            tree = Tree.GetInstance();
-            //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
+            DialogResult result = loginForm.ShowDialog() ;
+            if (result!= DialogResult.OK)
+            {
+                loginForm.Dispose();
+                this.Dispose();
+                Application.Exit();
+                return ;
+
+            }
+                InitializeComponent();
+                deselectPerson();
+                graf = splitC.Panel1;
+                tree = Tree.GetInstance();
+                //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
             
   
         }
@@ -555,6 +563,16 @@ namespace Rodoslovno_stablo
                 if (dlg.ShowDialog() == DialogResult.OK)
                     pictureBoxImage.Image = Image.FromFile(dlg.FileName);
             }
+        }
+
+        private void novoStabloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tree.clearTree();
+            controls.Clear();
+            graf.Controls.Clear();
+            redrawConnections();
+            graf.Update();
+
         }
 
 
