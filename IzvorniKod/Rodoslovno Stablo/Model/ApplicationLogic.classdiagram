@@ -8835,7 +8835,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="19360930-6bd3-4a23-8ffd-95faa98df50f" name="UserManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="19360930-6bd3-4a23-8ffd-95faa98df50f" name="UserManager" visibility="Private" isAbstract="false" isLeaf="false" isActiveClass="false">
         <referencesInternal>
           <reference Id="cfd0e4fe-db96-48ee-a115-616531acaebe" handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FHeRRDuDMaN%2FDocuments%2FGitHub%2Frodoslovno-stablo%2FIzvorniKod%2FRodoslovno Stablo%2FApplicationLogic%2Fbin%2FDebug%2FApplicationLogic.dll&quot; Namespace%3DApplicationLogic Type%3DUserManager" tag="ViewCode">
             <elementDefinition Id="ddc177ce-1636-4737-a6bb-51e4918c6fce" />

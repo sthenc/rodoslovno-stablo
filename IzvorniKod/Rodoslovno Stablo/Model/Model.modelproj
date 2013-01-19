@@ -35,10 +35,19 @@
     <Content Include="ModelDefinition\Package1_1935.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package1_2220.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package2_1934.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package2_1935.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_2220.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_2220.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1934.uml">
@@ -47,12 +56,28 @@
     <Content Include="ModelDefinition\Package_1935.uml">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="ModelDefinition\Package_2220.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2223.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2224.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Razredi.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Razredi.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Razredi.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="RodoslovnoStablo.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RodoslovnoStablo.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RodoslovnoStablo.classdiagram</DependentUpon>
     </Content>
     <Content Include="UC4.usecasediagram">
       <SubType>Content</SubType>

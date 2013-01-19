@@ -6,40 +6,35 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2013-01-19T19:36:37" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'fceec429-ddf2-4c4c-9f73-5294ba85ed4a' -  (ClassifierTemplateParameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic' -  (Package)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::Query' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::User' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Medium" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager' -  (Class)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::ActiveUser' -  (Property)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::AddUser' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::AddUser::korisnik' -  (Parameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::connectionString' -  (Property)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::DBInit' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::GetActiveUser' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::GetFileConnectionString' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::GetQueries' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::GetUser' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::GetUser::id' -  (Parameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::Login' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::Login::password' -  (Parameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::Login::username' -  (Parameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::Logoff' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::StoreQuery' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::StoreQuery::upit' -  (Parameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::UpdateUser' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::UpdateUser::korisnik' -  (Parameter)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::ApplicationLogic::UserManager::UserManager' -  (Operation)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System' -  (Package)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Collections' -  (Package)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Collections::Generic' -  (Package)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Collections::Generic::IEnumerable' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Collections::Generic::IEnumerable&lt;Query‎&gt;' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="High" Text="(4) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2013-01-19T19:36:38" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2013-01-19T22:25:02" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo' -  (Package)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Medium" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm' -  (Class)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::button2' -  (Property)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::button3' -  (Property)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::button4' -  (Property)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::buttonAdmin' -  (Property)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::components' -  (Property)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::Dispose' -  (Operation)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::Dispose::disposing' -  (Parameter)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::InitializeComponent' -  (Operation)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::Rodoslovno_stablo::UsersForm::UsersForm' -  (Operation)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System' -  (Package)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::ComponentModel' -  (Package)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::ComponentModel::IContainer' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Windows' -  (Package)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Windows::Forms' -  (Package)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Windows::Forms::Button' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Model::System::Windows::Forms::Form' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::UsersForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::QueriesForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::AboutBox to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::ConsoleForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::DisambiguatorForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::MainForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::LoginForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: Model::Rodoslovno_stablo::SettingsForm to Model::System::Windows::Forms::Form (Generalization)" />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="High" Text="(3) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2013-01-19T22:25:04" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

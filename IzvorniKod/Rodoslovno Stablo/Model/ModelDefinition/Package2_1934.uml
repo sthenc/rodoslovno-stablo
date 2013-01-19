@@ -69,5 +69,56 @@
         </appliedStereotypesInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4146c250-ec5c-4718-8cf6-40f4d573eef0"
+        name="Point"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2db4755d-48f6-4f90-9bc0-7ef311cf0188"
+            handle="viewcode://./CodeSchema_Struct?Assembly%3Dfile:%2F%2F%2FC:%2FWindows%2FMicrosoft.NET%2FFramework%2Fv2.0.50727%2FSystem.Drawing.dll Namespace%3DSystem.Drawing Type%3DPoint"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="a5c35e1f-8b50-44f6-9a9a-7424cb0c133d"
+            name="struct"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5868485e-a9b3-4f6b-9201-cdb0c5d28ddf">
+                <propertyInstance
+                  Id="11fb11b3-4f6a-4cac-9f29-405cdeb15d26"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7988ba98-de00-4f1c-bfcc-3ff7b7f0672d">
+                <propertyInstance
+                  Id="ee953791-a898-48ac-b471-114cd8b25346"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e2e20388-e023-4ab5-b4ba-873910e6d767">
+                <propertyInstance
+                  Id="72378001-03a9-4ec8-b29b-386ce87c872b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ff158004-327f-4f8c-9bcb-99673c4c44af">
+                <propertyInstance
+                  Id="f79cbde2-9398-4755-a584-5f40bf753af3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

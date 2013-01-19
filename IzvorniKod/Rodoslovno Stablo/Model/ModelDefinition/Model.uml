@@ -2576,6 +2576,20 @@
         LastKnownName="System"
         LastKnownLocation="Package_1934.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="54248e95-25b1-4ed5-8b96-260e6d38ad3d"
+        LastKnownName="Rodoslovno_stablo"
+        LastKnownLocation="Package_2220.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="adf56da3-2d0f-4c02-a074-137df8d6cfd5"
+        name="MainForm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
