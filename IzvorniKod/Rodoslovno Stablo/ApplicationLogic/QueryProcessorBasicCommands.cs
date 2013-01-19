@@ -174,8 +174,17 @@ namespace ApplicationLogic
 
 			// ok, sada kada znamo na kojeg roditelja se misli
 
-            Guid brat = Drvo.AddPerson(brat_ime, brat_prezime);
-            Drvo.AddChild(roditelj, brat);
+            Guid brat;
+            try
+            {
+                brat = FindPersonByName(brat_ime, brat_prezime);
+                Drvo.AddChild(roditelj, brat);
+            }
+            catch (Exception)
+            {
+                brat = Drvo.AddPerson(brat_ime, brat_prezime);
+                Drvo.AddChild(roditelj, brat);
+            }
 		}
 		
 		public void AddSister(string[] parametri)
