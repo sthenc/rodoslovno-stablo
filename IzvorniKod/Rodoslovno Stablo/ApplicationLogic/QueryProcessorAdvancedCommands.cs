@@ -16,8 +16,6 @@ namespace ApplicationLogic
 		//[GUID] Dohvati_sve_koji_pozivjese_vise_od(broj_godina)
 		//[GUID] Dohvati_sve_koji_pozivjese_manje_od(broj_godina)
 		//broj Razlika_u_starosti(Osoba1, Osoba2)
-		//broj Generacija_izmedju(Osoba1, Osoba2)
-        //broj U_kojem_koljenu(Osoba1, Osoba2)
 
         public readonly static DateTime nedefiniranDatum = new DateTime(1000, 1, 1);
 
@@ -234,40 +232,5 @@ namespace ApplicationLogic
 
         }
 
-        public void Generacija_izmedju(string[] parametri)
-        {
-            if (parametri.Length != 4)
-                throw new System.ArgumentException();
-
-            Person osoba1, osoba2;
-            Person stariji, mladji;
-            osoba1 = Drvo.GetPersonByID(FindPersonByName(parametri[0], parametri[1]));
-            osoba2 = Drvo.GetPersonByID(FindPersonByName(parametri[2], parametri[3]));
-
-            int razlika = osoba1.birthDate.Year - osoba2.birthDate.Year;
-            if (razlika > 0)
-            {
-                stariji = osoba2;
-                mladji = osoba1;
-            }
-            else if (razlika < 0)
-            {
-                stariji = osoba1;
-                mladji = osoba2;
-            }
-            else
-            {
-
-            }
-
-
-            int generacijaIzmedju = 0;
-            
-        }
-
-        public void U_kojem_koljenu(string[] parametri)
-        {
-
-        }
     }
 }
