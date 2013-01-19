@@ -35,7 +35,7 @@ namespace ApplicationLogic
 
 		
 
-                public void AddPerson(string[] parametri)
+        public void AddPerson(string[] parametri)
 		{
 		      	if (parametri.Length != 2)
 				throw new System.ArgumentException();
@@ -46,21 +46,21 @@ namespace ApplicationLogic
 			Drvo.AddPerson(ime, prezime);
 		}
 
-                public void GetPerson(string[] parametri)
-                {
-                        if (parametri.Length != 2)
-                	        throw new System.ArgumentException();
+        public void GetPerson(string[] parametri)
+        {
+                if (parametri.Length != 2)
+                	throw new System.ArgumentException();
                 	        
-                        string osoba_ime = parametri[0];
-                        string osoba_prezime = parametri[1];
+                string osoba_ime = parametri[0];
+                string osoba_prezime = parametri[1];
                 	
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        PrintPerson(osoba);
-                }
+                Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+                PrintPerson(osoba);
+        }
                 
-                public void AddSpouse(string[] parametri)
+        public void AddSpouse(string[] parametri)
 		{
-		      	if (parametri.Length != 4)
+		    if (parametri.Length != 4)
 				throw new System.ArgumentException();
 
 			string osoba_ime = parametri[0];
@@ -68,27 +68,27 @@ namespace ApplicationLogic
 			string partner_ime = parametri[2];
 			string partner_prezime = parametri[3];
                         
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        Guid partner = FindPersonByName(partner_ime, partner_prezime, "Na koga mislite ?");
+            Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+            Guid partner = FindPersonByName(partner_ime, partner_prezime, "Na koga mislite ?");
                         
-			Drvo.Partner(osoba,partner);
+			Drvo.AddPartner(osoba,partner);
 		}
 
-                public void GetSpouse(string[] parametri)
-                {
-                        if (parametri.Length != 2)
-                	        throw new System.ArgumentException();
+        public void GetSpouse(string[] parametri)
+        {
+                if (parametri.Length != 2)
+                	throw new System.ArgumentException();
                 	        
-                        string osoba_ime = parametri[0];
-                        string osoba_prezime = parametri[1];
+                string osoba_ime = parametri[0];
+                string osoba_prezime = parametri[1];
                 	
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        Drvo.GetParent(osoba);
-                }
+                Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+                Drvo.GetParent(osoba);
+        }
                 
-                public void AddChild(string[] parametri)
+        public void AddChild(string[] parametri)
 		{
-		      	if (parametri.Length != 4)
+		    if (parametri.Length != 4)
 				throw new System.ArgumentException();
 
 			string osoba_ime = parametri[0];
@@ -96,28 +96,28 @@ namespace ApplicationLogic
 			string dijete_ime = parametri[2];
 			string dijete_prezime = parametri[3];
                         
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        Guid dijete = FindPersonByName(dijete_ime, dijete_prezime, "Na koga mislite ?");
+            Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+            Guid dijete = FindPersonByName(dijete_ime, dijete_prezime, "Na koga mislite ?");
                         
 			Drvo.AddChild(osoba,dijete);
 		}
 
-                public void GetChild(string[] parametri)
-                {
-                        if (parametri.Length != 2)
-                	        throw new System.ArgumentException();
+        public void GetChild(string[] parametri)
+        {
+                if (parametri.Length != 2)
+                	throw new System.ArgumentException();
                 	        
-                        string osoba_ime = parametri[0];
-                        string osoba_prezime = parametri[1];
+                string osoba_ime = parametri[0];
+                string osoba_prezime = parametri[1];
                 	
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        Drvo.GetChild(osoba);
-                }
+                Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+                Drvo.GetChild(osoba);
+        }
                 
                 
-                public void AddParent(string[] parametri)
+        public void AddParent(string[] parametri)
 		{
-		      	if (parametri.Length != 4)
+		    if (parametri.Length != 4)
 				throw new System.ArgumentException();
 
 			string osoba_ime = parametri[0];
@@ -125,25 +125,25 @@ namespace ApplicationLogic
 			string roditelj_ime = parametri[2];
 			string roditelj_prezime = parametri[3];
                         
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        Guid roditelj = FindPersonByName(roditelj_ime, roditelj_prezime, "Na koga mislite ?");
+            Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+            Guid roditelj = FindPersonByName(roditelj_ime, roditelj_prezime, "Na koga mislite ?");
                         
 			Drvo.AddParent(osoba,roditelj);
 		}
 
-                public void GetParent(string[] parametri)
-                {
-                        if (parametri.Length != 2)
-                	        throw new System.ArgumentException();
+        public void GetParent(string[] parametri)
+        {
+                if (parametri.Length != 2)
+                	throw new System.ArgumentException();
                 	        
-                        string osoba_ime = parametri[0];
-                        string osoba_prezime = parametri[1];
+                string osoba_ime = parametri[0];
+                string osoba_prezime = parametri[1];
                 	
-                        Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-                        Drvo.GetPrent(osoba);
-                }
+                Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
+                Drvo.GetParent(osoba);
+        }
 
-                public void AddSibling(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
+        public void AddSibling(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
 		{
 			if (parametri.Length != 4)
 				throw new System.ArgumentException();
@@ -154,7 +154,7 @@ namespace ApplicationLogic
 			string brat_ime = parametri[2];
 			string brat_prezime = parametri[3];
 
-			Guid osoba = FindPersonByName(unuk_ime, unuk_prezime, "Na koga mislite ?");
+			Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
 			IEnumerable<Person> roditelji = Drvo.GetParents(osoba);
 			Guid roditelj;
 
@@ -174,10 +174,8 @@ namespace ApplicationLogic
 
 			// ok, sada kada znamo na kojeg roditelja se misli
 
-			Guid brat = Drvo.AddParent(brat, roditelj_ime, roditelj_prezime);
-			Person nona = Drvo.GetPersonByID(brat);
-			nona.sex = spol;
-			Drvo.ChangePerson(nona);
+            Guid brat = Drvo.AddPerson(brat_ime, brat_prezime);
+            Drvo.AddChild(roditelj, brat);
 		}
 		
 		public void AddSister(string[] parametri)
@@ -209,22 +207,20 @@ namespace ApplicationLogic
 			Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
 			IEnumerable<Guid> roditelji = Drvo.GetParent(osoba);
 
-			var brat = new List<Guid>();
+            List<Guid> brat = new List<Guid>();
 
-			foreach (var roditelj in roditelji)
-				baka = baka.Concat(Drvo.GetParent(roditelj)).ToList();
+            foreach (var roditelj in roditelji)
+            {
+                foreach (var djete in Drvo.GetChildren(roditelj))
+                {
+                    if (!osoba.Equals(djete) && !brat.Contains(djete.ID))
+                    {
+                        brat.Add(djete.ID);
+                    }
+                }
+            }
 
-			baka = baka.FindAll(b => Drvo.GetPersonByID(b).sex == spol);
-
-			PrintPersons(baka);
-		}
-
-			// ok, sada kada znamo na kojeg roditelja se misli
-
-			Guid baka = Drvo.AddParent(roditelj, baka_ime, baka_prezime);
-			Person nona = Drvo.GetPersonByID(baka);
-			nona.sex = spol;
-			Drvo.ChangePerson(nona);
+			PrintPersons(brat);
 		}
 		
 
