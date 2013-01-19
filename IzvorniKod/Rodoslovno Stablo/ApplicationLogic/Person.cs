@@ -56,6 +56,9 @@ namespace ApplicationLogic
         [XmlElement("telephone")]
         public string telephone  { get; set; }
 
+        [XmlElement("email")]
+        public string email { get; set; }
+
         [XmlElement("positionX")]
         public int positionX { get; set; }
 

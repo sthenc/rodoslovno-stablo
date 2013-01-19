@@ -22,11 +22,16 @@ namespace Rodoslovno_stablo
             updateControlContent();
 
         }
+        public PersonControl() 
+        {
+            InitializeComponent();
+            
+        }
         public void updateControlContent() {
             labelName.Text = p.name + " " + p.surname;
             if (p.photo!= null)
                 pictureBoxUser.Image = p.photo;
-            labelDateofBirth.Text = p.birthDate.ToShortDateString();
+            //labelDateofBirth.Text = p.birthDate.ToShortDateString();
 
 
         }
@@ -84,6 +89,10 @@ namespace Rodoslovno_stablo
 
         public Person getPerson(){
             return p;
+
+        }
+        private void setPerson(Person per) {
+            p = per;
 
         }
         public Point getRealTopPoint() {

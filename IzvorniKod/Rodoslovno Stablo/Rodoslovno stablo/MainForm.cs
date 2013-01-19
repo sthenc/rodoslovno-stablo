@@ -30,6 +30,7 @@ namespace Rodoslovno_stablo
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
             InitializeComponent();
+            deselectPerson();
             graf = splitC.Panel1;
             tree = Tree.GetInstance();
             //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
@@ -163,7 +164,7 @@ namespace Rodoslovno_stablo
 
                 connectionCreationInProgress = 0;
                 restoreInferfaceAfterConnection();
-               
+           
                 redrawConnections();
 
             }
@@ -185,22 +186,101 @@ namespace Rodoslovno_stablo
             textBoxIme.Text = p.name;
             textBoxPrezime.Text = p.surname;
             maskedTextBoxDate.Text = dateToString(p.birthDate);
+            maskedTextBoxDeath.Text = dateToString(p.deathDate);
             textBoxAddress.Text = p.address;
             textBoxCV.Text = p.CV;
+            textBoxTelefon.Text = p.telephone;
+            textBoxEmail.Text = p.email;
+
             if (p.sex == Person.Sex.Male)
                 radioButtonMale.Checked = true;
             else if (p.sex == Person.Sex.Female)
                 radioButtonFemale.Checked = true;
             else
                 radioButtonUnkown.Checked = true;
+            //dodavanje supruznika
 
+            IEnumerable<Person> l = tree.GetPartners(p.ID);
+            foreach (Person item in l) {
+                
+                textBoxPartner.Text += item.name + " " + item.surname;
+                
+                maskedTextBoxWedding.Text = "00000000";
+
+            }
+            pictureBoxImage.Image = p.photo;
+            if (p.photo == null) pictureBoxImage.Image = Properties.Resources.largerperson;
 
 
         }
+        private void deselectPerson()
+        {
+            if (currentlySelected != null)
+            {
+                currentlySelected.BackColor = PersonControl.DefaultBackColor;
+                currentlySelected = null;
+                textBoxAddress.Text = "";
+                textBoxCV.Text = "";
+                textBoxEmail.Text = "";
+                textBoxIme.Text = "";
+                textBoxPrezime.Text = "";
+                textBoxTelefon.Text = "";
+                maskedTextBoxDate.Text = "";
+                maskedTextBoxWedding.Text = "";
+                maskedTextBoxDeath.Text = "";
+                toolStripDeletePerson.Enabled = false;
+                pictureBoxImage.Image = Properties.Resources.largerperson;
+                textBoxPartner.Text = "";
+                radioButtonUnkown.Checked = true;
+                
+
+
+            }
+        }
+        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (currentlySelected != null)
+            {
+                Person p = currentlySelected.getPerson();
+                p.name = textBoxIme.Text;
+                p.surname = textBoxPrezime.Text;
+                p.address = textBoxAddress.Text;
+                p.CV = textBoxCV.Text;
+                p.email = textBoxEmail.Text;
+                p.telephone = textBoxTelefon.Text;
+                if (radioButtonUnkown.Checked)
+                    p.sex = Person.Sex.Unknown;
+                if (radioButtonMale.Checked)
+                    p.sex = Person.Sex.Male;
+                if (radioButtonFemale.Checked)
+                    p.sex = Person.Sex.Female;
+                
+                p.photo = pictureBoxImage.Image;
+                
+                p.birthDate = stringToDate(maskedTextBoxDate.Text);
+                p.deathDate = stringToDate(maskedTextBoxDeath.Text);
+                currentlySelected.updateControlContent();
+
+            }
+           // RefreshTree();
+        }
+
         public string dateToString(DateTime dateTime)
         {
             return dateTime.ToString("ddMMyyyy");
 
+        }
+        public DateTime stringToDate(string str) {
+            try
+            {
+                return DateTime.ParseExact(str, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                MessageBox.Show("Datum je u neispravnom formatu");
+                return DateTime.Now;
+
+            }
         }
         private void spremiKaoJpegToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -297,43 +377,10 @@ namespace Rodoslovno_stablo
         {
             deselectPerson();
         }
-        private void deselectPerson()
-        {
-            if (currentlySelected != null)
-            {
-                currentlySelected.BackColor = PersonControl.DefaultBackColor;
-                currentlySelected = null;
-                textBoxAddress.Text = "";
-                textBoxCV.Text = "";
-                textBoxEmail.Text = "";
-                textBoxIme.Text = "";
-                textBoxPrezime.Text = "";
-                textBoxTelefon.Text = "";
-                maskedTextBoxDate.Text = "";
-                toolStripDeletePerson.Enabled = false;
-                pictureBoxImage.Image = Properties.Resources.largerperson;
-            }
-        }
-
+  
         
 
-        private void buttonSaveChanges_Click(object sender, EventArgs e)
-        {
-            if (currentlySelected != null) {
-                Person p = currentlySelected.getPerson();
-                p.name = textBoxIme.Text;
-                p.surname = textBoxPrezime.Text;
-                p.address = textBoxAddress.Text;
-                p.CV = textBoxCV.Text;
-                p.telephone = textBoxTelefon.Text;
-                currentlySelected.updateControlContent();
-                p.photo = pictureBoxImage.Image;
-
-                // todo p.birthDate
-            
-            }
-            RefreshTree();
-        }
+ 
 
        
 

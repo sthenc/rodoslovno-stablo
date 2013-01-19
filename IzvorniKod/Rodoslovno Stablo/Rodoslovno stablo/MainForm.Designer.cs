@@ -63,7 +63,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.maskedTextBoxWedding = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBoxCV = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBoxTelefon = new System.Windows.Forms.TextBox();
             this.panelSex = new System.Windows.Forms.Panel();
             this.radioButtonUnkown = new System.Windows.Forms.RadioButton();
@@ -82,11 +85,9 @@
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelCV = new System.Windows.Forms.Label();
             this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.maskedTextBoxWedding = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxDeath = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPartner = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitC.Panel2.SuspendLayout();
@@ -388,10 +389,10 @@
             // 
             // buttonSaveChanges
             // 
-            this.buttonSaveChanges.Location = new System.Drawing.Point(217, 612);
+            this.buttonSaveChanges.Location = new System.Drawing.Point(217, 641);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(75, 23);
-            this.buttonSaveChanges.TabIndex = 3;
+            this.buttonSaveChanges.TabIndex = 14;
             this.buttonSaveChanges.Text = "Spremi";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
             this.buttonSaveChanges.Click += new System.EventHandler(this.buttonSaveChanges_Click);
@@ -410,10 +411,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(50, 5);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(52, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.Size = new System.Drawing.Size(116, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Uređivanje osobe";
             // 
@@ -425,10 +426,10 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxWedding, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxWedding, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBoxCV, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.textBoxTelefon, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.panelSex, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
@@ -445,7 +446,8 @@
             this.tableLayoutPanel1.Controls.Add(this.labelCV, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxDate, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxDeath, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxPartner, 1, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 183);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
@@ -459,9 +461,29 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 423);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 425);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // maskedTextBoxWedding
+            // 
+            this.maskedTextBoxWedding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBoxWedding.Location = new System.Drawing.Point(103, 395);
+            this.maskedTextBoxWedding.Mask = "00/00/0000";
+            this.maskedTextBoxWedding.Name = "maskedTextBoxWedding";
+            this.maskedTextBoxWedding.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxWedding.TabIndex = 13;
+            this.maskedTextBoxWedding.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 362);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Partner";
             // 
             // textBoxCV
             // 
@@ -472,7 +494,18 @@
             this.textBoxCV.Multiline = true;
             this.textBoxCV.Name = "textBoxCV";
             this.textBoxCV.Size = new System.Drawing.Size(186, 91);
-            this.textBoxCV.TabIndex = 15;
+            this.textBoxCV.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 398);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Datum vjenčanja";
+            this.label6.Visible = false;
             // 
             // textBoxTelefon
             // 
@@ -480,7 +513,7 @@
             this.textBoxTelefon.Location = new System.Drawing.Point(103, 230);
             this.textBoxTelefon.Name = "textBoxTelefon";
             this.textBoxTelefon.Size = new System.Drawing.Size(186, 20);
-            this.textBoxTelefon.TabIndex = 14;
+            this.textBoxTelefon.TabIndex = 10;
             // 
             // panelSex
             // 
@@ -499,7 +532,7 @@
             this.radioButtonUnkown.Location = new System.Drawing.Point(82, 6);
             this.radioButtonUnkown.Name = "radioButtonUnkown";
             this.radioButtonUnkown.Size = new System.Drawing.Size(77, 17);
-            this.radioButtonUnkown.TabIndex = 2;
+            this.radioButtonUnkown.TabIndex = 7;
             this.radioButtonUnkown.TabStop = true;
             this.radioButtonUnkown.Text = "Nepoznato";
             this.radioButtonUnkown.UseVisualStyleBackColor = true;
@@ -510,7 +543,7 @@
             this.radioButtonMale.Location = new System.Drawing.Point(41, 7);
             this.radioButtonMale.Name = "radioButtonMale";
             this.radioButtonMale.Size = new System.Drawing.Size(34, 17);
-            this.radioButtonMale.TabIndex = 1;
+            this.radioButtonMale.TabIndex = 6;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "M";
             this.radioButtonMale.UseVisualStyleBackColor = true;
@@ -521,7 +554,7 @@
             this.radioButtonFemale.Location = new System.Drawing.Point(3, 7);
             this.radioButtonFemale.Name = "radioButtonFemale";
             this.radioButtonFemale.Size = new System.Drawing.Size(32, 17);
-            this.radioButtonFemale.TabIndex = 0;
+            this.radioButtonFemale.TabIndex = 5;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Ž";
             this.radioButtonFemale.UseVisualStyleBackColor = true;
@@ -562,7 +595,7 @@
             this.textBoxPrezime.Location = new System.Drawing.Point(103, 38);
             this.textBoxPrezime.Name = "textBoxPrezime";
             this.textBoxPrezime.Size = new System.Drawing.Size(186, 20);
-            this.textBoxPrezime.TabIndex = 3;
+            this.textBoxPrezime.TabIndex = 2;
             // 
             // label4
             // 
@@ -601,7 +634,7 @@
             this.textBoxAddress.Location = new System.Drawing.Point(103, 166);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(186, 20);
-            this.textBoxAddress.TabIndex = 9;
+            this.textBoxAddress.TabIndex = 8;
             // 
             // textBoxEmail
             // 
@@ -609,7 +642,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(103, 198);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(186, 20);
-            this.textBoxEmail.TabIndex = 10;
+            this.textBoxEmail.TabIndex = 9;
             // 
             // labelMail
             // 
@@ -648,36 +681,7 @@
             this.maskedTextBoxDate.Mask = "00/00/0000";
             this.maskedTextBoxDate.Name = "maskedTextBoxDate";
             this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
-            this.maskedTextBoxDate.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 362);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Partner";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 397);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Datum vjenčanja";
-            // 
-            // maskedTextBoxWedding
-            // 
-            this.maskedTextBoxWedding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBoxWedding.Location = new System.Drawing.Point(103, 394);
-            this.maskedTextBoxWedding.Mask = "00/00/0000";
-            this.maskedTextBoxWedding.Name = "maskedTextBoxWedding";
-            this.maskedTextBoxWedding.Size = new System.Drawing.Size(186, 20);
-            this.maskedTextBoxWedding.TabIndex = 19;
+            this.maskedTextBoxDate.TabIndex = 3;
             // 
             // label7
             // 
@@ -690,14 +694,23 @@
             this.label7.Text = "Datum smrti";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // maskedTextBox1
+            // maskedTextBoxDeath
             // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(103, 102);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(186, 20);
-            this.maskedTextBox1.TabIndex = 21;
+            this.maskedTextBoxDeath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBoxDeath.Location = new System.Drawing.Point(103, 102);
+            this.maskedTextBoxDeath.Mask = "00/00/0000";
+            this.maskedTextBoxDeath.Name = "maskedTextBoxDeath";
+            this.maskedTextBoxDeath.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxDeath.TabIndex = 4;
+            // 
+            // textBoxPartner
+            // 
+            this.textBoxPartner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPartner.Enabled = false;
+            this.textBoxPartner.Location = new System.Drawing.Point(103, 359);
+            this.textBoxPartner.Name = "textBoxPartner";
+            this.textBoxPartner.Size = new System.Drawing.Size(186, 20);
+            this.textBoxPartner.TabIndex = 12;
             // 
             // MainForm
             // 
@@ -790,7 +803,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxDeath;
+        private System.Windows.Forms.TextBox textBoxPartner;
     }
 }
 
