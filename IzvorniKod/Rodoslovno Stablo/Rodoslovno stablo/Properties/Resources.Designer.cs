@@ -163,19 +163,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6_social_person {
+        internal static System.Drawing.Bitmap largerperson {
             get {
-                object obj = ResourceManager.GetObject("6_social_person", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _6_social_person1 {
-            get {
-                object obj = ResourceManager.GetObject("6_social_person1", resourceCulture);
+                object obj = ResourceManager.GetObject("largerperson", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

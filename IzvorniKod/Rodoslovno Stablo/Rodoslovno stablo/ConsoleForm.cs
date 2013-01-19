@@ -48,8 +48,14 @@ namespace Rodoslovno_stablo
        
         static Person QueryDisambiguator(IEnumerable<Person> kandidati, string pitanje = "")
         {
-            // TODO resolvanje dvosmislenosti upita
-            return kandidati.ElementAt(0);
+            DisambiguatorForm dis = new DisambiguatorForm();
+            foreach( Person p in kandidati ){
+                dis.listBox.Items.Add(p.ToString());
+            }
+            if (dis.ShowDialog() == DialogResult.OK)
+                return kandidati.ElementAt(dis.chosen);
+            else
+                return kandidati.ElementAt(0);
         }
 
         static string GetLine()

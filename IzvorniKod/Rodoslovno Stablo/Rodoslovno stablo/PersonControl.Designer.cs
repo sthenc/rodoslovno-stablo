@@ -47,13 +47,13 @@
             // pictureBoxUser
             // 
             this.pictureBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxUser.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_person1;
+            this.pictureBoxUser.Image = global::Rodoslovno_stablo.Properties.Resources.largerperson;
             this.pictureBoxUser.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxUser.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBoxUser.MaximumSize = new System.Drawing.Size(50, 50);
             this.pictureBoxUser.Name = "pictureBoxUser";
             this.pictureBoxUser.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUser.TabIndex = 0;
             this.pictureBoxUser.TabStop = false;
             // 

@@ -109,6 +109,12 @@
     <Compile Include="ConsoleForm.Designer.cs">
       <DependentUpon>ConsoleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisambiguatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisambiguatorForm.Designer.cs">
+      <DependentUpon>DisambiguatorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QueriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +166,9 @@
     <EmbeddedResource Include="ConsoleForm.resx">
       <DependentUpon>ConsoleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DisambiguatorForm.resx">
+      <DependentUpon>DisambiguatorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,14 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="QueriesForm.resx">
       <DependentUpon>QueriesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,17 +224,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\6_social_person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\6_social_person1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\6_social_cc_bcc.png" />
     <None Include="Resources\6_social_group.png" />
     <None Include="Resources\10_device_access_screen_locked_to_landscape.png" />
     <None Include="Resources\4_collections_view_as_list.png" />
     <None Include="Resources\1_navigation_cancel.png" />
+    <None Include="Resources\largerperson.png" />
     <Content Include="x64\SQLite.Interop.dll" />
     <None Include="Resources\5_content_edit1.png" />
     <Content Include="x64\SQLite.Interop.dll">

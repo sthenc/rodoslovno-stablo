@@ -311,7 +311,7 @@ namespace Rodoslovno_stablo
                 textBoxTelefon.Text = "";
                 maskedTextBoxDate.Text = "";
                 toolStripDeletePerson.Enabled = false;
-                pictureBoxImage.Image = Properties.Resources._6_social_person;
+                pictureBoxImage.Image = Properties.Resources.largerperson;
             }
         }
 
@@ -332,6 +332,7 @@ namespace Rodoslovno_stablo
                 // todo p.birthDate
             
             }
+            RefreshTree();
         }
 
        
@@ -499,7 +500,7 @@ namespace Rodoslovno_stablo
             {
                 // Configure open file dialog box 
                 OpenFileDialog dlg = new OpenFileDialog();
-                dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+                dlg.Filter = "Slikovne datoteke|*.jpeg;*.png;*.jpg;*.gif";
 
                 dlg.DefaultExt = ".jpg"; // Default file extension 
 

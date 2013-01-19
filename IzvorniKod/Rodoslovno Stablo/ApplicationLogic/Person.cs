@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Xml.Serialization;
+using System.ComponentModel;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace ApplicationLogic
 {
@@ -18,6 +21,7 @@ namespace ApplicationLogic
 //	adresa
 //	zivotopis
 //	K = {osobaID}
+//  http://stackoverflow.com/questions/1907077/serialize-a-bitmap-in-c-net-to-xml serijalizacija slike
 
 	[Serializable]
     public class Person
@@ -37,7 +41,7 @@ namespace ApplicationLogic
         [XmlElement("deathDate")]
         public DateTime deathDate { get; set; }
 
-        [XmlElement("photo")]
+        [XmlIgnore]
 		public Image photo { get; set; } // TODO
 
         [XmlElement("address")]
@@ -113,5 +117,35 @@ namespace ApplicationLogic
 			return ID == p.ID && name == p.name && surname == p.surname && photo == p.photo && sex == p.sex && birthDate == p.birthDate && address == p.address
                 && positionX==p.positionX && positionY==p.positionY;
 		}
+
+        [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
+        [XmlElement("LargeIcon")]
+        public byte[] LargeIconSerialized
+        {
+            get
+            { // serialize
+                if (photo == null) return null;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    photo.Save(ms, ImageFormat.Bmp);
+                    return ms.ToArray();
+                }
+            }
+            set
+            { // deserialize
+                if (value == null)
+                {
+                    photo = null;
+                }
+                else
+                {
+                    using (MemoryStream ms = new MemoryStream(value))
+                    {
+                        photo = new Bitmap(ms);
+                    }
+                }
+            }
+        }
 	}
+
 }
