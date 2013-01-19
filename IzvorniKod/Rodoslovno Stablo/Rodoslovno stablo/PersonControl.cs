@@ -36,6 +36,7 @@ namespace Rodoslovno_stablo
 
         private void PersonControl_MouseDown(object sender, MouseEventArgs e)
         {
+            f.personSelected(this);
             if (e.Button == MouseButtons.Left)
             {
                 _Offset = new Point(e.X, e.Y);
@@ -46,6 +47,7 @@ namespace Rodoslovno_stablo
         {
             if (_Offset != Point.Empty)
             {
+                f.moveRefresh();
                 Point newlocation = this.Location;
                 newlocation.X += e.X - _Offset.X;
                 newlocation.Y += e.Y - _Offset.Y;
@@ -58,8 +60,9 @@ namespace Rodoslovno_stablo
                 if (newlocation.Y % 100 < 15 || newlocation.Y%100 > 85) newlocation.Y = Convert.ToInt32(Math.Round(newlocation.Y/100.0)) * 100;
                 
                 this.Location = newlocation;
-                p.positionX = this.Location.X;
-                p.positionY = this.Location.Y;
+                Point realLocation = f.A2R(this.Location);
+                p.positionX = realLocation.X;
+                p.positionY = realLocation.Y;
 
             }
         }
@@ -81,7 +84,19 @@ namespace Rodoslovno_stablo
             return p;
 
         }
-       
-      
+        public Point getRealTopPoint() {
+            Point p = new Point(this.Location.X + this.Width / 2, this.Location.Y);
+            return f.A2R(p);
+
+        
+        }
+        public Point getRealBottomPoint()
+        {
+            
+            Point p = new Point(this.Location.X+this.Width/2, this.Location.Y + this.Height);
+            return f.A2R(p);
+
+
+        }
     }
 }

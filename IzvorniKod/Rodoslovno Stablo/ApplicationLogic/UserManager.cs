@@ -167,7 +167,15 @@ namespace ApplicationLogic
                 db.Update<User>(korisnik);
             }
         }
-
+        public User GetUser(Int32 id) {
+            List<User> aktivni = null;
+            using (IDbConnection db = connectionString.OpenDbConnection())
+            {
+                aktivni = db.Select<User>(x => x.ID == id );
+            }
+            return aktivni.ElementAt(0);
+            
+        }
         public void StoreQuery(Query upit)
         {
             upit.UserID = ActiveUser.ID;

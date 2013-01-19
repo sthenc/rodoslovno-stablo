@@ -18,47 +18,22 @@ namespace Rodoslovno_stablo
         private Tree tree;
         private QueryProcessor qerp;
         private Panel graf;
-        private System.Drawing.Bitmap myBitmap;
+        
         private PersonControl currentlySelected = null;
-        public UserManager userManager;
-
+       
+        List<PersonControl> kontrole = new List<PersonControl>();
 
         public MainForm()
-        {
-            userManager = new UserManager();
-
+        {  
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
-
             InitializeComponent();
-
             graf = splitC.Panel1;
-
             consoleForm = new ConsoleForm();
             qerp = consoleForm.MyQueryProcessor;
             tree = qerp.Drvo;
             //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
-            qerp.AddPerson(new string[] { "Ime", "Prezime" });
-            graf.Refresh();
-
-        }
-
-        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            splitC.VerticalScroll.Enabled = !splitC.VerticalScroll.Enabled;
-
-        }
-
-        private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            consoleForm.Show();
-            
+  
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -66,19 +41,71 @@ namespace Rodoslovno_stablo
             //centriraj se
             splitC.Panel1.VerticalScroll.Value = (2500 - splitC.Panel1.Height / 2);
             splitC.Panel1.HorizontalScroll.Value = (2500 - splitC.Panel1.Width / 2);
-            Graphics graphicsObj;
-            myBitmap = new Bitmap(5000, 5000,
-            System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            RefreshTree();
+         
+ 
+        }
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            redrawConnections();
+            
 
-            graphicsObj = Graphics.FromImage(myBitmap);
-            graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            Pen myPen = new Pen(System.Drawing.Color.Black, 4);
+        }
+        private void RefreshTree()
+        {
+            kontrole.Clear();
+           foreach (Person p in tree.osobe)
+            {
+                PersonControl c = new PersonControl(p, this);
+                c.Location = R2A(new Point(p.positionX, p.positionY));
+                splitC.Panel1.Controls.Add(c);
+                kontrole.Add(c);
 
-            graphicsObj.DrawLine(myPen, new Point(2000, 2000), new Point(2500, 2500));
-            graphicsObj.Dispose();
+            }
+            redrawConnections();
         }
 
+        public void redrawConnections()
+        {
+            if (kontrole.Count==2)
+            {
+                
+                Graphics graphicsObj=graf.CreateGraphics();
+               
+                graphicsObj.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                Pen myPen = new Pen(System.Drawing.Color.Black, 4);
+                SolidBrush blackBrush = new SolidBrush(Color.Black);
+                Point p1=R2A(kontrole.ElementAt(0).getRealBottomPoint());
+                Point p2 =R2A(kontrole.ElementAt(1).getRealTopPoint());
+                graphicsObj.DrawLine(myPen, p1, p2);
+                int radius = 6;
+                p1.X -= radius; p1.Y -= radius;
+                p2.X -= radius; p2.Y -= radius;
+                Rectangle rect = new Rectangle(p1, new Size(2 * radius, 2 * radius));
+                graphicsObj.FillEllipse(blackBrush, rect);
+                rect = new Rectangle(p2, new Size(2 * radius, 2 * radius));
+                graphicsObj.FillEllipse(blackBrush, rect);
+                
+
+                graphicsObj.Dispose();
+                
+            }
+
+        }
+        private void resetEverything()
+        {
+
+            graf.Controls.Clear();
+            graf.Refresh();
+
+
+
+        }
+  
+
+        
+
+
+        // Ostale bitne stvari 
         private void SaveToJpeg(string path)
         {
             Panel myPanel = splitC.Panel1;
@@ -99,32 +126,7 @@ namespace Rodoslovno_stablo
             image.Save(file, System.Drawing.Imaging.ImageFormat.Jpeg);
         }
 
-        private void RefreshTree()
-        {
-            /*List<PersonControl> persons = new List<PersonControl>();
-            Person p = new Person(new System.Guid(), "Netko", "Netkic");
-            Person p1 = new Person(new System.Guid(), "Bla", "Netkic");
-
-            PersonControl c = new PersonControl(p, this);
-            PersonControl c1 = new PersonControl(p1,this);
-            persons.Add(c);
-            persons.Add(c1);
-
-            splitContainer1.Panel1.Controls.Add(c);
-
-            splitContainer1.Panel1.Controls.Add(c1);*/
-
-            foreach (Person p in tree.osobe)
-            {
-                PersonControl c = new PersonControl(p, this);
-                c.Location = new Point(p.positionX, p.positionY);
-                
-
-                splitC.Panel1.Controls.Add(c);
-            }
-        }
-
-
+    
         public void personSelected(PersonControl c)
         {
             if (currentlySelected != null)
@@ -244,17 +246,67 @@ namespace Rodoslovno_stablo
             RefreshTree();
             
         }
-        private void resetEverything() {
 
-            graf.Controls.Clear();
-            myBitmap.Dispose();
-            myBitmap = new Bitmap(5000, 5000,
-            System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            graf.Refresh();
-            
-
-
+        private void otvoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenXMLClick();
         }
+
+        private void splitC_Panel1_Click(object sender, EventArgs e)
+        {
+            deselectPerson();
+        }
+        private void deselectPerson()
+        {
+            if (currentlySelected != null)
+            {
+                currentlySelected.BackColor = PersonControl.DefaultBackColor;
+                currentlySelected = null;
+                textBoxAddress.Text = "";
+                textBoxCV.Text = "";
+                textBoxEmail.Text = "";
+                textBoxIme.Text = "";
+                textBoxPrezime.Text = "";
+                textBoxTelefon.Text = "";
+                maskedTextBoxDate.Text = "";
+                toolStripDeletePerson.Enabled = false;
+
+            }
+        }
+
+        
+
+        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (currentlySelected != null) {
+                Person p = currentlySelected.getPerson();
+                p.name = textBoxIme.Text;
+                p.surname = textBoxPrezime.Text;
+                p.address = textBoxAddress.Text;
+                p.CV = textBoxCV.Text;
+                p.telephone = textBoxTelefon.Text;
+                currentlySelected.updateControlContent();
+
+                // todo p.birthDate
+            
+            }
+        }
+
+       
+
+        // Konverzija 
+
+        public Point R2A(Point p1) {
+            return new Point(p1.X + graf.AutoScrollPosition.X, p1.Y + graf.AutoScrollPosition.Y);
+        }
+        public Point A2R(Point p1) {
+            return new Point(p1.X - graf.AutoScrollPosition.X, p1.Y - graf.AutoScrollPosition.Y);
+        }
+
+
+        // Toolstripovi
+
+
         private void saveToXML_Click(object sender, EventArgs e)
         {
             SaveXMLClick();
@@ -290,82 +342,54 @@ namespace Rodoslovno_stablo
         {
             SaveXMLClick();
         }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics graphicsObj = e.Graphics;
-            // TODO paziti kad stizemo na rub ekrana
-            int upperLeftX = splitC.Panel1.HorizontalScroll.Value;
-            int upperLeftY = splitC.Panel1.VerticalScroll.Value;
-
-            // if ( upperLeftX > 5000-
-            Rectangle rect = new Rectangle(upperLeftX, upperLeftY, splitC.Panel1.Width - 0, splitC.Panel1.Height - 0);
-            Bitmap cropped = myBitmap.Clone(rect, myBitmap.PixelFormat);
-
-            graphicsObj.DrawImage(cropped, 0, 0);
-            cropped.Dispose();
-            graphicsObj.Dispose();
-        }
-
-        private void otvoriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenXMLClick();
-        }
-
-        private void splitC_Panel1_Click(object sender, EventArgs e)
-        {
-            deselectPerson();
-        }
-        private void deselectPerson()
-        {
-            if (currentlySelected != null)
-            {
-                currentlySelected.BackColor = PersonControl.DefaultBackColor;
-                currentlySelected = null;
-                textBoxAddress.Text = "";
-                textBoxCV.Text = "";
-                textBoxEmail.Text = "";
-                textBoxIme.Text = "";
-                textBoxPrezime.Text = "";
-                textBoxTelefon.Text = "";
-                maskedTextBoxDate.Text = "";
-                toolStripDeletePerson.Enabled = false;
-
-            }
-        }
-
-        private void toolStripAddPerson_Click(object sender, EventArgs e)
-        {
-            Guid novaOsobaGuid = tree.AddPerson("Nova", "Osoba");
-            Person p = tree.GetPersonByID(novaOsobaGuid);
-            PersonControl c = new PersonControl(p, this);
-            graf.Controls.Add(c);
-
-
-        }
-
-        private void buttonSaveChanges_Click(object sender, EventArgs e)
-        {
-            if (currentlySelected != null) {
-                Person p = currentlySelected.getPerson();
-                p.name = textBoxIme.Text;
-                p.surname = textBoxPrezime.Text;
-                p.address = textBoxAddress.Text;
-                p.CV = textBoxCV.Text;
-                p.telephone = textBoxTelefon.Text;
-                currentlySelected.updateControlContent();
-
-                // todo p.birthDate
-            
-            }
-        }
-
         private void collapseEditingPanel(object sender, EventArgs e)
         {
             splitC.Panel2Collapsed = !splitC.Panel2Collapsed;
 
         }
 
+        private void preglednikUpitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QueriesForm qf = new QueriesForm();
+            qf.Show();
+
+        }
+        private void toolStripAddPerson_Click(object sender, EventArgs e)
+        {
+            Guid novaOsobaGuid = tree.AddPerson("Nova", "Osoba");
+            Person p = tree.GetPersonByID(novaOsobaGuid);
+            PersonControl c = new PersonControl(p, this);
+            graf.Controls.Add(c);
+            kontrole.Add(c);
+
+
+        }
+
+        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            splitC.VerticalScroll.Enabled = !splitC.VerticalScroll.Enabled;
+
+        }
+
+        private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consoleForm.Show();
+
+        }
+
+        private void splitC_Panel1_Scroll(object sender, ScrollEventArgs e)
+        {
+            graf.Refresh();
+        }
+        public void moveRefresh(){
+            graf.Refresh();
+        }
 
     }
 }
