@@ -162,7 +162,8 @@ namespace Rodoslovno_stablo
                     tree.AddChild(person1.ID, person2.ID);
 
                 connectionCreationInProgress = 0;
-                //mouse
+                restoreInferfaceAfterConnection();
+               
                 redrawConnections();
 
             }
@@ -398,6 +399,7 @@ namespace Rodoslovno_stablo
             Guid novaOsobaGuid = tree.AddPerson("Nova", "Osoba");
             Person p = tree.GetPersonByID(novaOsobaGuid);
             PersonControl c = new PersonControl(p, this);
+            c.Location= new Point ( graf.Width / 2, graf.Height / 2);
             graf.Controls.Add(c);
             controls.Add(p,c);
 
@@ -433,16 +435,52 @@ namespace Rodoslovno_stablo
         private void toolStripButtonCreateParent_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 5; // roditelj
+            prepareInterfaceForConnection();
         }
 
         private void toolStripButtonCreateMarriage_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 10; // brak
+            prepareInterfaceForConnection();
         }
 
         private void toolStripButtonChild_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 6; // dijete
+            prepareInterfaceForConnection();
+        }
+        private void prepareInterfaceForConnection() {
+            toolStripAddPerson.Enabled = false;
+            toolStripButtonChild.Enabled = false;
+            toolStripButtonCreateMarriage.Enabled = false;
+            toolStripButtonCreateParent.Enabled = false;
+            
+            
+            toolStripDeletePerson.Enabled = false;
+
+            graf.Cursor = Cursors.Cross;
+            toolStripButtonCancel.Visible = true;
+
+
+        }
+        private void restoreInferfaceAfterConnection() {
+            toolStripAddPerson.Enabled = true;
+            toolStripButtonChild.Enabled = true;
+            toolStripButtonCreateMarriage.Enabled = true;
+            toolStripButtonCreateParent.Enabled = true;
+            toolStripDeletePerson.Enabled = true;
+            graf.Cursor = Cursors.Default;
+            toolStripButtonCancel.Visible = false;
+            
+        
+        }
+
+        private void toolStripButtonCancel_Click(object sender, EventArgs e)
+        {
+            connectionCreationInProgress = 0;
+            restoreInferfaceAfterConnection();
+
+            redrawConnections();
         }
 
 

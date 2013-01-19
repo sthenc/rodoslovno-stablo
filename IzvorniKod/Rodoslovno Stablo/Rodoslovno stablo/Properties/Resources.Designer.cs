@@ -63,6 +63,16 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_navigation_cancel {
+            get {
+                object obj = ResourceManager.GetObject("1_navigation_cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _10_device_access_screen_locked_to_landscape {
             get {
                 object obj = ResourceManager.GetObject("10_device_access_screen_locked_to_landscape", resourceCulture);

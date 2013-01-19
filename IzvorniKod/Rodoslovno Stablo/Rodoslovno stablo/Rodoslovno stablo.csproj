@@ -224,6 +224,7 @@
     <None Include="Resources\6_social_group.png" />
     <None Include="Resources\10_device_access_screen_locked_to_landscape.png" />
     <None Include="Resources\4_collections_view_as_list.png" />
+    <None Include="Resources\1_navigation_cancel.png" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
