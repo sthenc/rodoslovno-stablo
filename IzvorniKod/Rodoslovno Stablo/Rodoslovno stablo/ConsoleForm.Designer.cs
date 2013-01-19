@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.textBoxOutput = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonExecute = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.labelConsoleMarker = new System.Windows.Forms.Label();
+            this.comboBoxInput = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBoxOutput
@@ -50,16 +50,6 @@
             this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOutput.Size = new System.Drawing.Size(845, 429);
             this.textBoxOutput.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 12F);
-            this.textBox1.Location = new System.Drawing.Point(37, 447);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(711, 26);
-            this.textBox1.TabIndex = 1;
             // 
             // buttonExecute
             // 
@@ -94,19 +84,31 @@
             this.labelConsoleMarker.TabIndex = 4;
             this.labelConsoleMarker.Text = ">";
             // 
+            // comboBoxInput
+            // 
+            this.comboBoxInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxInput.Font = new System.Drawing.Font("Consolas", 12F);
+            this.comboBoxInput.FormattingEnabled = true;
+            this.comboBoxInput.Location = new System.Drawing.Point(37, 447);
+            this.comboBoxInput.Name = "comboBoxInput";
+            this.comboBoxInput.Size = new System.Drawing.Size(710, 27);
+            this.comboBoxInput.TabIndex = 5;
+            // 
             // ConsoleForm
             // 
             this.AcceptButton = this.buttonExecute;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 485);
+            this.Controls.Add(this.comboBoxInput);
             this.Controls.Add(this.labelConsoleMarker);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.buttonExecute);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxOutput);
             this.Name = "ConsoleForm";
             this.Text = "Pristup konzoli";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsoleForm_FormClosing);
             this.Load += new System.EventHandler(this.ConsoleForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,9 +118,9 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBoxOutput;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonExecute;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Label labelConsoleMarker;
+        private System.Windows.Forms.ComboBox comboBoxInput;
     }
 }

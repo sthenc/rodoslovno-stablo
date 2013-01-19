@@ -137,7 +137,7 @@ namespace ApplicationLogic
 		}
 
         private User ActiveUser;
-
+        
         public void AddUser(User korisnik)
         {
             List<User> korisnici = null;
@@ -192,8 +192,8 @@ namespace ApplicationLogic
 		public bool Login(string username, string password)
 		{
 			// TODO, dodat password hashing
-
             List<User> aktivni = null;
+         
             using (IDbConnection db = connectionString.OpenDbConnection())
             {
                 aktivni = db.Select<User>(x => x.username == username && x.password == password);
@@ -205,6 +205,7 @@ namespace ApplicationLogic
             }
 
             ActiveUser = aktivni.ElementAt(0);
+
 			return true;
 		}
 

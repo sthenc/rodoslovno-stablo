@@ -20,10 +20,13 @@ namespace Rodoslovno_stablo
         private Panel graf;
         private System.Drawing.Bitmap myBitmap;
         private PersonControl currentlySelected = null;
+        public UserManager userManager;
 
 
         public MainForm()
         {
+            userManager = new UserManager();
+
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
 
@@ -55,6 +58,7 @@ namespace Rodoslovno_stablo
         private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
         {
             consoleForm.Show();
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)

@@ -44,7 +44,7 @@
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripAddPerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -210,7 +210,7 @@
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.toolStripButtonSave,
             this.toolStripSeparator,
             this.toolStripAddPerson,
             this.toolStripButton2,
@@ -223,15 +223,15 @@
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "toolStrip";
             // 
-            // toolStripButton1
+            // toolStripButtonSave
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_2);
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSave.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_save;
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButtonSave.Text = "Spremi stablo";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButton1_Click_2);
             // 
             // toolStripSeparator
             // 
@@ -245,7 +245,7 @@
             this.toolStripAddPerson.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripAddPerson.Name = "toolStripAddPerson";
             this.toolStripAddPerson.Size = new System.Drawing.Size(36, 36);
-            this.toolStripAddPerson.Text = "toolStripButton1";
+            this.toolStripAddPerson.Text = "Kreiraj novu osobu";
             this.toolStripAddPerson.Click += new System.EventHandler(this.toolStripAddPerson_Click);
             // 
             // toolStripButton2
@@ -292,7 +292,7 @@
             this.toolStripDeletePerson.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDeletePerson.Name = "toolStripDeletePerson";
             this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
-            this.toolStripDeletePerson.Text = "toolStripButton1";
+            this.toolStripDeletePerson.Text = "Obriši označenu osobu";
             // 
             // splitC
             // 
@@ -665,7 +665,7 @@
         private System.Windows.Forms.ToolStripMenuItem otvoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem upravljanjeKorisnicimaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDate;

@@ -11,15 +11,27 @@ namespace Rodoslovno_stablo
 {
     public partial class LoginForm : Form
     {
+        
         public LoginForm()
         {
+            
             InitializeComponent();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            bool result;
+            result = SharedObjects.userManager.Login(textBoxUsername.Text, textBoxPassword.Text);
 
-            this.Dispose();
+                //form.userManager.Login(textBoxUsername.Text, textBoxPassword.Text);
+            if (result == true)
+            {
+                this.Dispose();
+
+            }
+            else
+                MessageBox.Show("Pogrešno korisničko ime ili lozinka. Pokušajte ponovno.", "Prijava neuspješna", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
 
         }

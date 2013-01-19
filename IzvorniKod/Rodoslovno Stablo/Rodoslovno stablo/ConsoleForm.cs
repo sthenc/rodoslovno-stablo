@@ -14,6 +14,7 @@ namespace Rodoslovno_stablo
     public partial class ConsoleForm : Form
     {
         TextWriter _writer = null;
+        
 
         private static ApplicationLogic.QueryProcessor qpro;
 
@@ -24,19 +25,25 @@ namespace Rodoslovno_stablo
                 return qpro;
             }
         }
+
+      
+
         public ConsoleForm()
         {
             InitializeComponent();
-            textBox1.Select();
+            comboBoxInput.Select();
+            
 
             qpro = new ApplicationLogic.QueryProcessor(QueryDisambiguator, GetLine);
+            
+
         }
+
         private void ConsoleForm_Load(object sender, EventArgs e)
         {
             _writer = new TextBoxStreamWriter(textBoxOutput);
             Console.SetOut(_writer);
-            
-
+            refreshQueries();
         }
        
         static Person QueryDisambiguator(IEnumerable<Person> kandidati, string pitanje = "")
@@ -44,6 +51,7 @@ namespace Rodoslovno_stablo
             // TODO resolvanje dvosmislenosti upita
             return kandidati.ElementAt(0);
         }
+
         static string GetLine()
         {
             return System.Console.ReadLine();
@@ -51,30 +59,45 @@ namespace Rodoslovno_stablo
 
         private void executeText(string request)
         {
-            textBox1.Text = "";
+            Query q = new Query();
+            q.command = request;
+            SharedObjects.userManager.StoreQuery(q);
+
+            comboBoxInput.Text = "";
             Console.WriteLine("> "+request);
             qpro.ProcessQuery(request);
-            
-
-
+            refreshQueries();
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             executeText("help");
-            textBox1.Select();
-
-
-
+            comboBoxInput.Select();
         }
 
         private void buttonExecute_Click(object sender, EventArgs e)
         {
-            executeText(textBox1.Text);
-            textBox1.Select();
+            
 
+            executeText(comboBoxInput.Text);
+            comboBoxInput.Select();
         }
 
+        private void ConsoleForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+
+        }
+        private void refreshQueries() {
+            comboBoxInput.Items.Clear();
+            IEnumerable<Query> list = SharedObjects.userManager.GetQueries();
+            list = list.Reverse().Take(7);
+
+
+            foreach (Query item in list)
+                comboBoxInput.Items.Add(item.command);
+        }
        
 
     }
