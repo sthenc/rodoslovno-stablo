@@ -16,6 +16,8 @@ namespace ApplicationLogic
         [XmlElement("Connection")]
 		public List<Connection> veze;
 
+        // Izvor http://csharpindepth.com/Articles/General/Singleton.aspx
+        // ne treba nam thread-safety, nema filozofije
         private static Tree DrvoSingleton = null;
 
 		private Tree() {}
@@ -258,12 +260,15 @@ namespace ApplicationLogic
         {
             XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
             TextReader inputFile = new StreamReader(path);
-            DrvoSingleton = (Tree)xmlReader.Deserialize(inputFile);
-            return DrvoSingleton;
 
-                //return (Tree)xmlReader.Deserialize(inputFile);
+            Tree deserializirano = (Tree)xmlReader.Deserialize(inputFile);
+            Tree staro = Tree.GetInstance();
+
+            staro.osobe = deserializirano.osobe;
+            staro.veze = deserializirano.veze;
+
+            return staro;
         }
-
 
 		// malo modificirano tako da mozemo unit testat
 		public string SaveTest()
