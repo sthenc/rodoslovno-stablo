@@ -16,6 +16,12 @@
         Id="532ea607-fb19-44b8-8502-3351b05452be"
         name="StandardProfileL3" />
     </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="62110518-5111-4a6a-af38-ef6188343372">
+      <profileInstance
+        Id="87f2aa0b-22bf-4da3-b74c-2b8f8fbed5d0"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
@@ -2549,6 +2555,26 @@
             isComposite="false" />
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="21f97e64-e126-4541-a49c-3909af09d2a8"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="591a456a-8a9f-4d55-8eef-02179a3ae83a"
+        LastKnownName="ApplicationLogic"
+        LastKnownLocation="Package1_1934.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1de8bbc6-915f-4e89-aa6b-7f411e55a16f"
+        LastKnownName="System"
+        LastKnownLocation="Package_1934.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

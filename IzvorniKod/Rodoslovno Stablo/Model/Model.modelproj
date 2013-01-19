@@ -29,6 +29,24 @@
       <SubType>Content</SubType>
       <DependentUpon>admin_add.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="ModelDefinition\Package1_1934.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1935.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1934.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1935.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1934.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1935.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Razredi.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -42,6 +60,13 @@
     <Content Include="UC4.usecasediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>UC4.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ApplicationLogic.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ApplicationLogic.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ApplicationLogic.classdiagram</DependentUpon>
     </Content>
     <Content Include="Upit.sequencediagram">
       <SubType>Content</SubType>
