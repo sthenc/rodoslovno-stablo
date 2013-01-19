@@ -78,11 +78,14 @@ namespace ApplicationLogic
 
 		// rijesenje buga sa loadanjem .dll-a http://mdetras.com/2011/09/29/unable-to-load-dll-sqlite-interop-dll/
 
+        private static bool createDB = false;
+
 		private static string GetFileConnectionString()
 		{
 			var connectionString = "~/db.sqlite".MapAbsolutePath();
-			if (File.Exists(connectionString))
-				File.Delete(connectionString); // TODO da ipak ne pobrise bazu
+            if (!File.Exists(connectionString))
+                //File.Delete(connectionString); // TODO da ipak ne pobrise bazu
+                createDB = true;
 
 			System.Console.WriteLine("Baza na lokaciji {0}", connectionString);
 			return connectionString;
@@ -95,8 +98,9 @@ namespace ApplicationLogic
             OrmLiteConfig.DialectProvider = SqliteOrmLiteDialectProvider.Instance;
 
             connectionString = GetFileConnectionString();
-            using (IDbConnection db = connectionString.OpenDbConnection())
+            if (createDB)
             {
+<<<<<<< HEAD
                 // users
                 db.DropTable<User>();
                 db.CreateTable<User>();
@@ -129,24 +133,47 @@ namespace ApplicationLogic
 
                 List <Query> queries = new List<Query>();
                 queries.Add(new Query()
+=======
+                using (IDbConnection db = connectionString.OpenDbConnection())
+>>>>>>> Dodan dijagram stanja. Maknuto brisanje baze
                 {
-                    UserID = db.Select<User>(x => x.username == "admin").First().ID,
-                    command = "ispisi_stablo"
-                });
-                queries.Add(new Query()
-                {
-                    UserID = db.Select<User>(x => x.username == "admin").First().ID,
-                    command = "ispisi_osobu Chuck, Norris"
-                });
-                queries.Add(new Query()
-                {
-                    UserID = db.Select<User>(x => x.username == "admin").First().ID,
-                    command = "dodaj_osobu Chuck, Norris"
-                });
+                    // users
+                    db.DropTable<User>();
+                    db.CreateTable<User>();
+                    db.DeleteAll<User>();
 
-                db.InsertAll(queries);
+                    List<User> users = new List<User>();
+                    users.Add(new User() { username = "admin", password = "abc123" });
+
+                    db.InsertAll(users);
+
+                    // queries
+                    db.DropTable<Query>();
+                    db.CreateTable<Query>();
+                    db.DeleteAll<Query>();
+
+                    List<Query> queries = new List<Query>();
+                    queries.Add(new Query()
+                    {
+                        UserID = db.Select<User>(x => x.username == "admin").First().ID,
+                        command = "ispisi_stablo"
+                    });
+                    queries.Add(new Query()
+                    {
+                        UserID = db.Select<User>(x => x.username == "admin").First().ID,
+                        command = "ispisi_osobu Chuck, Norris"
+                    });
+                    queries.Add(new Query()
+                    {
+                        UserID = db.Select<User>(x => x.username == "admin").First().ID,
+                        command = "dodaj_osobu Chuck, Norris"
+                    });
+
+                    db.InsertAll(queries);
+                }
             }
         }
+
 		public UserManager()
 		{
             DBInit();
