@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
 
 
 namespace Rodoslovno_stablo
@@ -50,8 +51,9 @@ namespace Rodoslovno_stablo
         }
         private void RefreshTree()
         {
+            graf.Controls.Clear();
             controls.Clear();
-           foreach (Person p in tree.osobe)
+            foreach (Person p in tree.osobe)
             {
                 PersonControl c = new PersonControl(p, this);
                 c.Location = R2A(new Point(p.positionX, p.positionY));
@@ -59,6 +61,7 @@ namespace Rodoslovno_stablo
                 controls.Add(p,c);
 
             }
+            graf.Invalidate();
             redrawConnections();
         }
 
@@ -280,6 +283,7 @@ namespace Rodoslovno_stablo
         {
             resetEverything();
             tree = Tree.Load(file);
+            
             RefreshTree();
             
         }
@@ -307,7 +311,7 @@ namespace Rodoslovno_stablo
                 textBoxTelefon.Text = "";
                 maskedTextBoxDate.Text = "";
                 toolStripDeletePerson.Enabled = false;
-
+                pictureBoxImage.Image = Properties.Resources._6_social_person;
             }
         }
 
@@ -323,6 +327,7 @@ namespace Rodoslovno_stablo
                 p.CV = textBoxCV.Text;
                 p.telephone = textBoxTelefon.Text;
                 currentlySelected.updateControlContent();
+                p.photo = pictureBoxImage.Image;
 
                 // todo p.birthDate
             
@@ -479,6 +484,29 @@ namespace Rodoslovno_stablo
             restoreInferfaceAfterConnection();
 
             redrawConnections();
+        }
+
+        private void toolStripDeletePerson_Click(object sender, EventArgs e)
+        {
+            tree.DeletePersonWithConnections(currentlySelected.getPerson().ID);
+            deselectPerson();
+            RefreshTree();
+        }
+
+        private void pictureBoxImage_Click(object sender, EventArgs e)
+        {
+            if (currentlySelected != null)
+            {
+                // Configure open file dialog box 
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+
+                dlg.DefaultExt = ".jpg"; // Default file extension 
+
+                // Show open file dialog box 
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    pictureBoxImage.Image = Image.FromFile(dlg.FileName);
+            }
         }
 
 

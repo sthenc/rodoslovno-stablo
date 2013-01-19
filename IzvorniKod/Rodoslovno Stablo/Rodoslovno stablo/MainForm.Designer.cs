@@ -81,6 +81,7 @@
             this.toolStripButtonCreateMarriage = new System.Windows.Forms.ToolStripButton();
             this.toolStripDeletePerson = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancel = new System.Windows.Forms.ToolStripButton();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitC.Panel2.SuspendLayout();
@@ -88,6 +89,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panelSex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -287,6 +289,7 @@
             // splitC.Panel2
             // 
             this.splitC.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitC.Panel2.Controls.Add(this.pictureBoxImage);
             this.splitC.Panel2.Controls.Add(this.buttonSaveChanges);
             this.splitC.Panel2.Controls.Add(this.pictureBox1);
             this.splitC.Panel2.Controls.Add(this.label2);
@@ -298,7 +301,7 @@
             // 
             // buttonSaveChanges
             // 
-            this.buttonSaveChanges.Location = new System.Drawing.Point(211, 403);
+            this.buttonSaveChanges.Location = new System.Drawing.Point(211, 509);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveChanges.TabIndex = 3;
@@ -312,7 +315,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(81, 5);
+            this.label2.Location = new System.Drawing.Point(50, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 1;
@@ -342,7 +345,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelTelefon, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelCV, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxDate, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 76);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 183);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
@@ -545,10 +548,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_edit;
+            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._5_content_edit1;
             this.pictureBox1.Location = new System.Drawing.Point(9, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 65);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 32);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -608,6 +611,7 @@
             this.toolStripDeletePerson.Name = "toolStripDeletePerson";
             this.toolStripDeletePerson.Size = new System.Drawing.Size(36, 36);
             this.toolStripDeletePerson.Text = "Obriši označenu osobu";
+            this.toolStripDeletePerson.Click += new System.EventHandler(this.toolStripDeletePerson_Click);
             // 
             // toolStripButtonCancel
             // 
@@ -619,6 +623,19 @@
             this.toolStripButtonCancel.Text = "Odustani od stvaranja veze";
             this.toolStripButtonCancel.Visible = false;
             this.toolStripButtonCancel.Click += new System.EventHandler(this.toolStripButtonCancel_Click);
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxImage.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_person;
+            this.pictureBoxImage.Location = new System.Drawing.Point(3, 43);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(292, 134);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImage.TabIndex = 4;
+            this.pictureBoxImage.TabStop = false;
+            this.pictureBoxImage.Click += new System.EventHandler(this.pictureBoxImage_Click);
             // 
             // MainForm
             // 
@@ -644,6 +661,7 @@
             this.panelSex.ResumeLayout(false);
             this.panelSex.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -705,6 +723,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonCreateParent;
         private System.Windows.Forms.ToolStripButton toolStripButtonChild;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancel;
+        private System.Windows.Forms.PictureBox pictureBoxImage;
     }
 }
 

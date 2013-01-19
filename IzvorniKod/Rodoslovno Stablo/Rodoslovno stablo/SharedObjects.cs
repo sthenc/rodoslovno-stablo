@@ -9,5 +9,6 @@ namespace Rodoslovno_stablo
     public static class SharedObjects
     {
         public static UserManager userManager = new UserManager();
+      
     }
 }
