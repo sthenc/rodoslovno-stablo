@@ -82,6 +82,11 @@
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelCV = new System.Windows.Forms.Label();
             this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.maskedTextBoxWedding = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.splitC.Panel2.SuspendLayout();
@@ -364,7 +369,7 @@
             this.splitC.Panel2.Controls.Add(this.label2);
             this.splitC.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitC.Panel2MinSize = 0;
-            this.splitC.Size = new System.Drawing.Size(1047, 671);
+            this.splitC.Size = new System.Drawing.Size(1047, 773);
             this.splitC.SplitterDistance = 745;
             this.splitC.TabIndex = 2;
             // 
@@ -383,7 +388,7 @@
             // 
             // buttonSaveChanges
             // 
-            this.buttonSaveChanges.Location = new System.Drawing.Point(211, 509);
+            this.buttonSaveChanges.Location = new System.Drawing.Point(217, 612);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
             this.buttonSaveChanges.Size = new System.Drawing.Size(75, 23);
             this.buttonSaveChanges.TabIndex = 3;
@@ -420,25 +425,30 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.textBoxCV, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxTelefon, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.panelSex, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxWedding, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxCV, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxTelefon, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.panelSex, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxIme, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPrezime, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelSpol, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.labelAdresa, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxEmail, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelMail, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.labelTelefon, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.labelCV, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelSpol, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.labelAdresa, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxAddress, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxEmail, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelMail, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.labelTelefon, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelCV, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxDate, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox1, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 183);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
@@ -447,7 +457,10 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 320);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 423);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBoxCV
@@ -455,16 +468,16 @@
             this.textBoxCV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCV.Location = new System.Drawing.Point(103, 227);
+            this.textBoxCV.Location = new System.Drawing.Point(103, 259);
             this.textBoxCV.Multiline = true;
             this.textBoxCV.Name = "textBoxCV";
-            this.textBoxCV.Size = new System.Drawing.Size(186, 90);
+            this.textBoxCV.Size = new System.Drawing.Size(186, 91);
             this.textBoxCV.TabIndex = 15;
             // 
             // textBoxTelefon
             // 
             this.textBoxTelefon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTelefon.Location = new System.Drawing.Point(103, 198);
+            this.textBoxTelefon.Location = new System.Drawing.Point(103, 230);
             this.textBoxTelefon.Name = "textBoxTelefon";
             this.textBoxTelefon.Size = new System.Drawing.Size(186, 20);
             this.textBoxTelefon.TabIndex = 14;
@@ -475,7 +488,7 @@
             this.panelSex.Controls.Add(this.radioButtonMale);
             this.panelSex.Controls.Add(this.radioButtonFemale);
             this.panelSex.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSex.Location = new System.Drawing.Point(103, 99);
+            this.panelSex.Location = new System.Drawing.Point(103, 131);
             this.panelSex.Name = "panelSex";
             this.panelSex.Size = new System.Drawing.Size(186, 26);
             this.panelSex.TabIndex = 3;
@@ -566,7 +579,7 @@
             // 
             this.labelSpol.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSpol.AutoSize = true;
-            this.labelSpol.Location = new System.Drawing.Point(3, 105);
+            this.labelSpol.Location = new System.Drawing.Point(3, 137);
             this.labelSpol.Name = "labelSpol";
             this.labelSpol.Size = new System.Drawing.Size(28, 13);
             this.labelSpol.TabIndex = 7;
@@ -576,7 +589,7 @@
             // 
             this.labelAdresa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelAdresa.AutoSize = true;
-            this.labelAdresa.Location = new System.Drawing.Point(3, 137);
+            this.labelAdresa.Location = new System.Drawing.Point(3, 169);
             this.labelAdresa.Name = "labelAdresa";
             this.labelAdresa.Size = new System.Drawing.Size(40, 13);
             this.labelAdresa.TabIndex = 8;
@@ -585,7 +598,7 @@
             // textBoxAddress
             // 
             this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAddress.Location = new System.Drawing.Point(103, 134);
+            this.textBoxAddress.Location = new System.Drawing.Point(103, 166);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(186, 20);
             this.textBoxAddress.TabIndex = 9;
@@ -593,7 +606,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEmail.Location = new System.Drawing.Point(103, 166);
+            this.textBoxEmail.Location = new System.Drawing.Point(103, 198);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(186, 20);
             this.textBoxEmail.TabIndex = 10;
@@ -602,7 +615,7 @@
             // 
             this.labelMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelMail.AutoSize = true;
-            this.labelMail.Location = new System.Drawing.Point(3, 169);
+            this.labelMail.Location = new System.Drawing.Point(3, 201);
             this.labelMail.Name = "labelMail";
             this.labelMail.Size = new System.Drawing.Size(94, 13);
             this.labelMail.TabIndex = 11;
@@ -612,7 +625,7 @@
             // 
             this.labelTelefon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTelefon.AutoSize = true;
-            this.labelTelefon.Location = new System.Drawing.Point(3, 201);
+            this.labelTelefon.Location = new System.Drawing.Point(3, 233);
             this.labelTelefon.Name = "labelTelefon";
             this.labelTelefon.Size = new System.Drawing.Size(94, 13);
             this.labelTelefon.TabIndex = 12;
@@ -622,7 +635,7 @@
             // 
             this.labelCV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCV.AutoSize = true;
-            this.labelCV.Location = new System.Drawing.Point(3, 265);
+            this.labelCV.Location = new System.Drawing.Point(3, 298);
             this.labelCV.Name = "labelCV";
             this.labelCV.Size = new System.Drawing.Size(94, 13);
             this.labelCV.TabIndex = 13;
@@ -637,11 +650,60 @@
             this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
             this.maskedTextBoxDate.TabIndex = 16;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 362);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Partner";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 397);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Datum vjenčanja";
+            // 
+            // maskedTextBoxWedding
+            // 
+            this.maskedTextBoxWedding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBoxWedding.Location = new System.Drawing.Point(103, 394);
+            this.maskedTextBoxWedding.Mask = "00/00/0000";
+            this.maskedTextBoxWedding.Name = "maskedTextBoxWedding";
+            this.maskedTextBoxWedding.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxWedding.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 105);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Datum smrti";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(103, 102);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBox1.TabIndex = 21;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 734);
+            this.ClientSize = new System.Drawing.Size(1047, 836);
             this.Controls.Add(this.splitC);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip1);
@@ -724,6 +786,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonChild;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancel;
         private System.Windows.Forms.PictureBox pictureBoxImage;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxWedding;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
 
