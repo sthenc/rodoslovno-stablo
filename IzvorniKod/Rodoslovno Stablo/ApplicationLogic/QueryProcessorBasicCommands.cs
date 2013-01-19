@@ -33,28 +33,7 @@ namespace ApplicationLogic
 
 		// 
 
-		public void AddPerson(string[] parametri)
-		{
-		      	if (parametri.Length != 2)
-				throw new System.ArgumentException();
-
-			string ime = parametri[0];
-			string prezime = parametri[1];
-
-			Drvo.AddPerson(ime, prezime);
-		}
-
-        public void GetPerson(string[] parametri)
-        {
-            if (parametri.Length != 2)
-                	throw new System.ArgumentException();
-                	        
-            string osoba_ime = parametri[0];
-            string osoba_prezime = parametri[1];
-                	
-            Guid osoba = FindPersonByName(osoba_ime, osoba_prezime, "Na koga mislite ?");
-            PrintPerson(osoba);
-        }
+		
 
                 public void AddPerson(string[] parametri)
 		{
@@ -248,10 +227,6 @@ namespace ApplicationLogic
 			Drvo.ChangePerson(nona);
 		}
 		
-			public void GetGrandmother(string[] parametri)
-		{
-			GetGrandsomething(parametri, Person.Sex.Female);
-		}
 
 		public void GetBrother(string[] parametri)
 		{
