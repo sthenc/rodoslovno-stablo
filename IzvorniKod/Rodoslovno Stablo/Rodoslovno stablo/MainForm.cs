@@ -51,7 +51,8 @@ namespace Rodoslovno_stablo
             //centriraj se
             splitC.Panel1.VerticalScroll.Value = (2500 - splitC.Panel1.Height / 2);
             splitC.Panel1.HorizontalScroll.Value = (2500 - splitC.Panel1.Width / 2);
-         
+            setTheme(Properties.Settings.Default.theme);
+
  
         }
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -296,6 +297,8 @@ namespace Rodoslovno_stablo
 
             SaveFileDialog dialog = new SaveFileDialog();
 
+            dialog.InitialDirectory = Properties.Settings.Default.workdirectory;
+
             dialog.AddExtension = true;
             dialog.DefaultExt = "jpeg";
             dialog.Filter = "JPEG slika (*.jpg)|*.jpg";
@@ -321,7 +324,7 @@ namespace Rodoslovno_stablo
             Stream myStream = null;
 
             SaveFileDialog dialog = new SaveFileDialog();
-
+            dialog.InitialDirectory = Properties.Settings.Default.workdirectory;
             dialog.AddExtension = true;
             dialog.DefaultExt = "xml";
             dialog.Filter = "xml files (*.xml)|*.xml";
@@ -348,7 +351,7 @@ namespace Rodoslovno_stablo
             string filename = null;
 
             OpenFileDialog dialog = new OpenFileDialog();
-
+            dialog.InitialDirectory = Properties.Settings.Default.workdirectory;
             dialog.AddExtension = true;
             dialog.DefaultExt = "xml";
             dialog.Filter = "Rodoslovno stablo XML datoteke (*.xml)|*.xml";
@@ -544,9 +547,13 @@ namespace Rodoslovno_stablo
 
         private void toolStripDeletePerson_Click(object sender, EventArgs e)
         {
-            tree.DeletePersonWithConnections(currentlySelected.getPerson().ID);
-            deselectPerson();
-            RefreshTree();
+            if (MessageBox.Show("Želite li obrisati označenu osobu i sve njezine veze?", "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
+            {
+
+                tree.DeletePersonWithConnections(currentlySelected.getPerson().ID);
+                deselectPerson();
+                RefreshTree();
+            }
         }
 
         private void pictureBoxImage_Click(object sender, EventArgs e)
@@ -555,6 +562,7 @@ namespace Rodoslovno_stablo
             {
                 // Configure open file dialog box 
                 OpenFileDialog dlg = new OpenFileDialog();
+                dlg.InitialDirectory = Properties.Settings.Default.workdirectory;
                 dlg.Filter = "Slikovne datoteke|*.jpeg;*.png;*.jpg;*.gif";
 
                 dlg.DefaultExt = ".jpg"; // Default file extension 
@@ -576,6 +584,9 @@ namespace Rodoslovno_stablo
         }
 
         public void setTheme(int i) {
+            Properties.Settings.Default.theme = i;
+            Properties.Settings.Default.Save();
+
             if (i == 1) { 
                 menuStrip1.BackColor=MenuStrip.DefaultBackColor;
                 toolStrip.BackColor=ToolStrip.DefaultBackColor;

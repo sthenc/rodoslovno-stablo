@@ -16,6 +16,14 @@ namespace Rodoslovno_stablo
         {
             f = fa;
             InitializeComponent();
+            if (Properties.Settings.Default.theme == 1)
+                radioButton1.Checked = true;
+            else if (Properties.Settings.Default.theme == 2)
+                radioButton2.Checked = true;
+            else if (Properties.Settings.Default.theme == 3)
+                radioButton3.Checked = true;
+            else
+                radioButton4.Checked = true;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
