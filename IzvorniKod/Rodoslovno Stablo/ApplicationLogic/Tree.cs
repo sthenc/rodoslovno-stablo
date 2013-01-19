@@ -258,8 +258,10 @@ namespace ApplicationLogic
         {
             XmlSerializer xmlReader = new XmlSerializer(typeof(Tree));
             TextReader inputFile = new StreamReader(path);
+            DrvoSingleton = (Tree)xmlReader.Deserialize(inputFile);
+            return DrvoSingleton;
 
-            return (Tree)xmlReader.Deserialize(inputFile);
+                //return (Tree)xmlReader.Deserialize(inputFile);
         }
 
 
