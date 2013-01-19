@@ -10229,16 +10229,6 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <generalsInternal>
-          <generalization
-            Id="d1b8d66c-eefb-4a51-b600-1cfbc62b8c25"
-            isSubstitutable="false">
-            <classMoniker
-              Id="000440f1-643a-41ec-83da-c05096b39098"
-              LastKnownName="Person"
-              LastKnownLocation="Package1_1934.uml" />
-          </generalization>
-        </generalsInternal>
         <targetEnds>
           <association
             Id="6ba528e0-5539-4108-ac69-de11cc67d099"
@@ -12899,7 +12889,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e5908b35-2961-4202-aec1-3532d93e7ab2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a4951df1-0d5f-4276-9f95-def14f7ebc25"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -12938,7 +12941,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="bd51cf59-ccf6-4cac-b83c-806c405a41ce"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="75b87d9e-faa1-4b67-997a-64583c76dc7c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
