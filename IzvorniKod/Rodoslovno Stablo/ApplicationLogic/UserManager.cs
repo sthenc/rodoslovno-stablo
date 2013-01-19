@@ -100,42 +100,7 @@ namespace ApplicationLogic
             connectionString = GetFileConnectionString();
             if (createDB)
             {
-<<<<<<< HEAD
-                // users
-                db.DropTable<User>();
-                db.CreateTable<User>();
-                db.DeleteAll<User>();
-
-                List<User> users = new List<User>();
-                User u = new User() { username = "admin", password = "abc123" };
-                u.isAdmin = true;
-                u.isEnabled = true;
-
-                users.Add(u);
-                u = new User() { username = "korisnik1", password = "%T*#($U^(J#GGFjsfw90wjfpstg@(GHJ#$gsih89hqwvijnk  oaj=afor32AFWJITR#@!Q)@!53166563" };
-                u.isEnabled = false;
-
-                users.Add(u);
-                u = new User() { username = "korisnik2", password = "lfjnioawfh9o32qtbf9o734fh934qgh934qth9o34qth9834qi2o1uh8921589wehofwsfs6f56sdf46" };
-                u.isEnabled = false;
-
-                users.Add(u);
-                u = new User() { username = "korisnik3", password = "#%(#$*%&#(@%&#*$^&()@F)WFSAIFHWS(GF$@JV#@KFwefh8f34q8r@(#%#QTWEGFS{FWw\fwsFwsafiqw8r32" };
-                u.isEnabled=false;
-
-                users.Add(u);
-                db.InsertAll(users);
-
-                // queries
-                db.DropTable<Query>();
-                db.CreateTable<Query>();
-                db.DeleteAll<Query>();
-
-                List <Query> queries = new List<Query>();
-                queries.Add(new Query()
-=======
                 using (IDbConnection db = connectionString.OpenDbConnection())
->>>>>>> Dodan dijagram stanja. Maknuto brisanje baze
                 {
                     // users
                     db.DropTable<User>();
