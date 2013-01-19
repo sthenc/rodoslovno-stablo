@@ -11,9 +11,57 @@ namespace Rodoslovno_stablo
 {
     public partial class SettingsForm : Form
     {
-        public SettingsForm()
+        MainForm f;
+        public SettingsForm(MainForm fa)
         {
+            f = fa;
             InitializeComponent();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            f.setTheme(1);
+
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            f.setTheme(2);
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            f.setTheme(3);
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            f.setTheme(4);
+
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string folderPath = "";
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            
+                textBox1.Text = folderBrowserDialog1.SelectedPath;
         }
     }
 }

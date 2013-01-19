@@ -417,7 +417,7 @@ namespace Rodoslovno_stablo
 
         private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form settingsForm = new SettingsForm();
+            Form settingsForm = new SettingsForm(this);
             settingsForm.Show();
 
         }
@@ -575,7 +575,43 @@ namespace Rodoslovno_stablo
 
         }
 
+        public void setTheme(int i) {
+            if (i == 1) { 
+                menuStrip1.BackColor=MenuStrip.DefaultBackColor;
+                toolStrip.BackColor=ToolStrip.DefaultBackColor;
+                splitC.Panel2.BackColor = SplitContainer.DefaultBackColor;
 
+                
+            
+            }
+            else if (i == 2) {
+                menuStrip1.BackColor = Color.Cornsilk;
+                toolStrip.BackColor = Color.Cornsilk;
+                splitC.Panel2.BackColor = Color.Cornsilk;
+               
+
+            
+            }
+            else if (i == 3)
+            {
+                menuStrip1.BackColor = Color.LightGreen;
+                toolStrip.BackColor = Color.LightGreen;
+                splitC.Panel2.BackColor = Color.LightGreen;
+
+
+
+            }
+            else if (i == 4)
+            {
+                menuStrip1.BackColor = Color.SkyBlue;
+                toolStrip.BackColor = Color.SkyBlue;
+                splitC.Panel2.BackColor = Color.SkyBlue;
+
+
+
+            }
+
+        }
 
     }
 }
