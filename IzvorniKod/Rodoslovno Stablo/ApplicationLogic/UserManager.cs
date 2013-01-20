@@ -19,19 +19,19 @@ using ServiceStack.OrmLite.Sqlite;
 
 namespace ApplicationLogic
 {
-	public class User
-	{	// TODO ostatak
-		public User() { }
-		[AutoIncrement]
-		[Alias("UserID")]
-		public Int32 ID { get; set; }
+    public class User
+    {	// TODO ostatak
+        public User() { }
+        [AutoIncrement]
+        [Alias("UserID")]
+        public Int32 ID { get; set; }
 
-		[Index(Unique=true)]
-		[StringLength(10)]
-		public string username { get; set; }
+        [Index(Unique = true)]
+        [StringLength(10)]
+        public string username { get; set; }
 
-		[StringLength(10)]
-		public string password { get; set; }
+        [StringLength(10)]
+        public string password { get; set; }
 
         public string email { get; set; }
 
@@ -58,7 +58,7 @@ namespace ApplicationLogic
         public string partnerSurname { get; set; }
         public Guid MarriageID { get; set; } // veza na Connection
         public DateTime marriedDate { get; set; }
-	}
+    }
 
     public class Query
     {
@@ -71,25 +71,25 @@ namespace ApplicationLogic
     }
 
 
-	public class UserManager
-	{
-		// Izvor za orm  https://github.com/ServiceStack/ServiceStack.OrmLite
-		// inspiracija za ovaj kod https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/SqliteExpressionsTest/Program.cs
+    public class UserManager
+    {
+        // Izvor za orm  https://github.com/ServiceStack/ServiceStack.OrmLite
+        // inspiracija za ovaj kod https://github.com/ServiceStack/ServiceStack.OrmLite/blob/master/src/SqliteExpressionsTest/Program.cs
 
-		// rijesenje buga sa loadanjem .dll-a http://mdetras.com/2011/09/29/unable-to-load-dll-sqlite-interop-dll/
+        // rijesenje buga sa loadanjem .dll-a http://mdetras.com/2011/09/29/unable-to-load-dll-sqlite-interop-dll/
 
         private static bool createDB = false;
 
-		private static string GetFileConnectionString()
-		{
-			var connectionString = "~/db.sqlite".MapAbsolutePath();
+        private static string GetFileConnectionString()
+        {
+            var connectionString = "~/db.sqlite".MapAbsolutePath();
             if (!File.Exists(connectionString))
                 //File.Delete(connectionString); // TODO da ipak ne pobrise bazu
                 createDB = true;
 
-			System.Console.WriteLine("Baza na lokaciji {0}", connectionString);
-			return connectionString;
-		}
+            System.Console.WriteLine("Baza na lokaciji {0}", connectionString);
+            return connectionString;
+        }
 
         private string connectionString;
 
@@ -108,7 +108,22 @@ namespace ApplicationLogic
                     db.DeleteAll<User>();
 
                     List<User> users = new List<User>();
-                    users.Add(new User() { username = "admin", password = "abc123" });
+                    User u = new User() { username = "admin", password = "abc123" };
+                    u.isAdmin = true;
+                    u.isEnabled = true;
+
+                    users.Add(u);
+                    u = new User() { username = "korisnik1", password = "%T*#($U^(J#GGFjsfw90wjfpstg@(GHJ#$gsih89hqwvijnk  oaj=afor32AFWJITR#@!Q)@!53166563" };
+                    u.isEnabled = false;
+                    users.Add(u);
+                    u = new User() { username = "korisnik2", password = "lfjnioawfh9o32qtbf9o734fh934qgh934qth9o34qth9834qi2o1uh8921589wehofwsfs6f56sdf46" };
+                    u.isEnabled = false;
+
+                    users.Add(u);
+                    u = new User() { username = "korisnik3", password = "#%(#$*%&#(@%&#*$^&()@F)WFSAIFHWS(GF$@JV#@KFwefh8f34q8r@(#%#QTWEGFS{FWw\fwsFwsafiqw8r32" };
+                    u.isEnabled = false;
+
+                    users.Add(u);
 
                     db.InsertAll(users);
 
@@ -117,35 +132,17 @@ namespace ApplicationLogic
                     db.CreateTable<Query>();
                     db.DeleteAll<Query>();
 
-                    List<Query> queries = new List<Query>();
-                    queries.Add(new Query()
-                    {
-                        UserID = db.Select<User>(x => x.username == "admin").First().ID,
-                        command = "ispisi_stablo"
-                    });
-                    queries.Add(new Query()
-                    {
-                        UserID = db.Select<User>(x => x.username == "admin").First().ID,
-                        command = "ispisi_osobu Chuck, Norris"
-                    });
-                    queries.Add(new Query()
-                    {
-                        UserID = db.Select<User>(x => x.username == "admin").First().ID,
-                        command = "dodaj_osobu Chuck, Norris"
-                    });
-
-                    db.InsertAll(queries);
                 }
             }
         }
 
-		public UserManager()
-		{
+        public UserManager()
+        {
             DBInit();
-		}
+        }
 
         private User ActiveUser;
-        
+
         public void AddUser(User korisnik)
         {
             List<User> korisnici = null;
@@ -164,7 +161,7 @@ namespace ApplicationLogic
         }
 
         public User GetActiveUser()
-        { 
+        {
             return ActiveUser;
         }
 
@@ -175,14 +172,15 @@ namespace ApplicationLogic
                 db.Update<User>(korisnik);
             }
         }
-        public User GetUser(Int32 id) {
+        public User GetUser(Int32 id)
+        {
             List<User> aktivni = null;
             using (IDbConnection db = connectionString.OpenDbConnection())
             {
-                aktivni = db.Select<User>(x => x.ID == id );
+                aktivni = db.Select<User>(x => x.ID == id);
             }
             return aktivni.ElementAt(0);
-            
+
         }
         public void StoreQuery(Query upit)
         {
@@ -194,7 +192,7 @@ namespace ApplicationLogic
         }
 
         public IEnumerable<Query> GetQueries()
-        {   
+        {
             IEnumerable<Query> ret = null;
 
             using (IDbConnection db = connectionString.OpenDbConnection())
@@ -205,11 +203,11 @@ namespace ApplicationLogic
             return ret;
         }
 
-		public bool Login(string username, string password)
-		{
-			// TODO, dodat password hashing
+        public bool Login(string username, string password)
+        {
+            // TODO, dodat password hashing
             List<User> aktivni = null;
-         
+
             using (IDbConnection db = connectionString.OpenDbConnection())
             {
                 aktivni = db.Select<User>(x => x.username == username && x.password == password);
@@ -222,13 +220,13 @@ namespace ApplicationLogic
 
             ActiveUser = aktivni.ElementAt(0);
 
-			return true;
-		}
+            return true;
+        }
 
-		public bool Logoff()
-		{
+        public bool Logoff()
+        {
             ActiveUser = null;
-			return true;
-		}
-	}
+            return true;
+        }
+    }
 }

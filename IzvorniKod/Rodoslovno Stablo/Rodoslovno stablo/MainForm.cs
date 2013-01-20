@@ -29,7 +29,8 @@ namespace Rodoslovno_stablo
         {  
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog() ;
-            if (result!= DialogResult.OK)
+
+            if (result!= DialogResult.OK || SharedObjects.userManager.GetActiveUser()==null)
             {
                 loginForm.Dispose();
                 this.Dispose();
@@ -195,6 +196,7 @@ namespace Rodoslovno_stablo
             textBoxIme.Text = p.name;
             textBoxPrezime.Text = p.surname;
             maskedTextBoxDate.Text = dateToString(p.birthDate);
+           
             maskedTextBoxDeath.Text = dateToString(p.deathDate);
             textBoxAddress.Text = p.address;
             textBoxCV.Text = p.CV;
@@ -267,7 +269,8 @@ namespace Rodoslovno_stablo
                 p.photo = pictureBoxImage.Image;
                 
                 p.birthDate = stringToDate(maskedTextBoxDate.Text);
-                p.deathDate = stringToDate(maskedTextBoxDeath.Text);
+                if (p.deathDate!=null)
+                    p.deathDate = stringToDate(maskedTextBoxDeath.Text);
                 currentlySelected.updateControlContent();
 
             }
@@ -276,10 +279,13 @@ namespace Rodoslovno_stablo
 
         public string dateToString(DateTime dateTime)
         {
-            return dateTime.ToString("ddMMyyyy");
+            string datetime= dateTime.ToString("ddMMyyyy");
+            if (datetime.Equals("01011000")) return "";
+            else return datetime;
 
         }
         public DateTime stringToDate(string str) {
+            if (str.Equals("  .  .")) return new DateTime(1000, 01, 01);
             try
             {
                 return DateTime.ParseExact(str, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -472,20 +478,17 @@ namespace Rodoslovno_stablo
             Application.Exit();
 
         }
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             splitC.VerticalScroll.Enabled = !splitC.VerticalScroll.Enabled;
 
         }
-
         private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
         {
             consoleForm = new ConsoleForm();
             consoleForm.Show();
 
         }
-
         private void splitC_Panel1_Scroll(object sender, ScrollEventArgs e)
         {
             graf.Refresh();
@@ -493,19 +496,16 @@ namespace Rodoslovno_stablo
         public void moveRefresh(){
             graf.Refresh();
         }
-
         private void toolStripButtonCreateParent_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 5; // roditelj
             prepareInterfaceForConnection();
         }
-
         private void toolStripButtonCreateMarriage_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 10; // brak
             prepareInterfaceForConnection();
         }
-
         private void toolStripButtonChild_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 6; // dijete
@@ -516,14 +516,9 @@ namespace Rodoslovno_stablo
             toolStripButtonChild.Enabled = false;
             toolStripButtonCreateMarriage.Enabled = false;
             toolStripButtonCreateParent.Enabled = false;
-            
-            
             toolStripDeletePerson.Enabled = false;
-
             graf.Cursor = Cursors.Cross;
             toolStripButtonCancel.Visible = true;
-
-
         }
         private void restoreInferfaceAfterConnection() {
             toolStripAddPerson.Enabled = true;
@@ -533,15 +528,12 @@ namespace Rodoslovno_stablo
             toolStripDeletePerson.Enabled = true;
             graf.Cursor = Cursors.Default;
             toolStripButtonCancel.Visible = false;
-            
-        
         }
 
         private void toolStripButtonCancel_Click(object sender, EventArgs e)
         {
             connectionCreationInProgress = 0;
             restoreInferfaceAfterConnection();
-
             redrawConnections();
         }
 
@@ -549,7 +541,6 @@ namespace Rodoslovno_stablo
         {
             if (MessageBox.Show("Želite li obrisati označenu osobu i sve njezine veze?", "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question).Equals(DialogResult.Yes))
             {
-
                 tree.DeletePersonWithConnections(currentlySelected.getPerson().ID);
                 deselectPerson();
                 RefreshTree();
@@ -580,46 +571,32 @@ namespace Rodoslovno_stablo
             graf.Controls.Clear();
             redrawConnections();
             graf.Update();
-
         }
 
         public void setTheme(int i) {
             Properties.Settings.Default.theme = i;
             Properties.Settings.Default.Save();
-
             if (i == 1) { 
                 menuStrip1.BackColor=MenuStrip.DefaultBackColor;
                 toolStrip.BackColor=ToolStrip.DefaultBackColor;
                 splitC.Panel2.BackColor = SplitContainer.DefaultBackColor;
-
-                
-            
             }
             else if (i == 2) {
                 menuStrip1.BackColor = Color.Cornsilk;
                 toolStrip.BackColor = Color.Cornsilk;
-                splitC.Panel2.BackColor = Color.Cornsilk;
-               
-
-            
+                splitC.Panel2.BackColor = Color.Cornsilk;      
             }
             else if (i == 3)
             {
                 menuStrip1.BackColor = Color.LightGreen;
                 toolStrip.BackColor = Color.LightGreen;
                 splitC.Panel2.BackColor = Color.LightGreen;
-
-
-
             }
             else if (i == 4)
             {
                 menuStrip1.BackColor = Color.SkyBlue;
                 toolStrip.BackColor = Color.SkyBlue;
                 splitC.Panel2.BackColor = Color.SkyBlue;
-
-
-
             }
 
         }

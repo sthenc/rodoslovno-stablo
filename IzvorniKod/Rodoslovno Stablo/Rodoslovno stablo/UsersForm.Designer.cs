@@ -122,9 +122,9 @@
             this.pictureBoxImage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxImage.Image = global::Rodoslovno_stablo.Properties.Resources.largerperson;
-            this.pictureBoxImage.Location = new System.Drawing.Point(185, 12);
+            this.pictureBoxImage.Location = new System.Drawing.Point(175, 12);
             this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(280, 134);
+            this.pictureBoxImage.Size = new System.Drawing.Size(304, 134);
             this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImage.TabIndex = 16;
             this.pictureBoxImage.TabStop = false;
@@ -133,9 +133,9 @@
             // 
             this.buttonSaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSaveChanges.Location = new System.Drawing.Point(390, 606);
+            this.buttonSaveChanges.Location = new System.Drawing.Point(380, 606);
             this.buttonSaveChanges.Name = "buttonSaveChanges";
-            this.buttonSaveChanges.Size = new System.Drawing.Size(75, 23);
+            this.buttonSaveChanges.Size = new System.Drawing.Size(99, 23);
             this.buttonSaveChanges.TabIndex = 17;
             this.buttonSaveChanges.Text = "Spremi";
             this.buttonSaveChanges.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBoxDeath, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPartner, 1, 9);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(185, 152);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(175, 152);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
@@ -185,7 +185,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 425);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(304, 425);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // maskedTextBoxWedding
@@ -194,7 +194,7 @@
             this.maskedTextBoxWedding.Location = new System.Drawing.Point(103, 395);
             this.maskedTextBoxWedding.Mask = "00/00/0000";
             this.maskedTextBoxWedding.Name = "maskedTextBoxWedding";
-            this.maskedTextBoxWedding.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxWedding.Size = new System.Drawing.Size(198, 20);
             this.maskedTextBoxWedding.TabIndex = 13;
             this.maskedTextBoxWedding.Visible = false;
             // 
@@ -216,7 +216,7 @@
             this.textBoxCV.Location = new System.Drawing.Point(103, 259);
             this.textBoxCV.Multiline = true;
             this.textBoxCV.Name = "textBoxCV";
-            this.textBoxCV.Size = new System.Drawing.Size(186, 91);
+            this.textBoxCV.Size = new System.Drawing.Size(198, 91);
             this.textBoxCV.TabIndex = 11;
             // 
             // label6
@@ -235,7 +235,7 @@
             this.textBoxTelefon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTelefon.Location = new System.Drawing.Point(103, 230);
             this.textBoxTelefon.Name = "textBoxTelefon";
-            this.textBoxTelefon.Size = new System.Drawing.Size(186, 20);
+            this.textBoxTelefon.Size = new System.Drawing.Size(198, 20);
             this.textBoxTelefon.TabIndex = 10;
             // 
             // panelSex
@@ -246,7 +246,7 @@
             this.panelSex.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSex.Location = new System.Drawing.Point(103, 131);
             this.panelSex.Name = "panelSex";
-            this.panelSex.Size = new System.Drawing.Size(186, 26);
+            this.panelSex.Size = new System.Drawing.Size(198, 26);
             this.panelSex.TabIndex = 3;
             // 
             // radioButtonUnkown
@@ -309,7 +309,7 @@
             this.textBoxIme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxIme.Location = new System.Drawing.Point(103, 6);
             this.textBoxIme.Name = "textBoxIme";
-            this.textBoxIme.Size = new System.Drawing.Size(186, 20);
+            this.textBoxIme.Size = new System.Drawing.Size(198, 20);
             this.textBoxIme.TabIndex = 1;
             // 
             // textBoxPrezime
@@ -317,7 +317,7 @@
             this.textBoxPrezime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPrezime.Location = new System.Drawing.Point(103, 38);
             this.textBoxPrezime.Name = "textBoxPrezime";
-            this.textBoxPrezime.Size = new System.Drawing.Size(186, 20);
+            this.textBoxPrezime.Size = new System.Drawing.Size(198, 20);
             this.textBoxPrezime.TabIndex = 2;
             // 
             // label4
@@ -356,7 +356,7 @@
             this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAddress.Location = new System.Drawing.Point(103, 166);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(186, 20);
+            this.textBoxAddress.Size = new System.Drawing.Size(198, 20);
             this.textBoxAddress.TabIndex = 8;
             // 
             // textBoxEmail
@@ -364,7 +364,7 @@
             this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmail.Location = new System.Drawing.Point(103, 198);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(186, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(198, 20);
             this.textBoxEmail.TabIndex = 9;
             // 
             // labelMail
@@ -403,7 +403,7 @@
             this.maskedTextBoxDate.Location = new System.Drawing.Point(103, 70);
             this.maskedTextBoxDate.Mask = "00/00/0000";
             this.maskedTextBoxDate.Name = "maskedTextBoxDate";
-            this.maskedTextBoxDate.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxDate.Size = new System.Drawing.Size(198, 20);
             this.maskedTextBoxDate.TabIndex = 3;
             // 
             // label7
@@ -423,7 +423,7 @@
             this.maskedTextBoxDeath.Location = new System.Drawing.Point(103, 102);
             this.maskedTextBoxDeath.Mask = "00/00/0000";
             this.maskedTextBoxDeath.Name = "maskedTextBoxDeath";
-            this.maskedTextBoxDeath.Size = new System.Drawing.Size(186, 20);
+            this.maskedTextBoxDeath.Size = new System.Drawing.Size(198, 20);
             this.maskedTextBoxDeath.TabIndex = 4;
             // 
             // textBoxPartner
@@ -432,7 +432,7 @@
             this.textBoxPartner.Enabled = false;
             this.textBoxPartner.Location = new System.Drawing.Point(103, 359);
             this.textBoxPartner.Name = "textBoxPartner";
-            this.textBoxPartner.Size = new System.Drawing.Size(186, 20);
+            this.textBoxPartner.Size = new System.Drawing.Size(198, 20);
             this.textBoxPartner.TabIndex = 12;
             // 
             // groupBox1
@@ -530,9 +530,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(185, 606);
+            this.button1.Location = new System.Drawing.Point(173, 606);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 26;
             this.button1.Text = "Zatvori";
             this.button1.UseVisualStyleBackColor = true;
@@ -542,7 +542,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 641);
+            this.ClientSize = new System.Drawing.Size(491, 641);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="Rodoslovno_stablo.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="Rodoslovno_stablo.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Data.SQLite" publicKeyToken="db937bc2d44ff139" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-1.0.84.0" newVersion="1.0.84.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <applicationSettings>
+    <Rodoslovno_stablo.Settings>
+      <setting name="theme" serializeAs="String">
+        <value>1</value>
+      </setting>
+      <setting name="workingdirectory" serializeAs="String">
+        <value>c:\</value>
+      </setting>
+    </Rodoslovno_stablo.Settings>
+  </applicationSettings>
+  <userSettings>
+    <Rodoslovno_stablo.Properties.Settings>
+      <setting name="workdirectory" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="theme" serializeAs="String">
+        <value>1</value>
+      </setting>
+    </Rodoslovno_stablo.Properties.Settings>
+  </userSettings>
+</configuration>

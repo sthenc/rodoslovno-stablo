@@ -27,11 +27,11 @@ namespace Rodoslovno_stablo
 
             if (!activeUser.isAdmin) {
                 buttonAdmin.Enabled = false;
-                if (!u1.Equals(activeUser))
+                if (!(activeUser.ID==2))
                     button2.Enabled = false;
-                if (!u2.Equals(activeUser))
+                if (!(activeUser.ID == 3))
                     button3.Enabled = false;
-                if (!u3.Equals(activeUser))
+                if (!(activeUser.ID == 4))
                     button4.Enabled = false;
             }
         }
@@ -104,18 +104,21 @@ namespace Rodoslovno_stablo
                 p.username = textBoxUsername.Text;
                 if (radioButton1.Checked) p.isEnabled = true;
                 else p.isEnabled = false;
-
+                SharedObjects.userManager.UpdateUser(currentlySelected);
 
             }
            
         }
         public string dateToString(DateTime dateTime)
         {
-            return dateTime.ToString("ddMMyyyy");
+            string datetime = dateTime.ToString("ddMMyyyy");
+            if (datetime.Equals("01011000")) return "";
+            else return datetime;
 
         }
         public DateTime stringToDate(string str)
         {
+            if (str.Equals("  .  .")) return new DateTime(1000, 01, 01);
             try
             {
                 return DateTime.ParseExact(str, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -156,8 +159,13 @@ namespace Rodoslovno_stablo
         {
             if (textBox1.Text == textBox2.Text) {
                 currentlySelected.password = textBox2.Text;
+                MessageBox.Show("Lozinka promijenjena.", "Lozinka", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+               SharedObjects.userManager.UpdateUser(currentlySelected);
             }
+            MessageBox.Show("Lozinke se ne podudaraju", "Lozinka", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
