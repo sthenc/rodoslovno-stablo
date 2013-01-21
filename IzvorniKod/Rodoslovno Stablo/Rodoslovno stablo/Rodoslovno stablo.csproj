@@ -80,6 +80,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>6_social_group.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -263,6 +266,7 @@
     <None Include="Resources\1_navigation_cancel.png" />
     <None Include="Resources\largerperson.png" />
     <None Include="Resources\Icon.bmp" />
+    <Content Include="6_social_group.ico" />
     <Content Include="x64\SQLite.Interop.dll" />
     <None Include="Resources\5_content_edit1.png" />
     <Content Include="x64\SQLite.Interop.dll">

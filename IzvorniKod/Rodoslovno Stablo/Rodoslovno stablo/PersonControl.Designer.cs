@@ -36,10 +36,10 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelName.Location = new System.Drawing.Point(57, 19);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(111, 18);
+            this.labelName.Size = new System.Drawing.Size(102, 18);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Ime Prezime";
             this.labelName.Click += new System.EventHandler(this.labelName_Click);
@@ -53,7 +53,7 @@
             this.pictureBoxUser.MaximumSize = new System.Drawing.Size(50, 50);
             this.pictureBoxUser.Name = "pictureBoxUser";
             this.pictureBoxUser.Size = new System.Drawing.Size(50, 50);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxUser.TabIndex = 0;
             this.pictureBoxUser.TabStop = false;
             this.pictureBoxUser.Click += new System.EventHandler(this.pictureBoxUser_Click);

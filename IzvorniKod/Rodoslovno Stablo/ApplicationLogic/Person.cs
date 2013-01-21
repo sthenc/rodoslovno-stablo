@@ -122,7 +122,7 @@ namespace ApplicationLogic
 		}
 
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
-        [XmlElement("LargeIcon")]
+        [XmlElement("Photo")]
         public byte[] LargeIconSerialized
         {
             get
@@ -130,7 +130,7 @@ namespace ApplicationLogic
                 if (photo == null) return null;
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    photo.Save(ms, ImageFormat.Bmp);
+                    photo.Save(ms, ImageFormat.Jpeg);
                     return ms.ToArray();
                 }
             }
@@ -144,7 +144,7 @@ namespace ApplicationLogic
                 {
                     using (MemoryStream ms = new MemoryStream(value))
                     {
-                        photo = new Bitmap(ms);
+                        photo = Image.FromStream(ms);
                     }
                 }
             }

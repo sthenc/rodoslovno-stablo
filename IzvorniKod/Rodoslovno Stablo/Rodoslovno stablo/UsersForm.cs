@@ -174,6 +174,21 @@ namespace Rodoslovno_stablo
 
         }
 
-       
+        private void pictureBoxImage_Click(object sender, EventArgs e)
+        {
+            if (currentlySelected != null)
+            {
+                // Configure open file dialog box 
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.InitialDirectory = Properties.Settings.Default.workdirectory;
+                dlg.Filter = "Slikovne datoteke|*.jpeg;*.png;*.jpg;*.gif";
+
+                dlg.DefaultExt = ".jpg"; // Default file extension 
+
+                // Show open file dialog box 
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    pictureBoxImage.Image = Image.FromFile(dlg.FileName);
+            }
+        }
     }
 }

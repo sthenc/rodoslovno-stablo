@@ -51,6 +51,8 @@
             this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOutput.Size = new System.Drawing.Size(845, 429);
             this.textBoxOutput.TabIndex = 0;
+            this.textBoxOutput.Text = "Dobro došli u aplikaciju Krv nije voda, verzija 1.1\r\nKopirajt grupa born2code sa " +
+    "FER-a, najjačeg fakulteta u Zagrebu i šire\r\n\r\n";
             // 
             // buttonExecute
             // 

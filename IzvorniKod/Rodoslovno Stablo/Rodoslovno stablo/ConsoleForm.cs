@@ -30,6 +30,7 @@ namespace Rodoslovno_stablo
 
         public ConsoleForm(MainForm form)
         {
+
             InitializeComponent();
             comboBoxInput.Select();
             f = form;
@@ -44,6 +45,7 @@ namespace Rodoslovno_stablo
             _writer = new TextBoxStreamWriter(textBoxOutput);
             Console.SetOut(_writer);
             refreshQueries();
+            
         }
        
         static Person QueryDisambiguator(IEnumerable<Person> kandidati, string pitanje = "")

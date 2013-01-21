@@ -78,6 +78,7 @@ namespace Rodoslovno_stablo
 
         public void redrawConnections()
         {
+            
             foreach (Connection item in tree.veze)
             {
                 Person person1 = tree.GetPersonByID(item.personID1);
@@ -484,7 +485,8 @@ namespace Rodoslovno_stablo
         }
         private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            consoleForm = new ConsoleForm(this);
+            if (consoleForm==null)
+                consoleForm = new ConsoleForm(this);
             consoleForm.Show();
 
         }

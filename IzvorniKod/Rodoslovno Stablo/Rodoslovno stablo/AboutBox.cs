@@ -107,6 +107,11 @@ namespace Rodoslovno_stablo
 
         }
 
+        private void AboutBox_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
