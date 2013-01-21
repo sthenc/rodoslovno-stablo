@@ -30,11 +30,12 @@ namespace Rodoslovno_stablo
             LoginForm loginForm = new LoginForm();
             DialogResult result = loginForm.ShowDialog() ;
 
-            if (result!= DialogResult.OK || SharedObjects.userManager.GetActiveUser()==null)
+            if (SharedObjects.userManager.GetActiveUser()==null)
             {
                 loginForm.Dispose();
                 this.Dispose();
                 Application.Exit();
+                Environment.Exit(0);
                 return ;
 
             }
@@ -476,6 +477,7 @@ namespace Rodoslovno_stablo
         private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            Environment.Exit(0);
 
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
