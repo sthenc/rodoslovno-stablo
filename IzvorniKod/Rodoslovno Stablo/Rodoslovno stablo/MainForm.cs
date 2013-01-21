@@ -48,8 +48,7 @@ namespace Rodoslovno_stablo
         private void MainForm_Load(object sender, EventArgs e)
         {
             //centriraj se i primjeni temu
-            splitC.Panel1.VerticalScroll.Value = (2500 - splitC.Panel1.Height / 2);
-            splitC.Panel1.HorizontalScroll.Value = (2500 - splitC.Panel1.Width / 2);
+            graf.AutoScrollPosition= new Point(2500-graf.Width/2, 2500-graf.Height / 2);
             setTheme(Properties.Settings.Default.theme);
         }
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -62,11 +61,11 @@ namespace Rodoslovno_stablo
             controls.Clear();
             foreach (Person p in tree.osobe)
             {
-                Random random = new Random();
+                
                 PersonControl c = new PersonControl(p, this);
                 // ako je osoba dodana iz konzole, koordinate nisu dobro postavljene i iznose 0,0. Bolje rjesenje: promjena strukture da stavlja -1,-1
                 if (p.positionX == 0 && p.positionY == 0)
-                    c.setLocation(new Point(graf.Width/2+random.Next(-100,100),graf.Height/2+random.Next(-100,100)));
+                    c.setLocation(newLocationInGraph());
                 else
                     c.setLocation(R2A(new Point(p.positionX, p.positionY)));
                 splitC.Panel1.Controls.Add(c);
@@ -389,8 +388,12 @@ namespace Rodoslovno_stablo
         {
             deselectPerson();
         }
-  
+
+        private Point newLocationInGraph() {
+            Random random = new Random();
+            return new Point(graf.Width / 2 + random.Next(-200, 200), graf.Height / 2 + random.Next(-200, 200));
         
+        }
 
  
 
@@ -461,7 +464,7 @@ namespace Rodoslovno_stablo
             Guid novaOsobaGuid = tree.AddPerson("Nova", "Osoba");
             Person p = tree.GetPersonByID(novaOsobaGuid);
             PersonControl c = new PersonControl(p, this);
-            c.setLocation( new Point ( graf.Width / 2, graf.Height / 2));
+            c.setLocation(newLocationInGraph());
             graf.Controls.Add(c);
             controls.Add(p,c);
 
