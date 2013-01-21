@@ -46,13 +46,14 @@ namespace Rodoslovno_stablo
         }
 
         private Point _Offset = Point.Empty;
-
+        private int movingState = 0;
         private void PersonControl_MouseDown(object sender, MouseEventArgs e)
         {
             
             if (e.Button == MouseButtons.Left)
             {
                 _Offset = new Point(e.X, e.Y);
+                movingState = 1;
             }
         }
 
@@ -60,7 +61,11 @@ namespace Rodoslovno_stablo
         {
             if (_Offset != Point.Empty)
             {
-                f.personSelected(this);
+                if (movingState == 1)
+                {
+                    f.personSelected(this);
+                    movingState = 2;
+                }
                 f.moveRefresh();
                 
                 Point newlocation = this.Location;
@@ -87,6 +92,7 @@ namespace Rodoslovno_stablo
         private void PersonControl_MouseUp(object sender, MouseEventArgs e)
         {
             _Offset = Point.Empty;
+            movingState = 0;
         }
 
         private void PersonControl_Click(object sender, EventArgs e)
