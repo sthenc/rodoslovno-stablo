@@ -43,19 +43,14 @@ namespace Rodoslovno_stablo
                 deselectPerson();
                 graf = splitC.Panel1;
                 tree = Tree.GetInstance();
-                //tree.osobe.Add(new Person(new System.Guid(), "Ime", "Prezime"));
-            
-  
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //centriraj se
+            //centriraj se i primjeni temu
             splitC.Panel1.VerticalScroll.Value = (2500 - splitC.Panel1.Height / 2);
             splitC.Panel1.HorizontalScroll.Value = (2500 - splitC.Panel1.Width / 2);
             setTheme(Properties.Settings.Default.theme);
-
- 
         }
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -68,7 +63,7 @@ namespace Rodoslovno_stablo
             foreach (Person p in tree.osobe)
             {
                 PersonControl c = new PersonControl(p, this);
-                c.Location = R2A(new Point(p.positionX, p.positionY));
+                c.setLocation(R2A(new Point(p.positionX, p.positionY)));
                 splitC.Panel1.Controls.Add(c);
                 controls.Add(p,c);
 
@@ -102,9 +97,15 @@ namespace Rodoslovno_stablo
                     {
                         myPen = new Pen(System.Drawing.Color.IndianRed, 4);
                         myBrush = new SolidBrush(Color.IndianRed);
-
-                        p1 = R2A(c1.getRealRightPoint());
-                        p2 = R2A(c2.getRealLeftPoint());
+                        if (person1.positionX < person2.positionX)
+                        {
+                            p1 = R2A(c1.getRealRightPoint());
+                            p2 = R2A(c2.getRealLeftPoint());
+                        }
+                        else {
+                            p1 = R2A(c1.getRealLeftPoint());
+                            p2 = R2A(c2.getRealRightPoint());
+                        }
 
                     }
                     else continue;
@@ -126,18 +127,9 @@ namespace Rodoslovno_stablo
         }
         private void resetEverything()
         {
-
             graf.Controls.Clear();
             graf.Refresh();
-
-
-
         }
-  
-
-        
-
-
         // Ostale bitne stvari 
         private void SaveToJpeg(string path)
         {
@@ -162,7 +154,9 @@ namespace Rodoslovno_stablo
     
         public void personSelected(PersonControl c)
         {
-            if (connectionCreationInProgress != 0 && currentlySelected!= null) { 
+
+            if (connectionCreationInProgress != 0 && currentlySelected != null)
+            {
                 // kreiramo novu vezu 
                 Person person1 = currentlySelected.getPerson();
                 Person person2 = c.getPerson();
@@ -175,54 +169,49 @@ namespace Rodoslovno_stablo
 
                 connectionCreationInProgress = 0;
                 restoreInferfaceAfterConnection();
-           
+
                 redrawConnections();
-
             }
-           
-
-            if (currentlySelected != null)
-            {
-                deselectPerson();
-
-            }
-            currentlySelected = c;
-            toolStripDeletePerson.Enabled = true;
-
-            c.BackColor = Color.FromArgb(51, 181, 229);
-          
-
-            Person p = c.getPerson();
-
-            textBoxIme.Text = p.name;
-            textBoxPrezime.Text = p.surname;
-            maskedTextBoxDate.Text = dateToString(p.birthDate);
-           
-            maskedTextBoxDeath.Text = dateToString(p.deathDate);
-            textBoxAddress.Text = p.address;
-            textBoxCV.Text = p.CV;
-            textBoxTelefon.Text = p.telephone;
-            textBoxEmail.Text = p.email;
-
-            if (p.sex == Person.Sex.Male)
-                radioButtonMale.Checked = true;
-            else if (p.sex == Person.Sex.Female)
-                radioButtonFemale.Checked = true;
             else
-                radioButtonUnkown.Checked = true;
-            //dodavanje supruznika
+            {
+                // samo oznacavamo osobu
+                if (currentlySelected != null)
+                    deselectPerson();
+                currentlySelected = c;
+                toolStripDeletePerson.Enabled = true;
+                c.BackColor = Color.FromArgb(51, 181, 229);     //bojanje kontrole u plavu
+                Person p = c.getPerson();
 
-            IEnumerable<Person> l = tree.GetPartners(p.ID);
-            foreach (Person item in l) {
-                
-                textBoxPartner.Text += item.name + " " + item.surname;
-                
-                maskedTextBoxWedding.Text = "00000000";
+                textBoxIme.Text = p.name;
+                textBoxPrezime.Text = p.surname;
+                maskedTextBoxDate.Text = dateToString(p.birthDate);
 
+                maskedTextBoxDeath.Text = dateToString(p.deathDate);
+                textBoxAddress.Text = p.address;
+                textBoxCV.Text = p.CV;
+                textBoxTelefon.Text = p.telephone;
+                textBoxEmail.Text = p.email;
+
+                if (p.sex == Person.Sex.Male)
+                    radioButtonMale.Checked = true;
+                else if (p.sex == Person.Sex.Female)
+                    radioButtonFemale.Checked = true;
+                else
+                    radioButtonUnkown.Checked = true;
+                //dodavanje supruznika
+
+                IEnumerable<Person> l = tree.GetPartners(p.ID);
+                foreach (Person item in l)
+                {
+
+                    textBoxPartner.Text += item.name + " " + item.surname;
+
+                    maskedTextBoxWedding.Text = "00000000";
+
+                }
+                pictureBoxImage.Image = p.photo;
+                if (p.photo == null) pictureBoxImage.Image = Properties.Resources.largerperson;
             }
-            pictureBoxImage.Image = p.photo;
-            if (p.photo == null) pictureBoxImage.Image = Properties.Resources.largerperson;
-
 
         }
         private void deselectPerson()
@@ -467,7 +456,7 @@ namespace Rodoslovno_stablo
             Guid novaOsobaGuid = tree.AddPerson("Nova", "Osoba");
             Person p = tree.GetPersonByID(novaOsobaGuid);
             PersonControl c = new PersonControl(p, this);
-            c.Location= new Point ( graf.Width / 2, graf.Height / 2);
+            c.setLocation( new Point ( graf.Width / 2, graf.Height / 2));
             graf.Controls.Add(c);
             controls.Add(p,c);
 

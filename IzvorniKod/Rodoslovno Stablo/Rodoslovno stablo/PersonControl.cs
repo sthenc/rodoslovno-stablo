@@ -20,12 +20,18 @@ namespace Rodoslovno_stablo
             p = person;
             f = form;
             updateControlContent();
-
         }
         public PersonControl() 
         {
             InitializeComponent();
             
+        }
+
+        public void setLocation(Point location){
+            //pocetno podesavanje lokacije kontrole, bitno nam je azurirati osobu prilikom azuriranja kontrole
+            this.Location = location;
+            p.positionX = f.A2R(this.Location).X;
+            p.positionY = f.A2R(this.Location).Y;
         }
         public void updateControlContent() {
             labelName.Text = p.name + " " + p.surname;
@@ -35,13 +41,15 @@ namespace Rodoslovno_stablo
 
 
         }
-
+        private void SelectionClick() {
+            f.personSelected(this);
+        }
 
         private Point _Offset = Point.Empty;
 
         private void PersonControl_MouseDown(object sender, MouseEventArgs e)
         {
-            f.personSelected(this);
+            //f.personSelected(this);
             if (e.Button == MouseButtons.Left)
             {
                 _Offset = new Point(e.X, e.Y);
@@ -81,10 +89,7 @@ namespace Rodoslovno_stablo
 
         private void PersonControl_Click(object sender, EventArgs e)
         {
-
-            f.personSelected(this);
-
-            
+            SelectionClick();
         }
 
         public Person getPerson(){
@@ -118,6 +123,16 @@ namespace Rodoslovno_stablo
             Point p = new Point(this.Location.X + this.Width, this.Location.Y+this.Height/2);
             return f.A2R(p);
             
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
+        {
+            SelectionClick();
+        }
+
+        private void pictureBoxUser_Click(object sender, EventArgs e)
+        {
+            SelectionClick();
         }
     }
 }

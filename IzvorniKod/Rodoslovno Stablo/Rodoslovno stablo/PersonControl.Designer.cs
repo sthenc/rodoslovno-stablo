@@ -42,6 +42,7 @@
             this.labelName.Size = new System.Drawing.Size(111, 18);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Ime Prezime";
+            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // pictureBoxUser
             // 
@@ -55,6 +56,7 @@
             this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxUser.TabIndex = 0;
             this.pictureBoxUser.TabStop = false;
+            this.pictureBoxUser.Click += new System.EventHandler(this.pictureBoxUser_Click);
             // 
             // PersonControl
             // 
