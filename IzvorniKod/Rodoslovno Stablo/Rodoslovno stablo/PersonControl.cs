@@ -49,7 +49,7 @@ namespace Rodoslovno_stablo
 
         private void PersonControl_MouseDown(object sender, MouseEventArgs e)
         {
-            //f.personSelected(this);
+            
             if (e.Button == MouseButtons.Left)
             {
                 _Offset = new Point(e.X, e.Y);
@@ -60,7 +60,9 @@ namespace Rodoslovno_stablo
         {
             if (_Offset != Point.Empty)
             {
+                f.personSelected(this);
                 f.moveRefresh();
+                
                 Point newlocation = this.Location;
                 newlocation.X += e.X - _Offset.X;
                 newlocation.Y += e.Y - _Offset.Y;

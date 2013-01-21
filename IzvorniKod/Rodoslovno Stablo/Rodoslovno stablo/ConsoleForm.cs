@@ -14,7 +14,7 @@ namespace Rodoslovno_stablo
     public partial class ConsoleForm : Form
     {
         TextWriter _writer = null;
-        
+        MainForm f;          // da mogu osvjeziti glavnu formu
 
         private static ApplicationLogic.QueryProcessor qpro;
 
@@ -28,11 +28,11 @@ namespace Rodoslovno_stablo
 
       
 
-        public ConsoleForm()
+        public ConsoleForm(MainForm form)
         {
             InitializeComponent();
             comboBoxInput.Select();
-            
+            f = form;
 
             qpro = new ApplicationLogic.QueryProcessor(QueryDisambiguator, GetLine);
             
@@ -73,6 +73,8 @@ namespace Rodoslovno_stablo
             Console.WriteLine("> "+request);
             qpro.ProcessQuery(request);
             refreshQueries();
+            f.RefreshTree();
+            
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)

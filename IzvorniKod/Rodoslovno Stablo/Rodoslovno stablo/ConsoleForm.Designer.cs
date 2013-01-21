@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsoleForm));
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.buttonExecute = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
@@ -106,6 +107,7 @@
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.textBoxOutput);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsoleForm";
             this.Text = "Pristup konzoli";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsoleForm_FormClosing);

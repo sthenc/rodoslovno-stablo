@@ -56,14 +56,19 @@ namespace Rodoslovno_stablo
         {
             redrawConnections();
         }
-        private void RefreshTree()
+        public void RefreshTree()
         {
             graf.Controls.Clear();
             controls.Clear();
             foreach (Person p in tree.osobe)
             {
+                Random random = new Random();
                 PersonControl c = new PersonControl(p, this);
-                c.setLocation(R2A(new Point(p.positionX, p.positionY)));
+                // ako je osoba dodana iz konzole, koordinate nisu dobro postavljene i iznose 0,0. Bolje rjesenje: promjena strukture da stavlja -1,-1
+                if (p.positionX == 0 && p.positionY == 0)
+                    c.setLocation(new Point(graf.Width/2+random.Next(-100,100),graf.Height/2+random.Next(-100,100)));
+                else
+                    c.setLocation(R2A(new Point(p.positionX, p.positionY)));
                 splitC.Panel1.Controls.Add(c);
                 controls.Add(p,c);
 
@@ -476,7 +481,7 @@ namespace Rodoslovno_stablo
         }
         private void otvoriKonzoluToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            consoleForm = new ConsoleForm();
+            consoleForm = new ConsoleForm(this);
             consoleForm.Show();
 
         }
