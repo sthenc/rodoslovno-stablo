@@ -227,21 +227,7 @@ namespace ApplicationLogic
 
         
         }
-        public class Pair<T, U>
-        {
-            public Pair()
-            {
-            }
-
-            public Pair(T first, U second)
-            {
-                this.First = first;
-                this.Second = second;
-            }
-
-            public T First { get; set; }
-            public U Second { get; set; }
-        };
+    
         public void Razlika_u_starosti(string[] parametri)
         {
             if (parametri.Length != 4)
@@ -390,19 +376,19 @@ namespace ApplicationLogic
             var obisao1 = new HashSet<Pair<Guid,int>>();
             var obisao2 = new HashSet<Pair<Guid,int>>();
 
-            System.Console.WriteLine("Do ovdje je OK");
+            //System.Console.WriteLine("Do ovdje je OK");
 
             TraverseAncestors(obisao1, new Pair<Guid, int>(osoba1.ID, 0));
             TraverseAncestors(obisao2, new Pair<Guid, int>(osoba2.ID, 0));
 
             int koljena = int.MaxValue;
 
-            System.Console.WriteLine("Do ovdje je OK");
+            //System.Console.WriteLine("Do ovdje je OK");
 
-            int i = 0;
+          
             foreach (var o1 in obisao1)
             {
-                System.Console.WriteLine("{0}", i);
+                //System.Console.WriteLine("{0}", i);
 
                 Pair<Guid, int> o2;
 

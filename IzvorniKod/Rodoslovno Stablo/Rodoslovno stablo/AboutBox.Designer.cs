@@ -67,7 +67,7 @@
             // logoPictureBox
             // 
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = global::Rodoslovno_stablo.Properties.Resources._6_social_group;
+            this.logoPictureBox.Image = global::Rodoslovno_stablo.Properties.Resources.social_group;
             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);

@@ -40,7 +40,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources._10_device_access_screen_locked_to_landscape;
+            this.pictureBox1.Image = global::Rodoslovno_stablo.Properties.Resources.device_access_screen_locked_to_landscape;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 62);

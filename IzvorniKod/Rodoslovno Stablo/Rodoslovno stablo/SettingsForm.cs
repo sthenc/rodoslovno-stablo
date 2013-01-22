@@ -66,7 +66,7 @@ namespace Rodoslovno_stablo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string folderPath = "";
+           
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 textBox1.Text = folderBrowserDialog1.SelectedPath;

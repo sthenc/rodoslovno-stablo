@@ -63,9 +63,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1_navigation_cancel {
+        internal static System.Drawing.Bitmap collections_view_as_list {
             get {
-                object obj = ResourceManager.GetObject("1_navigation_cancel", resourceCulture);
+                object obj = ResourceManager.GetObject("collections_view_as_list", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10_device_access_screen_locked_to_landscape {
+        internal static System.Drawing.Bitmap content_discard {
             get {
-                object obj = ResourceManager.GetObject("10_device_access_screen_locked_to_landscape", resourceCulture);
+                object obj = ResourceManager.GetObject("content_discard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4_collections_view_as_list {
+        internal static System.Drawing.Bitmap content_edit {
             get {
-                object obj = ResourceManager.GetObject("4_collections_view_as_list", resourceCulture);
+                object obj = ResourceManager.GetObject("content_edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5_content_discard {
+        internal static System.Drawing.Bitmap content_edit1 {
             get {
-                object obj = ResourceManager.GetObject("5_content_discard", resourceCulture);
+                object obj = ResourceManager.GetObject("content_edit1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5_content_edit {
+        internal static System.Drawing.Bitmap content_save {
             get {
-                object obj = ResourceManager.GetObject("5_content_edit", resourceCulture);
+                object obj = ResourceManager.GetObject("content_save", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,49 +113,9 @@ namespace Rodoslovno_stablo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5_content_edit1 {
+        internal static System.Drawing.Bitmap device_access_screen_locked_to_landscape {
             get {
-                object obj = ResourceManager.GetObject("5_content_edit1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _5_content_save {
-            get {
-                object obj = ResourceManager.GetObject("5_content_save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _6_social_add_person {
-            get {
-                object obj = ResourceManager.GetObject("6_social_add_person", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _6_social_cc_bcc {
-            get {
-                object obj = ResourceManager.GetObject("6_social_cc_bcc", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _6_social_group {
-            get {
-                object obj = ResourceManager.GetObject("6_social_group", resourceCulture);
+                object obj = ResourceManager.GetObject("device_access_screen_locked_to_landscape", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +126,46 @@ namespace Rodoslovno_stablo.Properties {
         internal static System.Drawing.Bitmap largerperson {
             get {
                 object obj = ResourceManager.GetObject("largerperson", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap navigation_cancel {
+            get {
+                object obj = ResourceManager.GetObject("navigation_cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap social_add_person {
+            get {
+                object obj = ResourceManager.GetObject("social_add_person", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap social_cc_bcc {
+            get {
+                object obj = ResourceManager.GetObject("social_cc_bcc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap social_group {
+            get {
+                object obj = ResourceManager.GetObject("social_group", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
