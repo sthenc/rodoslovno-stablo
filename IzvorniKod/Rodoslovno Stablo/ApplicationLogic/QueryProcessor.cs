@@ -90,6 +90,8 @@ namespace ApplicationLogic
 			komande.Add(new CommandDescriptor("dodaj_brata", AddBrother, "dodaj_brata ime_osoba, prezime_osoba, ime_brat, prezime_brat"));
 			komande.Add(new CommandDescriptor("dodaj_sestru", AddSister, "dodaj_sestru ime_unuk, prezime_unuk, ime_brat, prezime_brat"));
 			komande.Add(new CommandDescriptor("dodaj_brata_ili_sestru", AddUnknownSibling, "dodaj_brata_ili_sestru ime_osoba, prezime_osoba, ime_brat, prezime_brat"));
+            komande.Add(new CommandDescriptor("broji_generacije", CountGenerations, "broji_generacije ime_osoba, prezime_osoba, ime_druga_osoba, prezime_druga_osoba"));
+
 			komande.Add(new CommandDescriptor("izlaz", Quit, "izlaz"));            
 			// TODO popis funkcija
 		}

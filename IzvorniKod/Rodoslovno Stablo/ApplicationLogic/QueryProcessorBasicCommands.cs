@@ -201,7 +201,7 @@ namespace ApplicationLogic
 		{
 			AddGrandsomething(parametri, Person.Sex.Unknown);
 		}
-
+       
 
 		public void GetSibling(string[] parametri, Person.Sex spol = Person.Sex.Unknown)
 		{

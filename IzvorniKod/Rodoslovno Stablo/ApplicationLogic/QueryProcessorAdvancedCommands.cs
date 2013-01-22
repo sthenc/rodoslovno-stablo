@@ -159,7 +159,89 @@ namespace ApplicationLogic
 
             PrintPersons(osobeGuid);
         }
+        public void CountGenerations(string [] parametri) {
+            if (parametri.Length != 4) throw new System.ArgumentException();
+            Person osoba1, osoba2, pointer;
+            int distance,result=-1;
+            
+            List<Pair<Person, int> > queue= new List<Pair<Person,int>>();
+            List<Person> visited = new List<Person>();
 
+            osoba1 = Drvo.GetPersonByID(FindPersonByName(parametri[0], parametri[1]));
+            osoba2= Drvo.GetPersonByID(FindPersonByName(parametri[2],parametri[3]));
+
+            visited.Add(osoba1);
+            queue.Add( new Pair<Person,int>(osoba1,0));
+            
+            
+            while ( queue.Count!=0){
+                pointer = queue.Last().First;
+                distance = queue.Last().Second;
+                queue.Remove(queue.Last());
+                visited.Add(pointer);
+                if (osoba2.Equals(pointer)){
+                    // kraj, pronasli smo odgovor
+                    result=Math.Abs(distance);
+                    break;
+
+                }
+                // sredimo svu djecu
+                List <Person> djeca = Drvo.GetChildren(pointer.ID).ToList();
+                foreach (Person i in djeca){
+                    if (visited.Find(x => x==i)==null){
+                        
+                        queue.Add(new Pair<Person, int>(i,distance+1));
+
+                    }   
+                }
+                 // sredimo sve bracne drugove
+                List <Person> brak = Drvo.GetPartners(pointer.ID).ToList();
+                foreach (Person i in brak){
+                    if (visited.Find(x => x==i)==null){
+                       
+                        queue.Add(new Pair<Person, int>(i,distance+0));
+
+                    }   
+                }
+                
+                 // sredimo sve roditelje
+                List <Person> roditelji = Drvo.GetParents(pointer.ID).ToList();
+                foreach (Person i in roditelji){
+                    if (visited.Find(x => x==i)==null){
+                       
+                        queue.Add(new Pair<Person, int>(i,distance-1));
+
+                    }   
+                }
+               
+
+
+            
+            }
+            if (result == -1)
+                System.Console.WriteLine("Osobe nisu u istom stablu. Provjerite imate li bipartitni graf");
+            else
+                System.Console.WriteLine("Broj generacija između osoba jest " + result);
+
+            
+
+        
+        }
+        public class Pair<T, U>
+        {
+            public Pair()
+            {
+            }
+
+            public Pair(T first, U second)
+            {
+                this.First = first;
+                this.Second = second;
+            }
+
+            public T First { get; set; }
+            public U Second { get; set; }
+        };
         public void Razlika_u_starosti(string[] parametri)
         {
             if (parametri.Length != 4)
