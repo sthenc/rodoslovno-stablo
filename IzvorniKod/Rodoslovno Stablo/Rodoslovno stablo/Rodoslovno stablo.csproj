@@ -266,11 +266,7 @@
     <None Include="Resources\largerperson.png" />
     <None Include="Resources\Icon.bmp" />
     <Content Include="6_social_group.ico" />
-    <Content Include="x64\SQLite.Interop.dll" />
     <None Include="Resources\5_content_edit1.png" />
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

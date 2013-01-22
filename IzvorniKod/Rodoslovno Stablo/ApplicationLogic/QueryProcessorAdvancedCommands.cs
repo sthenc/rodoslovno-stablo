@@ -232,5 +232,118 @@ namespace ApplicationLogic
 
         }
 
+        public class Pair<T, U>
+        {
+            public Pair()
+            {
+            }
+
+            public Pair(T first, U second)
+            {
+                this.First = first;
+                this.Second = second;
+            }
+
+            public T First { get; set; }
+            public U Second { get; set; }
+
+            public override bool Equals(System.Object obj)
+            {
+                // ako je null nije jednako
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                // Ako se ne moze kastati sigurno nije dobro
+                Pair<T, U> p = obj as Pair<T, U>;
+                if ((System.Object)p == null)
+                {
+                    return false;
+                }
+
+                return this.Equals(p);
+            }
+
+            public bool Equals(Pair<T, U> p)
+            {
+                return this.First.Equals(p.First);
+            }
+        };
+
+        public void TraverseAncestors(HashSet<Pair<Guid, int>> store, Pair<Guid, int> start)
+        {
+            var red = new Queue<Pair<Guid, int>>();
+
+            red.Enqueue(start);
+
+            while (red.Count() > 0)
+            {
+                var aktualni = red.Dequeue();
+
+                if (!store.Contains(aktualni))
+                {
+                    store.Add(aktualni);
+
+                    IEnumerable<Guid> roditelji = Drvo.GetParent(aktualni.First);
+
+                    foreach (var rod in roditelji)
+                    {
+                        red.Enqueue(new Pair<Guid, int>(rod, aktualni.Second + 1));
+                    }
+                }
+            }
+        }
+
+        // http://www.forum.hr/archive/index.php/t-242082.html
+        public void NumberOfKneesBetween(string[] parametri)
+        {
+            if (parametri.Length != 4)
+                throw new System.ArgumentException();
+
+            Person osoba1, osoba2;
+            osoba1 = Drvo.GetPersonByID(FindPersonByName(parametri[0], parametri[1]));
+            osoba2 = Drvo.GetPersonByID(FindPersonByName(parametri[2], parametri[3]));
+
+            var obisao1 = new HashSet<Pair<Guid,int>>();
+            var obisao2 = new HashSet<Pair<Guid,int>>();
+
+            System.Console.WriteLine("Do ovdje je OK");
+
+            TraverseAncestors(obisao1, new Pair<Guid, int>(osoba1.ID, 0));
+            TraverseAncestors(obisao2, new Pair<Guid, int>(osoba2.ID, 0));
+
+            int koljena = int.MaxValue;
+
+            System.Console.WriteLine("Do ovdje je OK");
+
+            int i = 0;
+            foreach (var o1 in obisao1)
+            {
+                System.Console.WriteLine("{0}", i);
+
+                Pair<Guid, int> o2;
+
+                try
+                {
+                    o2 = obisao2.First(x => x.First == o1.First) ?? null;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+
+                koljena = Math.Min(Math.Max(o1.Second, o2.Second), koljena);
+            }
+
+
+            if (koljena == int.MaxValue)
+                System.Console.WriteLine("Ove dvije osobe nisu u rodu.");
+            else if (koljena == 1)
+                System.Console.WriteLine("Ove dvije osobe su u neposrednom krvnom srodstvu.");
+            else
+                System.Console.WriteLine("Ove dvije osobe su u rodu u {0}. koljenu", koljena - 1);
+        }
+
     }
 }
