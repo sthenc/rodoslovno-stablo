@@ -65,7 +65,7 @@ namespace ApplicationLogicTests
                 qp.PrintPersons(ocekivaneOsobe[i]);
 
                 Console.SetOut(actual);
-                qp.Dohvati_sve_rodjene_izmedju(trazeniDatumi[i]);
+                qp.GetAllBornBetween(trazeniDatumi[i]);
 
                 Assert.AreEqual(expected.ToString(), actual.ToString());
             }
@@ -95,7 +95,7 @@ namespace ApplicationLogicTests
                 qp.PrintPersons(ocekivaneOsobe[i]);
 
                 Console.SetOut(actual);
-                qp.Dohvati_sve_umrle_izmedju(trazeniDatumi[i]);
+                qp.GetAllDiedBetween(trazeniDatumi[i]);
 
                 Assert.AreEqual(expected.ToString(), actual.ToString());
             }
@@ -129,7 +129,7 @@ namespace ApplicationLogicTests
                 qp.PrintPersons(ocekivaneOsobe[i]);
 
                 Console.SetOut(actual);
-                qp.Dohvati_sve_koji_pozivjese_vise_od(trazenaDob[i]);
+                qp.GetAllLivedLonger(trazenaDob[i]);
 
                 Assert.AreEqual(expected.ToString(), actual.ToString());
             }
@@ -163,7 +163,7 @@ namespace ApplicationLogicTests
                 qp.PrintPersons(ocekivaneOsobe[i]);
 
                 Console.SetOut(actual);
-                qp.Dohvati_sve_koji_pozivjese_manje_od(trazenaDob[i]);
+                qp.GetAllLivedShorter(trazenaDob[i]);
 
                 Assert.AreEqual(expected.ToString(), actual.ToString());
             }
@@ -193,7 +193,7 @@ namespace ApplicationLogicTests
                 System.Console.WriteLine(ocekivano[i]);
 
                 Console.SetOut(actual);
-                qp.Razlika_u_starosti(trazenaRazlika[i]);
+                qp.DifferenceInAge(trazenaRazlika[i]);
 
                 Assert.AreEqual(expected.ToString(), actual.ToString());
             }

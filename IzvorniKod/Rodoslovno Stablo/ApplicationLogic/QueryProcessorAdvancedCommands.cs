@@ -73,7 +73,7 @@ namespace ApplicationLogic
 
         }
 
-        public void Dohvati_sve_rodjene_izmedju(string[] parametri)
+        public void GetAllBornBetween(string[] parametri)
         {
             if (parametri.Length != 2)
                 throw new System.ArgumentException();
@@ -93,7 +93,7 @@ namespace ApplicationLogic
             
         }
 
-        public void Dohvati_sve_umrle_izmedju(string[] parametri)
+        public void GetAllDiedBetween(string[] parametri)
         {
             if (parametri.Length != 2)
                 throw new System.ArgumentException();
@@ -112,7 +112,7 @@ namespace ApplicationLogic
             PrintPersons(osobeGuid);
         }
 
-        public void Dohvati_sve_koji_pozivjese_vise_od(string[] parametri)
+        public void GetAllLivedLonger(string[] parametri)
         {
             if (parametri.Length != 1)
                 throw new System.ArgumentException();
@@ -136,7 +136,7 @@ namespace ApplicationLogic
             PrintPersons(osobeGuid);
         }
 
-        public void Dohvati_sve_koji_pozivjese_manje_od(string[] parametri)
+        public void GetAllLivedShorter(string[] parametri)
         {
             if (parametri.Length != 1)
                 throw new System.ArgumentException();
@@ -228,7 +228,7 @@ namespace ApplicationLogic
         
         }
     
-        public void Razlika_u_starosti(string[] parametri)
+        public void DifferenceInAge(string[] parametri)
         {
             if (parametri.Length != 4)
                 throw new System.ArgumentException();
@@ -402,6 +402,9 @@ namespace ApplicationLogic
                 }
 
                 koljena = Math.Min(Math.Max(o1.Second, o2.Second), koljena);
+
+                if ((o1.Second == 0) || (o2.Second == 0))
+                    koljena = 1;
             }
 
 
