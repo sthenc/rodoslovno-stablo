@@ -199,6 +199,11 @@ namespace ApplicationLogicTests
             }
 
         }
+        [Test]
+        public void Broji_Generacije_Test() { 
+        
+        
+        }
         #endregion
     }
 }
